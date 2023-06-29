@@ -1,5 +1,22 @@
-/*
-Theme Name: pafchild
-Theme URI: http://pierrealainfaure.local/
-Template: pierrealainfaure
+/**
+
+Style SCSS du site pierrealainfaure.com
+
 */
+/*
+Font Family de pierrealainfaure.com
+*/
+@font-face {
+  font-family: "Abel";
+  src: url("./assets/fonts/Abel-Regular.ttf") format("truetype");
+}
+.site-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  font-family: "Abel";
+  font-size: 3.2rem;
+}
+
+/*# sourceMappingURL=style.css.map */

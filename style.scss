@@ -1,0 +1,16 @@
+/**
+
+Style SCSS du site pierrealainfaure.com
+
+*/
+
+@import "./assets/css/fonts";
+
+.site-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    font-family: 'Abel';
+    font-size: 3.2rem;
+}

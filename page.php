@@ -14,14 +14,6 @@
 
 get_header();
 ?>
-<style>
-.site-main{
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-}
-</style>
 
 <main class="site-main">
 
@@ -29,11 +21,6 @@ height: 100vh;
 	<section id="logo">
 		<p>pierrealainfaure.com</p>
 	</section>
-
-
-
-
-
 
 
 </main><!-- #main -->

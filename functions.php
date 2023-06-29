@@ -8,7 +8,7 @@ function pafchild_enqueue_styles() {
 
     wp_enqueue_style( 'pafchild', get_stylesheet_uri(), array( 'pierrealainfaure' ) );
 
-    wp_enqueue_style( 'pierrealainfaure', get_template_directory_uri() . '/assets/css/reset.css' );
+    wp_enqueue_style( 'reset', get_stylesheet_directory_uri() . '/assets/css/reset.css' );
 
 
 }
