@@ -5,12 +5,31 @@ Style SCSS du site pierrealainfaure.com
 */
 
 @import "./assets/css/fonts";
+@import "./assets/css/responsive";
 
-.site-main{
+body{
+    overflow: hidden;
+}
+
+.site-main {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 80vh;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  #logo {
+    text-align: center;
+  }
+  
+  h1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
     font-family: 'Abel';
     font-size: 3.2rem;
-}
+  }
+  

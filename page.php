@@ -19,7 +19,7 @@ get_header();
 
 
 	<section id="logo">
-		<p>pierrealainfaure.com</p>
+		<h1>pierrealainfaure.com</h1>
 	</section>
 
 
