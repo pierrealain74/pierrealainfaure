@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
 
 Style SCSS du site pierrealainfaure.com
@@ -6,17 +7,11 @@ Style SCSS du site pierrealainfaure.com
 /*
 Font Family de pierrealainfaure.com
 */
+@import "./assets/icons/fontawesome/css/all.min.css";
 @font-face {
   font-family: "Abel";
   src: url("./assets/fonts/Abel-Regular.ttf") format("truetype");
 }
-/* @media all and (max-width: 768px){
-
-    .site-main h1{
-    overflow: hidden;
-    }
-
-} */
 body {
   overflow: hidden;
 }
@@ -27,20 +22,94 @@ body {
   justify-content: center;
   height: 100vh;
 }
-
-#logo {
+.site-main section#logo {
   text-align: center;
 }
-
-h1 {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  padding: 0;
-  font-family: "Abel";
+.site-main section#logo h1 {
+  display: inline-block;
+  vertical-align: middle;
   font-size: 3.2rem;
+  font-family: "Abel";
+}
+.site-main section#logo .fa-arrow-right {
+  opacity: 0;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 2.2rem;
+  margin-left: 0.5rem;
+}
+.site-main section#logo .fa-arrow-right .fa-arrow-down {
+  position: absolute;
+  top: -17px;
+  left: 0;
+}
+.site-main section#logo .fa-arrow-right .fa-arrow-down span {
+  transform: rotate(90deg); /* Rotation de -90 degrés pour le texte à la verticale */
+  font-size: 0.8rem;
+  font-family: arial;
+  color: grey;
+  display: inline-block;
+}
+
+section#logo h1 {
+  opacity: 0;
+  animation: animeLogo 0.3s 1s ease-in forwards;
+}
+section#logo .fa-arrow-right {
+  opacity: 0;
+  animation: animeArrow 0.5s 1s ease-in forwards;
+}
+section#logo .fa-arrow-right .fa-arrow-down {
+  opacity: 0;
+  animation: animeArrowDown 2s 2s ease-in forwards infinite;
+  rotate: -90deg;
+}
+@keyframes animeLogo {
+  0% {
+    opacity: 0;
+    transform: translateY(-90%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes animeArrow {
+  0% {
+    opacity: 0;
+    transform: translateY(90px);
+  }
+  25% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  75% {
+    transform: rotate(45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(90deg);
+  }
+}
+@keyframes animeArrowDown {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(190px);
+  }
+}
+
+/*Responsive*/
+@media all and (max-width: 405px) {
+  .site-main h1 {
+    font-size: 2.2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

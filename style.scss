@@ -5,31 +5,126 @@ Style SCSS du site pierrealainfaure.com
 */
 
 @import "./assets/css/fonts";
-@import "./assets/css/responsive";
+//@import "./assets/icons/fontawesome/scss/icons";
+@import "./assets/icons/fontawesome/css/all.min.css";
 
 body{
     overflow: hidden;
 }
 
-.site-main {
+.site-main{
+
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-  }
   
-  #logo {
-    text-align: center;
-  }
   
-  h1 {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    padding: 0;
-    font-family: 'Abel';
-    font-size: 3.2rem;
-  }
-  
+        section#logo{
+            text-align: center;       
+        
+            h1 {
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 3.2rem;
+                font-family: 'Abel';
+            }
+            .fa-arrow-right{
+            opacity: 0;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 2.2rem;
+            margin-left: 0.5rem;
+
+                .fa-arrow-down{
+                    position: absolute;
+                    top: -17px;
+                    left: 0;
+
+                        span{
+                            transform: rotate(90deg); /* Rotation de -90 degrés pour le texte à la verticale */
+                            font-size: 0.8rem;
+                            font-family: arial;
+                            color: grey;
+                            display: inline-block;
+                        }
+
+                }
+           
+            }
+          
+        }
+       
+       
+        
+}
+
+section#logo{
+
+    h1{
+        opacity: 0;
+        animation: animeLogo 0.3s 1s ease-in forwards;
+    }
+    .fa-arrow-right{
+        opacity: 0;
+        animation: animeArrow 0.5s 1s ease-in forwards;
+        
+            .fa-arrow-down{
+            opacity: 0;
+            animation: animeArrowDown 2s 2s ease-in forwards infinite;
+            rotate: -90deg;
+
+            }
+    }
+
+    
+
+    @keyframes animeLogo {
+        0%{
+            opacity: 0;
+            transform: translateY(-90%) ;
+        }
+        100%{
+            opacity: 1;
+        }
+    }  
+    @keyframes animeArrow {
+        0%{
+            opacity: 0;
+            transform: translateY(90px);
+        }
+        25%{
+ 
+            transform: rotate(45deg);
+        }
+        50%{
+   
+            transform: rotate(-45deg);
+        }
+        75%{
+
+            transform: rotate(45deg);
+        }
+        100%{
+            opacity: 1;
+            transform: rotate(90deg);
+        }
+    }
+    @keyframes animeArrowDown {
+        0%{
+            opacity: 0;
+        }
+        50%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+            transform: translateY(190px);
+        }
+    }
+    
+}
+///////////////
+/*Responsive*///////////////////////////////////////////////////
+/////////////
+@import "./assets/css/responsive";
