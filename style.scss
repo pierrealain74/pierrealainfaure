@@ -5,7 +5,7 @@ Style SCSS du site pierrealainfaure.com
 */
 
 @import "./assets/css/fonts";
-//@import "./assets/icons/fontawesome/scss/icons";
+@import "./assets/css/animations";
 @import "./assets/icons/fontawesome/css/all.min.css";
 
 body{
@@ -13,11 +13,12 @@ body{
 }
 
 .site-main{
-
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    width: 100vw;
   
   
         section#logo{
@@ -55,75 +56,13 @@ body{
           
         }
        
-       
+   /*Section Who I Am*/
+   #whoiam{
+    display: none;
+}    
         
 }
 
-section#logo{
-
-    h1{
-        opacity: 0;
-        animation: animeLogo 0.3s 1s ease-in forwards;
-    }
-    .fa-arrow-right{
-        opacity: 0;
-        animation: animeArrow 0.5s 1s ease-in forwards;
-        
-            .fa-arrow-down{
-            opacity: 0;
-            animation: animeArrowDown 2s 2s ease-in forwards infinite;
-            rotate: -90deg;
-
-            }
-    }
-
-    
-
-    @keyframes animeLogo {
-        0%{
-            opacity: 0;
-            transform: translateY(-90%) ;
-        }
-        100%{
-            opacity: 1;
-        }
-    }  
-    @keyframes animeArrow {
-        0%{
-            opacity: 0;
-            transform: translateY(90px);
-        }
-        25%{
- 
-            transform: rotate(45deg);
-        }
-        50%{
-   
-            transform: rotate(-45deg);
-        }
-        75%{
-
-            transform: rotate(45deg);
-        }
-        100%{
-            opacity: 1;
-            transform: rotate(90deg);
-        }
-    }
-    @keyframes animeArrowDown {
-        0%{
-            opacity: 0;
-        }
-        50%{
-            opacity: 1;
-        }
-        100%{
-            opacity: 0;
-            transform: translateY(190px);
-        }
-    }
-    
-}
 ///////////////
 /*Responsive*///////////////////////////////////////////////////
 /////////////

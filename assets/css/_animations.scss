@@ -1,0 +1,95 @@
+  /*Bakground animated*/
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(171, 241, 7) 50%, rgb(245, 245, 245) 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+
+  /*Section Logo*/
+  
+section#logo{
+
+    h1{
+        opacity: 0;
+        animation: animeLogo 0.3s 1s ease-in-out forwards;
+    }
+    .fa-arrow-right{
+        opacity: 0;
+        animation: animeArrow 0.5s 2s ease-in forwards;
+        
+            .fa-arrow-down{
+            opacity: 0;
+            animation: animeArrowDown 2s 2s ease-in forwards infinite;
+            rotate: -90deg;
+
+            }
+    }
+    @keyframes animeLogo {
+        0%{
+            opacity: 0;
+            transform: translateY(-290%) ;
+        }
+        100%{
+            opacity: 1;
+        }
+    }  
+    @keyframes animeArrow {
+        0%{
+            opacity: 0;
+            transform: translateY(90px);
+        }
+        25%{
+ 
+            transform: rotate(45deg);
+        }
+        50%{
+   
+            transform: rotate(-45deg);
+        }
+        75%{
+
+            transform: rotate(45deg);
+        }
+        100%{
+            opacity: 1;
+            transform: rotate(90deg);
+        }
+    }
+    @keyframes animeArrowDown {
+        0%{
+            opacity: 0;
+        }
+        50%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+            transform: translateY(190px);
+        }
+    }
+
+}

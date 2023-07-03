@@ -12,52 +12,44 @@ Font Family de pierrealainfaure.com
   font-family: "Abel";
   src: url("./assets/fonts/Abel-Regular.ttf") format("truetype");
 }
-body {
-  overflow: hidden;
+/*Bakground animated*/
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(171, 241, 7) 50%, rgb(245, 245, 245) 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
 }
 
-.site-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-.site-main section#logo {
-  text-align: center;
-}
-.site-main section#logo h1 {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 3.2rem;
-  font-family: "Abel";
-}
-.site-main section#logo .fa-arrow-right {
-  opacity: 0;
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 2.2rem;
-  margin-left: 0.5rem;
-}
-.site-main section#logo .fa-arrow-right .fa-arrow-down {
-  position: absolute;
-  top: -17px;
-  left: 0;
-}
-.site-main section#logo .fa-arrow-right .fa-arrow-down span {
-  transform: rotate(90deg); /* Rotation de -90 degrés pour le texte à la verticale */
-  font-size: 0.8rem;
-  font-family: arial;
-  color: grey;
-  display: inline-block;
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
 }
 
+.bg3 {
+  animation-duration: 5s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+/*Section Logo*/
 section#logo h1 {
   opacity: 0;
-  animation: animeLogo 0.3s 1s ease-in forwards;
+  animation: animeLogo 0.3s 1s ease-in-out forwards;
 }
 section#logo .fa-arrow-right {
   opacity: 0;
-  animation: animeArrow 0.5s 1s ease-in forwards;
+  animation: animeArrow 0.5s 2s ease-in forwards;
 }
 section#logo .fa-arrow-right .fa-arrow-down {
   opacity: 0;
@@ -67,7 +59,7 @@ section#logo .fa-arrow-right .fa-arrow-down {
 @keyframes animeLogo {
   0% {
     opacity: 0;
-    transform: translateY(-90%);
+    transform: translateY(-290%);
   }
   100% {
     opacity: 1;
@@ -103,6 +95,51 @@ section#logo .fa-arrow-right .fa-arrow-down {
     opacity: 0;
     transform: translateY(190px);
   }
+}
+
+body {
+  overflow: hidden;
+}
+
+.site-main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  /*Section Who I Am*/
+}
+.site-main section#logo {
+  text-align: center;
+}
+.site-main section#logo h1 {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 3.2rem;
+  font-family: "Abel";
+}
+.site-main section#logo .fa-arrow-right {
+  opacity: 0;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 2.2rem;
+  margin-left: 0.5rem;
+}
+.site-main section#logo .fa-arrow-right .fa-arrow-down {
+  position: absolute;
+  top: -17px;
+  left: 0;
+}
+.site-main section#logo .fa-arrow-right .fa-arrow-down span {
+  transform: rotate(90deg); /* Rotation de -90 degrés pour le texte à la verticale */
+  font-size: 0.8rem;
+  font-family: arial;
+  color: grey;
+  display: inline-block;
+}
+.site-main #whoiam {
+  display: none;
 }
 
 /*Responsive*/
