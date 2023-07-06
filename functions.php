@@ -15,19 +15,13 @@ function pafchild_enqueue_styles() {
 
 //Script via le scroll
 
-/* function enqueue_scriptScroll()
+function enqueue_whoiam()
 {
 
-    wp_enqueue_script('simpleparallax', get_stylesheet_directory_uri() . '/node_modules/simple-parallax-js/dist/simpleParallax.min.js', array(), false, true);
+    wp_enqueue_script('whoiam', get_stylesheet_directory_uri() . '/assets/js/whoiam.js', array(), false, true);
 
-    wp_enqueue_script('simpleparallax-config', get_stylesheet_directory_uri() . '/js/simpleparallax.js', array(), false, true);
+   /*  wp_enqueue_script('simpleparallax-config', get_stylesheet_directory_uri() . '/js/simpleparallax.js', array(), false, true); */
 }
-add_action('wp_footer', 'enqueue_scriptScroll'); */
-
-
-
-
-
-
+add_action('wp_footer', 'enqueue_whoiam');
 
 ?>

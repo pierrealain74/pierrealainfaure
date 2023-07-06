@@ -112,6 +112,7 @@ body {
 }
 .site-main section#logo {
   text-align: center;
+  /* opacity: 1;  */
 }
 .site-main section#logo h1 {
   display: inline-block;
@@ -138,12 +139,42 @@ body {
   color: grey;
   display: inline-block;
 }
-.site-main #whoiam {
+.site-main section#whoiam {
   display: none;
+  text-align: center;
+}
+.site-main section#whoiam img {
+  max-width: 100%;
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+}
+.site-main .posMouse {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 90%;
+  left: 93%;
+  font-size: 0.9rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: beige;
+  letter-spacing: 0rem;
 }
 
 /*Responsive*/
 @media all and (max-width: 405px) {
+  .site-main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
   .site-main h1 {
     font-size: 2.2rem;
   }
