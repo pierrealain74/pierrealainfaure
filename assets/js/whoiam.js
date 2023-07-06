@@ -1,20 +1,10 @@
 function introToWhoiam() {
 
-
-
-   
-
     // Check scoll direction : wheel fastword backwrd
     //Delta = value take +-100 each wheel scroll
     delta += event.deltaY || event.detail || event.wheelDelta;
     var direction = (delta > 0) ? 1 : -1;
 
-    //console.log(delta);
-    //To display wheel delta
-    posMouse.innerHTML = `delta: ${delta}<br />direction: ${direction}`;
-    
- 
-    var opacity = delta / 1000;
 
     // Delta and opacity may stay btw 0 et 1 or 0 1000
     delta = Math.max(0, delta);
@@ -22,24 +12,22 @@ function introToWhoiam() {
     opacity = Math.max(0, opacity);
     opacity = Math.min(1, opacity);
 
-    // Logo opacity depends on wheel delta value
-    //sectionLogo.style.opacity = opacity.toString();
+    //opacity is % of delta
+    var opacity = 100 - (delta / 10);
+
+    posMouse.innerHTML = `delta: ${delta}<br />direction: ${direction}<br />opacity: ${opacity}%`;
   
-    if (direction == -1 && sectionLogo.style.opacity == 1) {
-
-      console.log('delta : ', delta);
-      console.log('opa : ', sectionLogo.style.opacity);
-
-/*       sectionLogo.style.opacity = opacity.toString() */
-
-
-    }
+    sectionLogo.style.opacity = (opacity / 100).toFixed(2);
+  
+  if (sectionLogo.style.opacity === '0') {
+    
+    //console.log('opacity 0');
 
 
+    
 
 
-
-
+  }
 
 }
 
