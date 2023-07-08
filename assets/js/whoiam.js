@@ -62,37 +62,3 @@ window.addEventListener("wheel", function(event) {
 
 
 });
-
-
-  
-
-
-
-
-
-/*Un cran de roulette souris avant ou arrière declanche l'affichage de la section suivante ou precedente */
-/*   window.addEventListener('wheel', function() {
-
-        var logoSection = document.getElementById('logo');
-        var whoiamSection = document.getElementById('whoiam');
-
-        //Prends le css réel de la section dans la page
-        var computedWHoIAmSection = window.getComputedStyle(whoiamSection);
-
-        // Vérifie la direction du défilement : cran roulette avant ou arriere
-        var delta = event.deltaY || event.detail || event.wheelDelta;
-        var direction = (delta > 0) ? 1 : -1;
-    
-        if (computedWHoIAmSection.getPropertyValue('display') === 'none' && direction === 1) {
-    
-          logoSection.style.display = 'none';
-          whoiamSection.style.display = 'block';
-    
-        }
-        else if(logoSection.style.display = 'none' && direction === -1){
-          logoSection.style.display = 'block';
-          whoiamSection.style.display = 'none';
-        }
-        
-    
-  }); */

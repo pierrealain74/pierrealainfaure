@@ -1,3 +1,8 @@
+/*Section Logo*/
+  
+
+
+
   /*Bakground animated*/
   .bg {
     animation:slide 3s ease-in-out infinite alternate;
@@ -29,14 +34,21 @@
     }
   }
 
-  /*Section Logo*/
-  
-section#logo{
+/********************************/
+#logo{
 
     h1{
-        opacity: 0;
-        animation: animeLogo 0.3s 1s ease-in-out forwards;
+        animation: animeLogo 0.3s ease-in-out forwards;
     }
+    @keyframes animeLogo {
+        0%{
+            opacity: 0;
+            transform: translateX(-50%);
+        }
+        100%{
+            opacity: 1;
+        }
+    } 
     .fa-arrow-right{
         opacity: 0;
         animation: animeArrow 0.5s 2s ease-in forwards;
@@ -48,15 +60,7 @@ section#logo{
 
             }
     }
-    @keyframes animeLogo {
-        0%{
-            opacity: 0;
-            transform: translateY(-290%) ;
-        }
-        100%{
-            opacity: 1;
-        }
-    }  
+    
     @keyframes animeArrow {
         0%{
             opacity: 0;
