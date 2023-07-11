@@ -1,76 +1,136 @@
+@charset "UTF-8";
 /**
 
 Style SCSS du site pierrealainfaure.com
 
 */
-:root {
-  --home-color: #ccc000;
-  --whoiam-color: #FFF000;
-  --logo-color: #AAA666;
+/*
+Font Family de pierrealainfaure.com
+*/
+@import "./assets/icons/fontawesome/css/all.min.css";
+@font-face {
+  font-family: "Abel";
+  src: url("./assets/fonts/Abel-Regular.ttf") format("truetype");
+}
+/* Styles personnalisés pour les barres de défilement */
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-body {
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Styles personnalisés pour les barres de défilement dans Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+/* Barre de défilement */
+::-moz-scrollbar {
+  width: 10px;
+}
+
+/* Piste de la barre de défilement */
+::-moz-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Poignée de la barre de défilement */
+::-moz-scrollbar-thumb {
+  background-color: #888;
+}
+
+/* Hover sur la poignée de la barre de défilement */
+::-moz-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+:root {
+  --home-color: #20CAFC;
+  --whoiam-color: #ffffff;
+  --contact-color: #000000;
+}
+
+.bg-line1, .bg-line2 {
+  position: fixed;
+  top: 0;
+  left: 25px;
+  height: 100vh;
+  width: 400px;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.bg-line2 {
+  left: 800px;
+}
+
+#logo {
+  position: fixed;
+  top: 6%;
+  left: 3%;
+  transition: width 0.2s ease-in, transform 0.1s ease-in-out;
+  width: 85px;
+  width: 75px;
+}
+#logo:hover {
+  width: 88px;
+  transform: rotate(360deg);
+}
+
+#portfolio {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 5rem;
   background-color: var(--home-color);
 }
-body #site-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+
+video {
+  width: 250px;
 }
-body #site-main #logo {
-  display: block;
-  height: 100vh;
-  /* border: 1px solid red; */
-}
-body #site-main #logo h1 {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: inline-block;
-  vertical-align: middle;
+
+h1 {
   font-size: 3.2rem;
   font-family: "Abel";
+  color: white;
 }
-body #site-main #whoiam {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.2rem;
-  font-family: sans-serif;
+
+#whoiam img, #contact img {
+  width: 25%;
+  float: left;
 }
-body #site-main .fade-in {
-  opacity: 0;
-  transition: opacity 3s;
-}
-body #site-main .fade-in.show {
-  opacity: 1;
-}
-body #site-main .hide {
-  opacity: 0;
-}
-body #site-main #portfolio {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-body #site-main #portfolio img {
-  width: 50%;
-}
-body #site-main .posMouse {
+
+#whoiam, #contact {
   display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 90%;
-  left: 90%;
-  transform: translate(-90%, -90%);
-  font-size: 1.5rem;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: grey;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 5rem;
+  padding: 5rem;
+}
+
+#whoiam {
+  background-color: var(--whoiam-color);
+}
+
+#contact {
+  background-color: var(--contact-color);
+  color: #ffffff;
 }
 
 /*Responsive*/

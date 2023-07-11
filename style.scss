@@ -4,99 +4,89 @@ Style SCSS du site pierrealainfaure.com
 
 */
 
+@import "./assets/css/fonts";
+@import "./assets/css/scrollbar";
+
+//@import "./assets/css/animations";
+@import "./assets/icons/fontawesome/css/all.min.css";
+
 :root {
-    --home-color: #ccc000;
-    --whoiam-color: #FFF000;
-    --logo-color: #AAA666;
+  --home-color: #20CAFC;
+  --whoiam-color: #ffffff;
+  --contact-color: #000000;
+}
+.bg-line1, .bg-line2{
+    position: fixed;
+    top: 0;
+    left: 25px;
+    height: 100vh;
+    width: 400px;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    opacity: 0.2;
+    z-index: 0;
+}
+.bg-line2{
+    left: 800px;
+}
+
+
+
+#logo{
+  position: fixed;
+  top: 6%;
+  left: 3%;
+  transition: width 0.2s ease-in, transform 0.1s ease-in-out;
+  width: 85px;
+  width: 75px;
+
+
+  &:hover {
+    width: 88px;
+    transform: rotate(360deg);
+  }
+}
+
+#portfolio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 5rem;
+  background-color: var(--home-color);
+}
+
+  video {
+    width: 250px;
+  }
+  h1{
+    font-size: 3.2rem;
+    font-family: 'Abel';
+    color: white;
+  } 
+  #whoiam img, #contact img{
+    width: 25%;
+    float: left;
+  }
+  #whoiam, #contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 5rem;
+  padding: 5rem;
+  }
+
+  #whoiam{
+    background-color: var(--whoiam-color);
+  }
+  #contact{
+    background-color: var(--contact-color);
+    color: #ffffff;
   }
 
 
-body{
-    display: flex;
-    background-color: var(--home-color);
-
-    #site-main{
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-
-        #logo{
-         
-            display: block;
-            height: 100vh;
-            /* border: 1px solid red; */
-     
-     
-        h1 {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: inline-block;
-            vertical-align: middle;
-            font-size: 3.2rem;
-            font-family: 'Abel';
-        }
-    }
-    #whoiam{
-
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 1.2rem;
-        font-family: sans-serif;
-
-
-    }
-    .fade-in {
-        opacity: 0;
-        transition: opacity 3s;
-        
-        &.show {
-        opacity: 1;
-        
-      }
-      }
-
-      .hide{
-        opacity: 0;
-        
-      }
-
-      #portfolio{
-
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        & img{
-            width: 50%;
-        }
-      }
-
-
-
-    .posMouse{
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 90%;
-        left: 90%;
-        transform: translate(-90%, -90%);
-        font-size: 1.5rem;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        color: grey;
-    }
-
-
-
-    }//end site-main    
-}//end body
 ///////////////
-/*Responsive*///////////////////////////////////////////////////
+/*Responsive*/ //////////////////////////////////////////////////
 /////////////
 //@import "./assets/css/responsive";
