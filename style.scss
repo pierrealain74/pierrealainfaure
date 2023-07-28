@@ -3,7 +3,8 @@
 Style SCSS du site pierrealainfaure.com
 
 */
-
+@import "./assets/css/reset";
+@import "./assets/css/carousel";
 @import "./assets/css/fonts";
 @import "./assets/css/scrollbar";
 
@@ -14,6 +15,10 @@ Style SCSS du site pierrealainfaure.com
   --home-color: #20CAFC;
   --whoiam-color: #ffffff;
   --contact-color: #000000;
+  /* portfolio color */
+  --primary-color: #3396C0;
+	--secondary-color: #CD006B;
+	--third-color: #EEE325;
 }
 .bg-line1, .bg-line2{
     position: fixed;
@@ -30,8 +35,6 @@ Style SCSS du site pierrealainfaure.com
     left: 800px;
 }
 
-
-
 #logo{
   position: fixed;
   top: 6%;
@@ -39,6 +42,8 @@ Style SCSS du site pierrealainfaure.com
   transition: width 0.2s ease-in, transform 0.1s ease-in-out;
   width: 85px;
   width: 75px;
+  font-family: 'Abel';
+  font-size: 2.2rem;
 
 
   &:hover {
@@ -84,6 +89,91 @@ Style SCSS du site pierrealainfaure.com
     background-color: var(--contact-color);
     color: #ffffff;
   }
+
+
+
+  /*Carousel*/
+
+.carousel {
+  width: 500px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: fit-content;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slides li {
+  flex: 0 0 100%;
+}
+
+.slides img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+#banner {
+  display: flex;
+  justify-content: flex-start; /* Aligner les images à gauche */
+  gap: 10px; /* Espace entre les images */
+}
+.banner-img {
+  max-width: 100%;
+  width: 250px;
+  height: auto;
+}
+/* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
+/* Gestion des fleches du carrousel */
+#banner .arrow {
+	position: absolute;
+}
+#banner .arrow_left {
+	left: 10px;
+}
+#banner .arrow_right {
+	right: 10px;
+}
+/* Gestion des points du carrousel */
+.dots {
+	position: absolute;
+	bottom: 40px;
+	display: flex;
+}
+.dot {
+	margin-inline: 5px;
+	width: 13px;
+	height: 13px;
+	background-color: #ffffff00;
+	border: 3px solid #fff;
+	border-radius: 100%;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);;
+}
+.dot_selected {
+	background-color: #fff;
+}
+/* Fin du code CSS pour le carousel */
+#banner p {
+	font-family: 'Roboto Slab', sans-serif;
+	font-weight: 900;
+	font-size: 50px;
+	line-height: 66px;
+	color: white;
+	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	text-align: center;
+}
+#banner span {
+	display: block;
+	font-weight: 400;
+	font-size: 30px;
+}
+
 
 
 ///////////////

@@ -1,4 +1,4 @@
-const slides = [
+/* const slides = [
 	{
 		"image":"slide1.jpg",
 		"tagLine": "Impressions tous formats <span>en boutique et en ligne</span>"
@@ -15,7 +15,7 @@ const slides = [
 		"image":"slide4.png",
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
-]
+] */
 
 // Récupérer les éléments du DOM
 const banner = document.getElementById('banner');
@@ -63,7 +63,7 @@ let currentSlide = 0;
 // Fonction pour afficher le slide selectionné
 function modifySlide() {
 
-	bannerImg.src = './assets/images/slideshow/' + slides[currentSlide].image;  
+	bannerImg.src = slides[currentSlide].image;  
 	
 	const pTag = document.querySelector('#banner p');
 	pTag.innerHTML = slides[currentSlide].tagLine;//inner permet de garder les elts html comme span

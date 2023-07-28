@@ -1,0 +1,150 @@
+@use "sass:math";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: #fff;
+	background-color: #021417;
+    overflow: hidden;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+	min-height: 100vh;
+	width: 100%;
+	/* max-width: 900px; */
+	margin: 0 auto;
+}
+
+.c-header {
+	display: block;
+	width: 100%;
+}
+
+.u-a5 {
+	font-family: Arial;
+	font-size: 37px;
+	line-height: 35px;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	font-weight: 700;
+	text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+	color: #fff;
+
+    img {
+        width: 130px; // Change the width to 100% for horizontal display
+        height: 400px; // Allow the image to maintain its aspect ratio
+        object-fit: cover;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease, height 0.3s ease;
+
+        &:hover{
+        
+            filter: grayscale(2%);
+            height: 420px;
+    
+        }
+    }
+}
+
+.u-b4 {
+	font-family: Arial;
+	font-size: 12px;
+	line-height: 17px;
+	letter-spacing: 0.3px;
+	font-weight: normal;
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+}
+
+//MEDIA WRAPPER
+.u-media-wrapper {
+	position: relative;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	height: 0;
+
+	&#{&}--16-9 {
+		/* padding-bottom:  math.div(9, 16); */
+		padding-bottom: 40%;
+	}
+}
+
+// GRADIENT IMAGE OVERLAY
+.c-gradient-overlay {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: radial-gradient(
+		circle at 49% 50%,
+		rgba(2, 21, 25, 0.3),
+		rgba(2, 21, 25, 0.6)
+	);
+}
+
+.c-mouse-vertical-carousel {
+	position: relative;
+	overflow: hidden;
+
+	&__list {
+		display: flex; // Display the list items horizontally
+		width: 30%;
+		position: absolute;
+		top: 50%; // Center the carousel vertically
+		left: 80%; // Center the carousel horizontally
+		transform: translate(-50%, -50%); // Center the carousel
+		z-index: 1;
+        height: 500px;
+	}
+
+	&__list-item {
+		flex: 0 0 30%; // Set each list item to occupy the full width
+		text-align: center; // Center the content inside each item
+
+		a {
+			display: block;
+			padding-bottom: 25px;
+			padding-top: 25px;
+		}
+	}
+
+	&__eyebrow {
+		position: relative;
+		padding-bottom: 12px;
+
+		span {
+			position: absolute;
+			left: -30px;
+			top: 2px;
+		}
+	}
+
+	&__title {
+		max-width: 450px;
+	}
+
+	&__bg-img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: center;
+		will-change: transform;
+	}
+}

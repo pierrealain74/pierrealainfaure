@@ -8,19 +8,36 @@ function pafchild_enqueue_styles() {
 
     wp_enqueue_style( 'pafchild', get_stylesheet_uri(), array( 'pierrealainfaure' ) );
 
-    wp_enqueue_style( 'reset', get_stylesheet_directory_uri() . '/assets/css/reset.css' );
+    //Reset CSS
+    //wp_enqueue_style( 'reset', get_stylesheet_directory_uri() . '/assets/css/reset.css' );
 
+    //Glide Js (portoflio/carrousel)
+    wp_enqueue_style( 'glide-core', get_stylesheet_directory_uri() . '/node_modules/@glidejs/glide/dist/css/glide.core.css' );
+
+    wp_enqueue_style( 'glide-theme', get_stylesheet_directory_uri() . '/node_modules/@glidejs/glide/dist/css/glide.theme.css' );
+
+    wp_enqueue_script( 'glidejs', get_stylesheet_directory_uri() . '/node_modules/@glidejs/glide/dist/glide.js' );
 
 }
 
-//Script JS avec listener scroll //////////////
-//add_action('wp_footer', 'enqueue_animation');
 
-function enqueue_animation(){
-    wp_enqueue_script('animationJS', get_stylesheet_directory_uri() . '/assets/js/animation.js', array(), false, true);
+//Call Php file to create portfolio_array.js
+function create_portfolio_array() {
+
+    //To create portfolio_array.js file contains all thumbnial and title of ACF portfolio
+    include_once get_stylesheet_directory() . '/assets/php/create_portfolio_array.php';
+
+/*     $js_file = get_stylesheet_directory() . '/assets/js/portfolio_array.js';
+
+    // Test and call portfolio_array.js file
+    if (file_exists($js_file) && filesize($js_file) > 0) {
+        wp_enqueue_script('portfolio_array', get_stylesheet_directory_uri() . '/assets/js/portfolio_array.js', array(), false, true);
+    } */
 }
+add_action('after_setup_theme', 'create_portfolio_array');
 
-// Fonction d'enregistrement du Custom Post Type
+
+// ACF -- Portfolio Custom Post Type
 function portfolio_post_type() {
     $labels = array(
         'name'               => 'Portfolio', // Nom du CPT affiché dans la barre latérale
