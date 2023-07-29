@@ -28,104 +28,16 @@ get_header();
 	<header class="c-header c-header--archive c-header--project-list">
 		<div class="c-mouse-vertical-carousel js-carousel u-media-wrapper u-media-wrapper--16-9">
 			<ul class="c-mouse-vertical-carousel__list js-carousel-list">
-				<li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="0">
-					<a href="">
-						<p class="c-mouse-vertical-carousel__eyebrow u-b4">
-                                <span>
-                            01
-                        </span> Nevada
-						</p>
 
-						<p class="c-mouse-vertical-carousel__title u-a5">
-							<img id="colorImage" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/img1.jpg'?>" alt="">
-
-						</p>
-					</a>
-				</li>
-
-				<li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="1">
-					<a href="">
-						<p class="c-mouse-vertical-carousel__eyebrow u-b4">
-							<span>
-                        02
-                    </span> New Hampshire
-						</p>
-
-						<p class="c-mouse-vertical-carousel__title u-a5">
-                        <img id="colorImage" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/img2.jpg'?>" alt="">
-						</p>
-					</a>
-				</li>
-
-				<li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="2">
-					<a href="">
-						<p class="c-mouse-vertical-carousel__eyebrow u-b4">
-							<span>
-                        03
-                    </span> New York
-						</p>
-
-						<p class="c-mouse-vertical-carousel__title u-a5">
-                        <img id="colorImage" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/img3.jpg'?>" alt="">
-						</p>
-					</a>
-				</li>
-
-				<li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="3">
-					<a href="">
-						<p class="c-mouse-vertical-carousel__eyebrow u-b4">
-							<span>
-                        04
-                    </span> Oklahoma
-						</p>
-
-						<p class="c-mouse-vertical-carousel__title u-a5">
-                        <img id="colorImage" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/img4.jpg'?>" alt="">
-						</p>
-					</a>
-				</li>
-
-				<li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="4">
-					<a href="">
-						<p class="c-mouse-vertical-carousel__eyebrow u-b4">
-							<span>
-                        05
-                    </span> North Carolina
-						</p>
-
-						<p class="c-mouse-vertical-carousel__title u-a5">
-                        <img id="colorImage" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/img5.jpg'?>" alt="">
-						</p>
-					</a>
-				</li>
 				
-				<li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="5">
-					<a href="">
-						<p class="c-mouse-vertical-carousel__eyebrow u-b4">
-							<span>
-                        06
-                    </span> Utah
-						</p>
+			<?php get_template_part('template-parts/portfolio'); ?>
 
-						<p class="c-mouse-vertical-carousel__title u-a5">
-                        <img id="colorImage" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/img6.jpg'?>" alt=""> 
-						</p>
-					</a>
-				</li>
-				
-				<li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="6">
-					<a href="">
-						<p class="c-mouse-vertical-carousel__eyebrow u-b4">
-							<span>
-                        07
-                    </span> Missouri
-						</p>
 
-						<p class="c-mouse-vertical-carousel__title u-a5">
-                        <img id="colorImage" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/img7.jpg'?>" alt="">
-						</p>
-					</a>
-				</li>
+
+
+
+
+
 			</ul>
 
 <!-- 			<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img1.jpg')"></i>
@@ -145,7 +57,7 @@ get_header();
 <!--////////////////////////////////////Carousel - GSAP//////////////////////////////////////////////////////-->
 
    <!--Section datamouse-->
-    <div class="posMouse">>mouse?</div>
+    <div class="posMouse"></div>
 
 
 </main><!-- #main -->
