@@ -160,7 +160,7 @@ a {
   height: 500px;
 }
 .c-mouse-vertical-carousel__list-item {
-  flex: 0 0 30%;
+  flex: 0 0 10rem;
   text-align: center;
 }
 .c-mouse-vertical-carousel__list-item a {
@@ -189,6 +189,18 @@ a {
   background-size: cover;
   background-position: center;
   will-change: transform;
+}
+
+.post-title {
+  display: block;
+  position: fixed;
+  z-index: -1;
+  top: 90%;
+  left: 90%;
+  width: 50rem;
+  font-family: "Abel";
+  font-size: 2.2rem;
+  transition: width 0.2s ease-in, transform 0.1s ease-in-out;
 }
 
 /*
@@ -273,7 +285,6 @@ html {
   top: 6%;
   left: 3%;
   transition: width 0.2s ease-in, transform 0.1s ease-in-out;
-  width: 85px;
   width: 75px;
   font-family: "Abel";
   font-size: 2.2rem;

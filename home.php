@@ -23,41 +23,26 @@ get_header();
 
 <!--////////////////////////////////////Carousel - GSAP//////////////////////////////////////////////////////-->
 
-
-<div class="container">
-	<header class="c-header c-header--archive c-header--project-list">
-		<div class="c-mouse-vertical-carousel js-carousel u-media-wrapper u-media-wrapper--16-9">
-			<ul class="c-mouse-vertical-carousel__list js-carousel-list">
-
 				
 			<?php get_template_part('template-parts/portfolio'); ?>
 
 
-
-
-
-
-
-			</ul>
-
-<!-- 			<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img1.jpg')"></i>
-			<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img2.jpg')"></i>
-			<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img3.jpg')"></i>
-			<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img4.jpg')"></i>
-			<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img5.jpg')"></i>
-			<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img6.jpg')"></i>
-			<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img7.jpg')"></i>
-			<i class="c-gradient-overlay"></i> -->
-		</div>
-	</header>
-</div>
+<!-- 
+<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img1.jpg')"></i>
+<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img2.jpg')"></i>
+<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img3.jpg')"></i>
+<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img4.jpg')"></i>
+<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img5.jpg')"></i>
+<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img6.jpg')"></i>
+<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img7.jpg')"></i>
+<i class="c-gradient-overlay"></i> -->
 
 
 
 <!--////////////////////////////////////Carousel - GSAP//////////////////////////////////////////////////////-->
 
    <!--Section datamouse-->
-    <div class="posMouse"></div>
+    <div class="post-title"></div>
 
 
 </main><!-- #main -->

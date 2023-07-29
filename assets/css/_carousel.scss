@@ -52,6 +52,7 @@ body {
     
         }
     }
+
 }
 
 .u-b4 {
@@ -112,7 +113,7 @@ a {
 	}
 
 	&__list-item {
-		flex: 0 0 30%; // Set each list item to occupy the full width
+		flex: 0 0 10rem; // Set each list item to occupy the full width
 		text-align: center; // Center the content inside each item
 
 		a {
@@ -147,4 +148,22 @@ a {
 		background-position: center;
 		will-change: transform;
 	}
+
+
+
+
+}
+
+.post-title{
+	display: block;
+	position: fixed;
+	z-index: -1;
+	top: 90%;
+	left: 90%;
+	width: 50rem;
+	font-family: 'Abel';
+	font-size: 2.2rem;
+	transition: width 0.2s ease-in, transform 0.1s ease-in-out;
+
+
 }
