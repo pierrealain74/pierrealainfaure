@@ -75,3 +75,10 @@ function portfolio_post_type() {
 }
 add_action( 'init', 'portfolio_post_type' );
 
+//Add main menu 
+function register_my_menu() {
+    register_nav_menu('primary-menu', __('Primary Menu'));
+}
+add_action('after_setup_theme', 'register_my_menu');
+
+
