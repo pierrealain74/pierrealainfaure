@@ -21,11 +21,13 @@ class HorizontalMouseDrivenCarousel {
 		this.initCursor();
 		this.init();
 
-		//FOREACH
+		// Ajouter cette ligne pour définir postTitleElement en tant que propriété de la classe
+		this.postTitleElement = document.querySelector('.post-title');
+		this.cursor = document.querySelector('.cursor');
+		
 		const carouselImages = this.getList().querySelectorAll("img");
-		const cursor = document.querySelector('.cursor');
-
-
+		
+		//FOREACH
 		carouselImages.forEach((image) => {
 
 			image.addEventListener("mouseover", async () => {
@@ -78,15 +80,6 @@ class HorizontalMouseDrivenCarousel {
 	}
 
 
-
-	 // New function to extract post title from JSON based on image source URL
-	// Updated async function to extract post title from JSON based on image source URL
-
-
-
-
-
-
 	async getPostTitleFromJSON(imageSrc) {
 		// Construisez le chemin complet vers le fichier JSON en utilisant le répertoire du thème
 		var jsonFilePath = themeDirectoryUri + "/assets/json/portfolio-data.json";
@@ -114,13 +107,15 @@ class HorizontalMouseDrivenCarousel {
 	// New function to update the post title in the HTML element
 	mouseChangeOver() {
 
-		cursor.classList.add('overImg');
-		cursor.innerHTML = "click";
+		this.cursor.classList.add('overImg');
+		this.cursor.innerHTML = "click";
+		this.postTitleElement.classList.add('move');
 			}
 	mouseChangeOut() {
 
-		cursor.classList.remove('overImg');
-		cursor.innerHTML = "";
+		this.cursor.classList.remove('overImg');
+		this.cursor.innerHTML = "";
+		this.postTitleElement.classList.remove('move');
 	}
 
 }

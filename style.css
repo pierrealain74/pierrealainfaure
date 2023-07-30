@@ -371,14 +371,29 @@ a {
   display: block;
   position: fixed;
   z-index: -1;
-  bottom: 0; /* Positionné en bas de l'écran */
-  right: 0; /* Positionné à droite de l'écran */
-  /* width: 80rem; */
   font-family: "Abel";
   font-size: 8.2rem;
-  transition: width 0.2s ease-in, transform 0.1s ease-in-out;
+  width: 100vw;
+  height: 100px;
+  bottom: 50px;
+  left: 0px;
+  visibility: hidden;
+}
+.post-title.move {
+  animation: slideFromLeft 0.5s ease-in-out forwards;
 }
 
+/* Définition de l'animation */
+@keyframes slideFromLeft {
+  from {
+    left: 0; /* Position de départ en dehors de l'écran à gauche */
+    visibility: hidden;
+  }
+  to {
+    left: 1850px; /* Position finale à l'extrême droite de l'écran */
+    visibility: visible;
+  }
+}
 /*
 Font Family de pierrealainfaure.com
 */

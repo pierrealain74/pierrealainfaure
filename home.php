@@ -12,16 +12,11 @@ get_header();
 
 ?>
 <main id="site-main">
-<script>
-  // Définissez la variable themeDirectoryUri pour qu'elle soit accessible en JavaScript
-  var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
-</script>
-<div class="cursor"></div>
-
-
-    <!--Lignes vericales en bg-->
-<!--     <div class="bg-line1"></div>
-    <div class="bg-line2"></div> -->
+	<script>
+	// Définissez la variable themeDirectoryUri pour qu'elle soit accessible en JavaScript
+	var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
+	</script>
+	<div class="cursor"></div>
 
     <!--Section logo-->
 	<div id="logo">pierrealainfaure.com</div>
