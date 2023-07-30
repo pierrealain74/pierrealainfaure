@@ -27,6 +27,7 @@ class HorizontalMouseDrivenCarousel {
 		
 		// New code to add event listener to each image element
 		const carouselImages = this.getList().querySelectorAll("img");
+		//console.log(carouselImages);
 		carouselImages.forEach((image) => {
 		image.addEventListener("mouseover", async () => {
 			const postTitle = await this.getPostTitleFromJSON(image.src);

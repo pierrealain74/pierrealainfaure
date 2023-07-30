@@ -17,7 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
-	<!-- <script src="<?php //echo get_stylesheet_directory_uri() . '/assets/json/portfolio-data.json';?>" defer></script> -->
+	<!-- <script src="<?php //echo get_stylesheet_directory_uri() . '/assets/js/cursor.js' ?>"></script> -->
 	<?php wp_head(); ?>
 	
 </head>

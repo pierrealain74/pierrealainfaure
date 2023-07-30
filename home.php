@@ -16,6 +16,8 @@ get_header();
   // Définissez la variable themeDirectoryUri pour qu'elle soit accessible en JavaScript
   var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
 </script>
+<div class="cursor"></div>
+
 
     <!--Lignes vericales en bg-->
 <!--     <div class="bg-line1"></div>
@@ -53,6 +55,8 @@ get_header();
 
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/portfolio_array.js"></script>
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/carousel.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/cursor.js"></script>
+
 
 
 <?php

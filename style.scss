@@ -4,6 +4,7 @@ Style SCSS du site pierrealainfaure.com
 
 */
 @import "./assets/css/reset";
+@import "./assets/css/cursor";
 @import "./assets/css/carousel";
 @import "./assets/css/fonts";
 @import "./assets/css/scrollbar";
@@ -20,6 +21,32 @@ Style SCSS du site pierrealainfaure.com
 	--secondary-color: #CD006B;
 	--third-color: #EEE325;
 }
+
+body {
+  cursor: none; /* Cacher le pointeur de souris par défaut */
+}
+
+/* Style du rond avec opacité de 0.5 */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px; /* Ajustez la taille du rond ici */
+  height: 30px; /* Ajustez la taille du rond ici */
+  background-color: rgba(255, 0, 0, 0.5); /* Couleur rouge avec opacité de 0.5 */
+  border-radius: 50%;
+  pointer-events: none; /* Le rond ne doit pas interagir avec les éléments sous-jacents */
+  z-index: 9999; /* Assurez-vous que le rond est au-dessus de tout le contenu */
+}
+
+/* Animation pour faire bouger le rond avec la souris */
+@keyframes moveCursor {
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+
 .bg-line1, .bg-line2{
     position: fixed;
     top: 0;
