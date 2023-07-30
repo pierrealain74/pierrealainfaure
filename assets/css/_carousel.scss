@@ -39,16 +39,18 @@ body {
 	color: #fff;
 
     img {
-        width: 130px; // Change the width to 100% for horizontal display
-        height: 400px; // Allow the image to maintain its aspect ratio
+        width: 130px; 
+        height: 400px; 
         object-fit: cover;
         filter: grayscale(100%);
         transition: filter 0.3s ease, height 0.3s ease;
 
         &:hover{
-        
-            filter: grayscale(2%);
+			
+            filter: grayscale(2%);//Display
             height: 420px;
+
+
     
         }
     }
@@ -158,12 +160,13 @@ a {
 	display: block;
 	position: fixed;
 	z-index: -1;
-	top: 90%;
-	left: 90%;
-	width: 50rem;
+    bottom: 0; /* Positionné en bas de l'écran */
+    right: 0; /* Positionné à droite de l'écran */
+	/* width: 80rem; */
 	font-family: 'Abel';
-	font-size: 2.2rem;
+	font-size: 8.2rem;
 	transition: width 0.2s ease-in, transform 0.1s ease-in-out;
 
 
 }
+

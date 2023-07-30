@@ -5,7 +5,10 @@ La carousel slide à droite et gauche selon la souris
 
 */
 class HorizontalMouseDrivenCarousel {
+
 	constructor(options = {}) {
+
+
 		const _defaults = {
 			carousel: ".js-carousel",
 			list: ".js-carousel-list",
@@ -17,6 +20,21 @@ class HorizontalMouseDrivenCarousel {
 
 		this.initCursor();
 		this.init();
+
+		
+		
+		
+		
+		// New code to add event listener to each image element
+		const carouselImages = this.getList().querySelectorAll("img");
+		carouselImages.forEach((image) => {
+		image.addEventListener("mouseover", async () => {
+			const postTitle = await this.getPostTitleFromJSON(image.src);
+			this.updatePostTitle(postTitle);
+			});
+		});
+	
+
 	}
 
 	//region getters
@@ -53,6 +71,41 @@ class HorizontalMouseDrivenCarousel {
 			false
 		);
 	}
+
+
+
+	 // New function to extract post title from JSON based on image source URL
+	// Updated async function to extract post title from JSON based on image source URL
+
+
+
+
+
+
+	async getPostTitleFromJSON(imageSrc) {
+		// Construisez le chemin complet vers le fichier JSON en utilisant le répertoire du thème
+		var jsonFilePath = themeDirectoryUri + "/assets/json/portfolio-data.json";
+		console.log('chemin : ',jsonFilePath);
+
+		try {
+		const response = await fetch(jsonFilePath);
+		const jsonData = await response.json();
+		const post = jsonData.find((item) => item.thumbnail === imageSrc);
+		return post ? post.post_title : "";
+		} catch (error) {
+		console.error("Error loading JSON data:", error);
+		return "";
+		}
+	}
+	
+	// New function to update the post title in the HTML element
+	updatePostTitle(postTitle) {
+		const postTitleElement = document.querySelector(".post-title");
+		if (postTitleElement) {
+		postTitleElement.textContent = postTitle;
+		}
+	}
+	
 }
 
 new HorizontalMouseDrivenCarousel();

@@ -12,6 +12,10 @@ get_header();
 
 ?>
 <main id="site-main">
+<script>
+  // Définissez la variable themeDirectoryUri pour qu'elle soit accessible en JavaScript
+  var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
+</script>
 
     <!--Lignes vericales en bg-->
 <!--     <div class="bg-line1"></div>
@@ -42,7 +46,7 @@ get_header();
 <!--////////////////////////////////////Carousel - GSAP//////////////////////////////////////////////////////-->
 
    <!--Section datamouse-->
-    <div class="post-title"></div>
+    <h2 class="post-title"></h2>
 
 
 </main><!-- #main -->

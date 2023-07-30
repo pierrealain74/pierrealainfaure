@@ -29,15 +29,16 @@ while ($characters_query->have_posts()) {
 
     $characters_query->the_post();
 
-    echo '<li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="' . $counter . '"><a href=""><p class="c-mouse-vertical-carousel__title u-a5" id="'.get_the_ID().'">';
+    echo '<li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="' . $counter . '"  id="'.get_the_ID().'"><a href=""><p class="c-mouse-vertical-carousel__title u-a5">';
 
     $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
     echo '<img id="colorImage" src="' . esc_url($thumbnail_url) . '" alt="">';
     echo '</p></a></li>';
 
 
-      // Stocker le titre du post dans le tableau pour afficher les titres en dehors du div container
-    $post_titles[] = get_the_title();
+    // Stocker le titre du post dans le tableau pour afficher les titres en dehors du div container
+    // display un foreach
+    /* $post_titles[] = get_the_title(); */
 
 
     //Créer un array complet de toutes les datas des post
@@ -56,15 +57,15 @@ while ($characters_query->have_posts()) {
 
     echo '</ul></div></header></div>';
 
-    // Display post title
-    foreach ($post_titles as $title) {
+    // Display post title in position fixed to the bottom right of screen
+/*     foreach ($post_titles as $title) {
         echo '<h2 class="post-title">' . $title . '</h2>';
-    }
+    } */
 
 
 //To create file contains array of ALL portfolio datas
 $json_data = json_encode($data);
-$file_path = get_stylesheet_directory() . '/assets/php/portfolio-data.json';
+$file_path = get_stylesheet_directory() . '/assets/json/portfolio-data.json';
 file_put_contents($file_path, $json_data);
 
 ?>
