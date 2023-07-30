@@ -29,11 +29,11 @@ while ($characters_query->have_posts()) {
 
     $characters_query->the_post();
 
-    echo '<li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="' . $counter . '"  id="'.get_the_ID().'"><a href=""><p class="c-mouse-vertical-carousel__title u-a5">';
+    echo '<li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="' . $counter . '"  id="'.get_the_ID().'"><p class="c-mouse-vertical-carousel__title u-a5">';
 
     $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
     echo '<img id="colorImage" src="' . esc_url($thumbnail_url) . '" alt="">';
-    echo '</p></a></li>';
+    echo '</p></li>';
 
 
     // Stocker le titre du post dans le tableau pour afficher les titres en dehors du div container

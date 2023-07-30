@@ -65,9 +65,14 @@ table {
   border: 1px dashed white;
   border-radius: 50%;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 9999;
   animation: Anim1 1s infinite alternate;
   pointer-events: none;
+  font-family: "Abel";
+  font-size: 0.9rem;
 }
 .cursor::before {
   content: "";
@@ -77,16 +82,30 @@ table {
   transform: translate(-50%, -50%);
   width: 5px;
   height: 5px;
-  background: crimson;
+  background: rgb(163, 162, 162);
   border-radius: 50%;
+}
+
+.overImg {
+  animation: AnimOver 0.9s infinite alternate;
+  background: rgba(247, 244, 243, 0.5);
+  border: 1px solid rgb(172, 173, 171);
 }
 
 .expand {
   animation: Anim2 0.5s;
-  background: crimson;
-  border: 1px solid crimson;
+  background: rgb(167, 235, 42);
+  border: 1px solid rgb(53, 90, 5);
 }
 
+@keyframes AnimOver {
+  from {
+    transform: scale(2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 @keyframes Anim1 {
   from {
     transform: scale(1) rotate(0deg);

@@ -33,21 +33,10 @@ get_header();
 			<?php get_template_part('template-parts/portfolio'); ?>
 
 
-<!-- 
-<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img1.jpg')"></i>
-<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img2.jpg')"></i>
-<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img3.jpg')"></i>
-<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img4.jpg')"></i>
-<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img5.jpg')"></i>
-<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img6.jpg')"></i>
-<i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img" style="background-image: url('images/img7.jpg')"></i>
-<i class="c-gradient-overlay"></i> -->
-
-
 
 <!--////////////////////////////////////Carousel - GSAP//////////////////////////////////////////////////////-->
 
-   <!--Section datamouse-->
+   <!--Display Post Tilte-->
     <h2 class="post-title"></h2>
 
 

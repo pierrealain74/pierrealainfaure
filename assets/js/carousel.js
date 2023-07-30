@@ -21,18 +21,22 @@ class HorizontalMouseDrivenCarousel {
 		this.initCursor();
 		this.init();
 
-		
-		
-		
-		
-		// New code to add event listener to each image element
+		//FOREACH
 		const carouselImages = this.getList().querySelectorAll("img");
-		//console.log(carouselImages);
+		const cursor = document.querySelector('.cursor');
+
+
 		carouselImages.forEach((image) => {
-		image.addEventListener("mouseover", async () => {
-			const postTitle = await this.getPostTitleFromJSON(image.src);
-			this.updatePostTitle(postTitle);
-			});
+
+			image.addEventListener("mouseover", async () => {
+				const postTitle = await this.getPostTitleFromJSON(image.src);
+				this.updatePostTitle(postTitle);//Get and display post title
+				this.mouseChangeOver();//Change cursor when img rollover
+				});
+			
+			image.addEventListener("mouseout", async () => {
+				this.mouseChangeOut();
+				});
 		});
 	
 
@@ -106,50 +110,20 @@ class HorizontalMouseDrivenCarousel {
 		postTitleElement.textContent = postTitle;
 		}
 	}
-	
+
+	// New function to update the post title in the HTML element
+	mouseChangeOver() {
+
+		cursor.classList.add('overImg');
+		cursor.innerHTML = "click";
+			}
+	mouseChangeOut() {
+
+		cursor.classList.remove('overImg');
+		cursor.innerHTML = "";
+	}
+
 }
 
 new HorizontalMouseDrivenCarousel();
 
-
-
-/* 
-
-V1 
-Display images without any effect
-
-
-
-class HorizontalCarousel {
-	constructor(options = {}) {
-		const _defaults = {
-			carousel: ".js-carousel",
-			listItem: ".js-carousel-list-item"
-		};
-
-		this.defaults = Object.assign({}, _defaults, options);
-
-		this.init();
-	}
-
-	//region getters
-	getListItems() {
-		return document.querySelectorAll(this.defaults.listItem);
-	}
-
-	getCarousel() {
-		return document.querySelector(this.defaults.carousel);
-	}
-
-	init() {
-		this.listItems = this.getListItems().length;
-		this.listWidth = this.listItems * 30; // Adjust 30 to control the width of each image
-		this.getCarousel().style.width = `${this.listWidth}%`;
-
-		TweenMax.set(this.getListItems(), {
-			flex: `0 0 ${100 / this.listItems}%` // Set each list item to occupy equal width
-		});
-	}
-}
-
-new HorizontalCarousel(); */
