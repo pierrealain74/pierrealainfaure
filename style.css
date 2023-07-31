@@ -200,14 +200,15 @@ table {
   transform: translate(-50%, -50%);
   width: 5px;
   height: 5px;
-  background: rgb(163, 162, 162);
+  /* background: rgb(163, 162, 162); */
   border-radius: 50%;
 }
 
 .overImg {
   animation: AnimOver 0.9s infinite alternate;
-  background: rgba(161, 159, 159, 0.5);
-  border: 1px solid rgb(172, 173, 171);
+  font-size: 1.2rem;
+  padding: 8px 0 0 2px;
+  color: rgb(211, 210, 210);
 }
 
 .expand {
@@ -288,11 +289,13 @@ body {
   height: 400px;
   object-fit: cover;
   filter: grayscale(100%);
+  opacity: 0.5;
   transition: filter 0.3s ease, height 0.3s ease;
 }
 .u-a5 img:hover {
   filter: grayscale(2%);
   height: 420px;
+  opacity: 1;
 }
 
 .u-b4 {
@@ -383,8 +386,8 @@ a {
   font-family: "Abel";
   font-size: 8.2rem;
   bottom: 50px;
-  left: 0;
-  width: 80rem;
+  left: 50px;
+  width: 180rem;
   visibility: hidden;
 }
 .post-title.move {

@@ -16,6 +16,7 @@ get_header();
 	// Définissez la variable themeDirectoryUri pour qu'elle soit accessible en JavaScript
 	var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
 	</script>
+	<!--To modifiate mouse cursor-->
 	<div class="cursor"></div>
 
     <!--Section logo-->

@@ -43,12 +43,14 @@ body {
         height: 400px; 
         object-fit: cover;
         filter: grayscale(100%);
+		opacity: 0.5;
         transition: filter 0.3s ease, height 0.3s ease;
 
         &:hover{
 			
             filter: grayscale(2%);//Display
             height: 420px;
+			opacity: 1;
 
 
     
@@ -165,8 +167,8 @@ a {
 	font-size: 8.2rem;
 
 	bottom: 50px; 
-	left: 0;
-	width: 80rem;
+	left: 50px;
+	width: 180rem;
 
 	visibility: hidden;
 

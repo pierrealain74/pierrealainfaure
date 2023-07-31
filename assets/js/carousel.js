@@ -107,8 +107,10 @@ class HorizontalMouseDrivenCarousel {
 	// New function to update the post title in the HTML element
 	mouseChangeOver() {
 
+		//for display text on cursor during rollover img
 		this.cursor.classList.add('overImg');
-		this.cursor.innerHTML = "click";
+		this.cursor.innerText = "click";
+		//for moving title
 		this.postTitleElement.classList.add('move');
 			}
 	mouseChangeOut() {
