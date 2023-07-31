@@ -21,16 +21,17 @@
 	<?php wp_head(); ?>
 	
 </head>
-<!--Main menu-->
+<!--Main menu from WP-->
 <nav class="primary-menu" role="navigation">
 
 	<div id="menuToggle">
 
 		<input type="checkbox" />
+		<span></span>
+		<span></span>
+		<span></span>
 
-		<span></span>
-		<span></span>
-		<span></span>
+
 		
 		<?php
 
@@ -40,7 +41,9 @@
 			'menu_class' => 'menu',
 			));
 		?>
-	
-  </div>
+
+		</div>
+
 </nav>
+
 <body>

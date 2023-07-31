@@ -164,11 +164,9 @@ a {
 	font-family: 'Abel';
 	font-size: 8.2rem;
 
-	width: 100vw;
-	height: 100px;
-
 	bottom: 50px; 
-	left: 0px; 
+	left: 0;
+	width: 80rem;
 
 	visibility: hidden;
 
@@ -180,11 +178,14 @@ a {
   /* Définition de l'animation */
   @keyframes slideFromLeft {
 	from {
-	  left: 0; /* Position de départ en dehors de l'écran à gauche */
-	  visibility: hidden;
+
+		left: -500px;
+		visibility: hidden;
+	
 	}
 	to {
-		left: 1850px;/* Position finale à l'extrême droite de l'écran */
+		right: 0;
+		/* transform: translateX(0%); */
 		visibility: visible;
 	}
   }

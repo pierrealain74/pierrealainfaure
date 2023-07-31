@@ -62,8 +62,8 @@ table {
 /* Styles pour le menu horizontal */
 .primary-menu {
   position: absolute;
-  bottom: 150px;
-  left: 0;
+  top: 50px;
+  right: 160px;
   font-family: "Abel";
   /*
    * Just a quick hamburger
@@ -97,7 +97,7 @@ table {
 }
 .primary-menu #menuToggle a {
   text-decoration: none;
-  color: #232323;
+  color: #777575;
   transition: color 0.3s ease;
 }
 .primary-menu #menuToggle a:hover {
@@ -145,19 +145,28 @@ table {
 .primary-menu #menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
+.primary-menu ul.menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+.primary-menu ul.menu li a {
+  font-size: 2.2rem;
+  color: white;
+  margin-right: 20px;
+}
 .primary-menu #menu-menu-header {
   position: absolute;
-  width: 200px;
-  margin: -270px 0 0 -50px;
-  padding: 50px;
-  padding-top: 25px;
-  padding-bottom: 125px;
-  background: #ededed;
+  width: 600px;
+  /*   margin: -270px 0 0 -50px; */
+  padding: 2rem;
+  right: 100px;
+  top: -60px;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
   transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
+  transform: translateY(-100%);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 .primary-menu #menu-menu-header li {
@@ -197,14 +206,14 @@ table {
 
 .overImg {
   animation: AnimOver 0.9s infinite alternate;
-  background: rgba(247, 244, 243, 0.5);
+  background: rgba(161, 159, 159, 0.5);
   border: 1px solid rgb(172, 173, 171);
 }
 
 .expand {
   animation: Anim2 0.5s;
-  background: rgb(167, 235, 42);
-  border: 1px solid rgb(53, 90, 5);
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(144, 145, 143);
 }
 
 @keyframes AnimOver {
@@ -373,10 +382,9 @@ a {
   z-index: -1;
   font-family: "Abel";
   font-size: 8.2rem;
-  width: 100vw;
-  height: 100px;
   bottom: 50px;
-  left: 0px;
+  left: 0;
+  width: 80rem;
   visibility: hidden;
 }
 .post-title.move {
@@ -386,11 +394,12 @@ a {
 /* Définition de l'animation */
 @keyframes slideFromLeft {
   from {
-    left: 0; /* Position de départ en dehors de l'écran à gauche */
+    left: -500px;
     visibility: hidden;
   }
   to {
-    left: 1850px; /* Position finale à l'extrême droite de l'écran */
+    right: 0;
+    /* transform: translateX(0%); */
     visibility: visible;
   }
 }
@@ -496,7 +505,7 @@ body {
 
 #logo {
   position: fixed;
-  top: 6%;
+  top: 80px;
   left: 3%;
   transition: width 0.2s ease-in, transform 0.1s ease-in-out;
   width: 75px;
