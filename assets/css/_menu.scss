@@ -2,11 +2,9 @@
 .primary-menu {
 
   position: absolute;
-  top: 50px;
+  top: 5%;
   right: 160px;
   font-family: 'Abel';
-
-
 
   #menuToggle
   {
@@ -15,7 +13,7 @@
     top: 50px;
     left: 50px;
     
-    z-index: 1;
+    z-index: 3;
     
     -webkit-user-select: none;
     user-select: none;
@@ -24,7 +22,7 @@
   #menuToggle a
   {
     text-decoration: none;
-    color: #777575;
+    color: #ffffff;
     
     transition: color 0.3s ease;
   }
@@ -133,7 +131,7 @@
 
     position: absolute;
 
-    width: 600px;
+    width: 450px;
   /*   margin: -270px 0 0 -50px; */
     padding: 2rem;
     right: 100px;

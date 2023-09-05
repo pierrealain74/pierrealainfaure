@@ -1,6 +1,6 @@
-@media all and (max-width: 405px){
+@media all and (min-width: 320px)  and  (max-width: 800px){
     
-    .site-main {
+/*     .site-main {
 
         position: fixed;
         top: 50%;
@@ -16,7 +16,24 @@
         h1 {
             font-size: 2.2rem;
         }
-    
-    }//endof site-main
 
-}//endof @media
+        .u-media-wrapper.u-media-wrapper--16-9{
+            height: 150%;
+        }
+    
+    }
+     */
+    
+    
+    .u-media-wrapper.u-media-wrapper--16-9{
+        height: 80rem !important;
+    }
+//endof site-main
+
+}
+
+@media all and (min-width: 801px)  and  (max-width: 1200px){
+    .u-media-wrapper.u-media-wrapper--16-9{
+        height: 50rem !important;
+    }
+}

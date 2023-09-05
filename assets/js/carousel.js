@@ -81,7 +81,7 @@ class HorizontalMouseDrivenCarousel {
 
 
 	async getPostTitleFromJSON(imageSrc) {
-		// Construisez le chemin complet vers le fichier JSON en utilisant le répertoire du thème
+
 		var jsonFilePath = themeDirectoryUri + "/assets/json/portfolio-data.json";
 		//console.log('chemin : ',jsonFilePath);
 

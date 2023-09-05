@@ -40,7 +40,7 @@ body {
 
     img {
         width: 130px; 
-        height: 400px; 
+        height: 450px; 
         object-fit: cover;
         filter: grayscale(100%);
 		opacity: 0.5;
@@ -82,7 +82,7 @@ a {
 
 	&#{&}--16-9 {
 		/* padding-bottom:  math.div(9, 16); */
-		padding-bottom: 40%;
+		padding-bottom: 30%;
 	}
 }
 

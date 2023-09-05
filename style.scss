@@ -65,7 +65,7 @@ body {
 
 #logo{
   position: fixed;
-  top: 80px;
+  top: 10%;
   left: 3%;
   transition: width 0.2s ease-in, transform 0.1s ease-in-out;
   width: 75px;
@@ -202,4 +202,4 @@ body {
 ///////////////
 /*Responsive*/ //////////////////////////////////////////////////
 /////////////
-//@import "./assets/css/responsive";
+@import "./assets/css/responsive";

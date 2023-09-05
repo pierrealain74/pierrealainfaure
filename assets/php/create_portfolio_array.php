@@ -29,7 +29,7 @@ $args = array(
   
       $slides[] = $slide;
       $json_data = json_encode($slides);
-      $js_file = get_stylesheet_directory() .'/assets/js/portfolio_array.js';
+      $js_file = get_stylesheet_directory() .'/assets/js/portfolio_array.json';
 
       $result = file_put_contents($js_file, 'const slides = ' . $json_data . ';');
 

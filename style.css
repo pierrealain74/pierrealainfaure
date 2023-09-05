@@ -62,7 +62,7 @@ table {
 /* Styles pour le menu horizontal */
 .primary-menu {
   position: absolute;
-  top: 50px;
+  top: 5%;
   right: 160px;
   font-family: "Abel";
   /*
@@ -91,13 +91,13 @@ table {
   position: relative;
   top: 50px;
   left: 50px;
-  z-index: 1;
+  z-index: 3;
   -webkit-user-select: none;
   user-select: none;
 }
 .primary-menu #menuToggle a {
   text-decoration: none;
-  color: #777575;
+  color: #ffffff;
   transition: color 0.3s ease;
 }
 .primary-menu #menuToggle a:hover {
@@ -157,7 +157,7 @@ table {
 }
 .primary-menu #menu-menu-header {
   position: absolute;
-  width: 600px;
+  width: 450px;
   /*   margin: -270px 0 0 -50px; */
   padding: 2rem;
   right: 100px;
@@ -286,7 +286,7 @@ body {
 }
 .u-a5 img {
   width: 130px;
-  height: 400px;
+  height: 450px;
   object-fit: cover;
   filter: grayscale(100%);
   opacity: 0.5;
@@ -320,7 +320,7 @@ a {
 }
 .u-media-wrapper.u-media-wrapper--16-9 {
   /* padding-bottom:  math.div(9, 16); */
-  padding-bottom: 40%;
+  padding-bottom: 30%;
 }
 
 .c-gradient-overlay {
@@ -508,7 +508,7 @@ body {
 
 #logo {
   position: fixed;
-  top: 80px;
+  top: 10%;
   left: 3%;
   transition: width 0.2s ease-in, transform 0.1s ease-in-out;
   width: 75px;
@@ -649,5 +649,38 @@ h1 {
 }
 
 /*Responsive*/
+@media all and (min-width: 320px) and (max-width: 800px) {
+  /*     .site-main {
+
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          width: 100vw;
+          overflow: hidden;
+
+          h1 {
+              font-size: 2.2rem;
+          }
+
+          .u-media-wrapper.u-media-wrapper--16-9{
+              height: 150%;
+          }
+
+      }
+       */
+  .u-media-wrapper.u-media-wrapper--16-9 {
+    height: 80rem !important;
+  }
+}
+@media all and (min-width: 801px) and (max-width: 1200px) {
+  .u-media-wrapper.u-media-wrapper--16-9 {
+    height: 50rem !important;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
