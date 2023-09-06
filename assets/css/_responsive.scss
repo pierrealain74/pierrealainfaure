@@ -1,39 +1,76 @@
 @media all and (min-width: 320px)  and  (max-width: 800px){
-    
-/*     .site-main {
 
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        width: 100vw;
-        overflow: hidden;
-
-        h1 {
-            font-size: 2.2rem;
-        }
-
-        .u-media-wrapper.u-media-wrapper--16-9{
-            height: 150%;
-        }
-    
-    }
-     */
-    
-    
     .u-media-wrapper.u-media-wrapper--16-9{
-        height: 80rem !important;
+        height: 20rem !important;
     }
-//endof site-main
+    .c-header {
+        height: 100vh;
+
+    }
+}
+
+/****************
+
+
+        MENU
+
+*****************/
+
+@media all and (min-width: 600px)  and  (max-width: 1200px){
+/*
+
+MENU Toogle
+
+*/
+.primary-menu {
+    top: 4rem;
+    left: 2rem;
+    width: 100%;
+}
+
+.primary-menu #menuToggle {
+
+    left: 0;
 
 }
 
-@media all and (min-width: 801px)  and  (max-width: 1200px){
-    .u-media-wrapper.u-media-wrapper--16-9{
-        height: 50rem !important;
+#menuToggle input{
+    color: white !important;
+}
+
+
+
+
+}
+
+@media all and (min-width: 320px)  and  (max-width: 600px){
+
+    .primary-menu {
+        top: 4rem;
+        left: 0;
     }
+
+    .primary-menu #menuToggle {
+
+        left: 2rem;
+    
+    }
+
+    .primary-menu #menu-menu-header {
+
+
+        position: absolute;
+
+        left: 2rem;
+        top: 2rem;
+        display: flex;
+        flex-direction: column;
+        transform: translateY(-200%);
+        padding: 0;
+    }
+    
+    
+    
+    
+    
 }

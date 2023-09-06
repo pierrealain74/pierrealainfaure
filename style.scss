@@ -14,7 +14,7 @@ Style SCSS du site pierrealainfaure.com
 @import "./assets/icons/fontawesome/css/all.min.css";
 
 :root {
-  --home-color: #20CAFC;
+  --home-color: #4c5658;
   --whoiam-color: #ffffff;
   --contact-color: #000000;
   /* portfolio color */
@@ -65,8 +65,8 @@ body {
 
 #logo{
   position: fixed;
-  top: 10%;
-  left: 3%;
+  top: 2rem;
+  left: 2rem;
   transition: width 0.2s ease-in, transform 0.1s ease-in-out;
   width: 75px;
   font-family: 'Abel';
