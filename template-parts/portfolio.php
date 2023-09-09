@@ -1,71 +1,70 @@
 <?php
+// Récupérez les portfolios depuis l'API REST
+$portfolio_url = 'http://pierrealainfaure2.local/wp-json/wp/v2/portfolio?_fields=id,title,date,categories,tags,featured_media';
+$portfolio_response = wp_remote_get($portfolio_url);
+$portfolio_data = wp_remote_retrieve_body($portfolio_response);
+$portfolios = json_decode($portfolio_data);
 
+// Tableau pour stocker les données JSON
+$portfolio_json = array();
 
-/** 
- * Generate an Array 
- * All portfolio (acf) thumbnails & title
- * For diplaying in portfolio
- */
+// Boucle pour afficher chaque portfolio et stocker les données JSON
+foreach ($portfolios as $portfolio) :
+    $portfolio_item = array(
+        'title' => esc_html($portfolio->title->rendered),
+        'excerpt' => isset($portfolio->excerpt->rendered) ? wp_kses_post($portfolio->excerpt->rendered) : '',
+        'date' => isset($portfolio->date) ? esc_html($portfolio->date) : '',
+        'categories' => array(),
+        'tags' => array(),
+        'thumbnail' => ''
+    );
 
-$args = array(
-    'post_type' => 'portfolio',
-    'posts_per_page' => -1
+    // Récupérer les catégories
+    if (isset($portfolio->categories) && is_array($portfolio->categories)) {
+        foreach ($portfolio->categories as $category_id) {
+            $category = get_term($category_id, 'category');
+            if ($category && !is_wp_error($category)) {
+                $portfolio_item['categories'][] = esc_html($category->name);
+            }
+        }
+    }
 
-);
+    // Récupérer les balises (tags)
+    if (isset($portfolio->tags) && is_array($portfolio->tags)) {
+        foreach ($portfolio->tags as $tag_id) {
+            $tag = get_term($tag_id, 'post_tag');
+            if ($tag && !is_wp_error($tag)) {
+                $portfolio_item['tags'][] = esc_html($tag->name);
+            }
+        }
+    }
 
-$characters_query = new WP_Query($args);
+    // Récupérer l'image à la une (thumbnail)
+    $thumbnail_id = $portfolio->featured_media;
+    $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'thumbnail');
+    $portfolio_item['thumbnail'] = esc_url($thumbnail_url);
 
-?>
+    // Ajouter l'élément au tableau JSON
+    $portfolio_json[] = $portfolio_item;
+    ?>
 
+    <div class="portfolio">
+        <h2><?php echo esc_html($portfolio->title->rendered); ?></h2>
+        <!-- Reste du code pour afficher les données du portfolio -->
+    </div>
 
 <?php
+endforeach;
 
+// Convertir le tableau JSON en une chaîne JSON
+$portfolio_json = json_encode($portfolio_json, JSON_PRETTY_PRINT);
 
-echo '<div class="container"><header class="c-header c-header--archive c-header--project-list"><div class="c-mouse-vertical-carousel js-carousel u-media-wrapper u-media-wrapper--16-9"><ul class="c-mouse-vertical-carousel__list js-carousel-list">';
-
-$counter = 0;
-
-while ($characters_query->have_posts()) {
-
-    $characters_query->the_post();
-
-    echo '<li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="' . $counter . '"  id="'.get_the_ID().'"><p class="c-mouse-vertical-carousel__title u-a5">';
-
-    $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-    echo '<img id="colorImage" src="' . esc_url($thumbnail_url) . '" alt="">';
-    echo '</p></li>';
-
-
-    // Stocker le titre du post dans le tableau pour afficher les titres en dehors du div container
-    // display un foreach
-    /* $post_titles[] = get_the_title(); */
-
-
-    //Créer un array complet de toutes les datas des post
-    $post_data = array(
-        'post_title' => get_the_title(),
-        'thumbnail' => get_the_post_thumbnail_url(get_the_ID(), 'full'),
-        'category' => get_the_category(),
-        'tags' => get_the_tags(),
-        'id_post' => get_the_ID(),
-    );
-    $data[] = $post_data; 
-
-
-    $counter++;
-}
-
-    echo '</ul></div></header></div>';
-
-    // Display post title in position fixed to the bottom right of screen
-/*     foreach ($post_titles as $title) {
-        echo '<h2 class="post-title">' . $title . '</h2>';
-    } */
-
-
-//To create file contains array of ALL portfolio datas
-$json_data = json_encode($data);
+// Chemin du fichier où enregistrer le JSON
 $file_path = get_stylesheet_directory() . '/assets/json/portfolio-data.json';
-file_put_contents($file_path, $json_data);
 
+// Enregistrer la chaîne JSON dans le fichier
+file_put_contents($file_path, $portfolio_json);
+
+// Afficher un message de confirmation
+echo 'Le JSON a été enregistré dans ' . $file_path;
 ?>

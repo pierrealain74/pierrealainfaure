@@ -8,33 +8,16 @@ function pafchild_enqueue_styles() {
 
     wp_enqueue_style( 'pafchild', get_stylesheet_uri(), array( 'pierrealainfaure' ) );
 
-    //Reset CSS
-    //wp_enqueue_style( 'reset', get_stylesheet_directory_uri() . '/assets/css/reset.css' );
-
+    
     //Glide Js (portoflio/carrousel)
-    wp_enqueue_style( 'glide-core', get_stylesheet_directory_uri() . '/node_modules/@glidejs/glide/dist/css/glide.core.css' );
+/*     wp_enqueue_style( 'glide-core', get_stylesheet_directory_uri() . '/node_modules/@glidejs/glide/dist/css/glide.core.css' );
 
     wp_enqueue_style( 'glide-theme', get_stylesheet_directory_uri() . '/node_modules/@glidejs/glide/dist/css/glide.theme.css' );
 
-    wp_enqueue_script( 'glidejs', get_stylesheet_directory_uri() . '/node_modules/@glidejs/glide/dist/glide.js' );
+    wp_enqueue_script( 'glidejs', get_stylesheet_directory_uri() . '/node_modules/@glidejs/glide/dist/glide.js' ); */
 
 }
 
-
-//Call Php file to create portfolio_array.js
-function create_portfolio_array() {
-
-    //To create portfolio_array.js file contains all thumbnial and title of ACF portfolio
-    include_once get_stylesheet_directory() . '/assets/php/create_portfolio_array.php';
-
-/*     $js_file = get_stylesheet_directory() . '/assets/js/portfolio_array.js';
-
-    // Test and call portfolio_array.js file
-    if (file_exists($js_file) && filesize($js_file) > 0) {
-        wp_enqueue_script('portfolio_array', get_stylesheet_directory_uri() . '/assets/js/portfolio_array.js', array(), false, true);
-    } */
-}
-add_action('after_setup_theme', 'create_portfolio_array');
 
 
 // ACF -- Portfolio Custom Post Type
@@ -63,7 +46,8 @@ function portfolio_post_type() {
         'show_in_menu'        => true, // Afficher dans la barre latérale
         'menu_icon'           => 'dashicons-star-filled', // Icône du CPT affichée dans la barre latérale
         'supports'            => array( 'title', 'editor', 'thumbnail' ),
-        'taxonomies'          => array( 'post_tag', 'category' )
+        'taxonomies'          => array( 'post_tag', 'category' ),
+        'show_in_rest' => true,
     );
     register_post_type( 'portfolio', $args ); // 'mon_cpt' est le slug du CPT
 
@@ -74,6 +58,27 @@ function portfolio_post_type() {
     ) );
 }
 add_action( 'init', 'portfolio_post_type' );
+
+
+
+//Call Php file to create portfolio_array.js
+/* function save_portfolio_update_json($post_id = null) {
+    // Si $post_id n'est pas fourni, on vérifie le type de post en cours de traitement
+    if ($post_id === null || get_post_type($post_id) === 'portfolio') {
+        require_once get_stylesheet_directory_uri() . '/assets/php/create_json_portfolio.php';
+        
+    }
+} */
+
+/* // Action lors de la sauvegarde/mise à jour d'un post
+add_action('save_post', 'save_portfolio_update_json');
+
+// Action lors de la suppression d'un post
+add_action('delete_post', 'save_portfolio_update_json');
+
+// Action lors de la création d'un post
+add_action('wp_insert_post', 'save_portfolio_update_json'); */
+
 
 //Add main menu 
 function register_my_menu() {

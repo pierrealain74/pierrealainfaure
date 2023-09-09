@@ -15,36 +15,34 @@ get_header();
 
 	<script>
 	// Définissez la variable themeDirectoryUri pour qu'elle soit accessible en JavaScript
-	var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
+		var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
 	</script>
-	<!--To modifiate mouse cursor-->
-	<div class="cursor"></div>
 
-    <!--Section logo-->
-	<div id="logo">pierrealainfaure.com</div>
+	<?php //get_template_part('template-parts/logo'); ?>
+	<?php //get_template_part('template-parts/cursor'); ?>
 
 
-<!--////////////////////////////////////Carousel - GSAP//////////////////////////////////////////////////////-->
 
 				
 	<?php get_template_part('template-parts/portfolio'); ?>
 
 
-<!--////////////////////////////////////Carousel - GSAP//////////////////////////////////////////////////////-->
-
-   <!--Display Post Tilte-->
-    <h2 class="post-title"></h2>
-
-
-
-</main><!-- #main -->
 
 
 
 
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/portfolio_array.json"></script>
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/carousel.js"></script>
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/cursor.js"></script>
+
+
+
+
+</main>
+
+
+
+
+<!-- <script src="<?php //echo get_stylesheet_directory_uri(); ?>/assets/js/portfolio_array.json"></script> -->
+<!-- <script src="<?php //echo get_stylesheet_directory_uri(); ?>/assets/js/carousel.js"></script> -->
+<!-- <script src="<?php //echo get_stylesheet_directory_uri(); ?>/assets/js/cursor.js"></script> -->
 
 
 
