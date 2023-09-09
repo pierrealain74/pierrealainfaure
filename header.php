@@ -17,5 +17,23 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>	
 </head>
-<?php get_template_part('template-parts/nav-menu'); ?>
+<?php 
+
+get_template_part('template-parts/nav-menu'); 
+
+
+$include_create_json_path = get_stylesheet_directory() . '/assets/php/create_portfolio_array.php';
+// Utilisez include pour inclure le fichier
+include($include_create_json_path);
+
+
+?>
+
+
+
+
+
+
+
+
 <body>

@@ -60,26 +60,6 @@ function portfolio_post_type() {
 add_action( 'init', 'portfolio_post_type' );
 
 
-
-//Call Php file to create portfolio_array.js
-/* function save_portfolio_update_json($post_id = null) {
-    // Si $post_id n'est pas fourni, on vérifie le type de post en cours de traitement
-    if ($post_id === null || get_post_type($post_id) === 'portfolio') {
-        require_once get_stylesheet_directory_uri() . '/assets/php/create_json_portfolio.php';
-        
-    }
-} */
-
-/* // Action lors de la sauvegarde/mise à jour d'un post
-add_action('save_post', 'save_portfolio_update_json');
-
-// Action lors de la suppression d'un post
-add_action('delete_post', 'save_portfolio_update_json');
-
-// Action lors de la création d'un post
-add_action('wp_insert_post', 'save_portfolio_update_json'); */
-
-
 //Add main menu 
 function register_my_menu() {
     register_nav_menu('primary-menu', __('Primary Menu'));

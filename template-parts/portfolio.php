@@ -1,6 +1,6 @@
 <?php
 // Récupérez les portfolios depuis l'API REST
-$portfolio_url = 'http://pierrealainfaure2.local/wp-json/wp/v2/portfolio?_fields=id,title,date,categories,tags,featured_media';
+$portfolio_url = 'http://pierrealainfaure2.local/wp-json/wp/v2/portfolio?_fields=id,title,date,categories,tags,featured_media,content';
 $portfolio_response = wp_remote_get($portfolio_url);
 $portfolio_data = wp_remote_retrieve_body($portfolio_response);
 $portfolios = json_decode($portfolio_data);
@@ -16,7 +16,9 @@ foreach ($portfolios as $portfolio) :
         'date' => isset($portfolio->date) ? esc_html($portfolio->date) : '',
         'categories' => array(),
         'tags' => array(),
-        'thumbnail' => ''
+        'thumbnail' => '',
+        'thumbnailfull' => '',
+        'content' => esc_html($portfolio->content->rendered),
     );
 
     // Récupérer les catégories
@@ -44,18 +46,55 @@ foreach ($portfolios as $portfolio) :
     $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'thumbnail');
     $portfolio_item['thumbnail'] = esc_url($thumbnail_url);
 
+    // Récupérer l'image à la une (thumbnail)
+    $thumbnail_id = $portfolio->featured_media;
+    $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'full');
+    $portfolio_item['thumbnailfull'] = esc_url($thumbnail_url);
+
+
+
+
     // Ajouter l'élément au tableau JSON
     $portfolio_json[] = $portfolio_item;
     ?>
 
-    <div class="portfolio">
-        <h2><?php echo esc_html($portfolio->title->rendered); ?></h2>
-        <!-- Reste du code pour afficher les données du portfolio -->
-    </div>
+
 
 <?php
 endforeach;
+?>
 
+<div class="portfolio">
+       
+<?php
+       
+// Boucle foreach pour afficher les titres depuis le tableau $portfolio_json
+foreach ($portfolio_json as $item) {
+
+    
+        echo '<p>' . $item['title'] . '</p>';
+
+
+        // Afficher la thumbnail
+        if (!empty($item['thumbnail'])) {
+            echo '<p>Thumbnail : <br /></p>' . '<img src="' . esc_url($item['thumbnail']) . '" alt="' . esc_attr($item['title']) . ' - Thumbnail">';
+        }
+        
+        // Afficher la thumbnailfull
+        if (!empty($item['thumbnailfull'])) {
+            echo '<p>ThumbnailFull : <br /></p>' . '<img src="' . esc_url($item['thumbnailfull']) . '" alt="' . esc_attr($item['title']) . ' - Full Thumbnail">';
+        }
+
+
+        $decoded_content = html_entity_decode($item['content']);
+        echo '<p>Content : <br /></p>' . $decoded_content . '<p><br />-----------------------------------------------------------------FIN</p>';
+    
+    
+}
+?>
+       
+</div>
+<?php
 // Convertir le tableau JSON en une chaîne JSON
 $portfolio_json = json_encode($portfolio_json, JSON_PRETTY_PRINT);
 
@@ -68,3 +107,4 @@ file_put_contents($file_path, $portfolio_json);
 // Afficher un message de confirmation
 echo 'Le JSON a été enregistré dans ' . $file_path;
 ?>
+
