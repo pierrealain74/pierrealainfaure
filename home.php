@@ -11,27 +11,16 @@
 get_header();
 
 ?>
+<body>
 <main id="site-main">
 
-	<script>
-	// Définissez la variable themeDirectoryUri pour qu'elle soit accessible en JavaScript
-		var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
-	</script>
+
 
 	<?php //get_template_part('template-parts/logo'); ?>
 	<?php //get_template_part('template-parts/cursor'); ?>
 
 
-
-				
-	<?php //get_template_part('template-parts/portfolio'); ?>
-
-
-
-
-
-
-
+	<?php get_template_part('template-parts/carousel'); ?>
 
 
 
@@ -40,11 +29,11 @@ get_header();
 
 
 
-<!-- <script src="<?php //echo get_stylesheet_directory_uri(); ?>/assets/js/portfolio_array.json"></script> -->
-<!-- <script src="<?php //echo get_stylesheet_directory_uri(); ?>/assets/js/carousel.js"></script> -->
-<!-- <script src="<?php //echo get_stylesheet_directory_uri(); ?>/assets/js/cursor.js"></script> -->
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="<?php echo get_stylesheet_directory_uri() . '/assets/slick/slick.js' ?>" type="text/javascript" charset="utf-8"></script>
+<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/slickcarousel.js' ?>" type="text/javascript" charset="utf-8"></script>
 
-
+</body>
 
 <?php
 //get_sidebar();

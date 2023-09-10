@@ -4,18 +4,11 @@
 add_action( 'wp_enqueue_scripts', 'pafchild_enqueue_styles' );
 function pafchild_enqueue_styles() {
 
-    wp_enqueue_style( 'pierrealainfaure', get_template_directory_uri() . '/style.css' );
+    /* wp_enqueue_style( 'pierrealainfaure', get_template_directory_uri() . '/style.css' ); */
 
     wp_enqueue_style( 'pafchild', get_stylesheet_uri(), array( 'pierrealainfaure' ) );
 
     
-    //Glide Js (portoflio/carrousel)
-/*     wp_enqueue_style( 'glide-core', get_stylesheet_directory_uri() . '/node_modules/@glidejs/glide/dist/css/glide.core.css' );
-
-    wp_enqueue_style( 'glide-theme', get_stylesheet_directory_uri() . '/node_modules/@glidejs/glide/dist/css/glide.theme.css' );
-
-    wp_enqueue_script( 'glidejs', get_stylesheet_directory_uri() . '/node_modules/@glidejs/glide/dist/glide.js' ); */
-
 }
 
 
