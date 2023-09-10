@@ -10,24 +10,11 @@
 
 
       <section class="variable slider">
-        <div>
+
+      <div>
           <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/paysage1.jpg' ?>">
-        </div>
-        <div>
-          <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/paysage2.jpg' ?>">
-        </div>
-        <div>
-          <img src="<?php echo get_stylesheet_directory_uri(). '/assets/images/paysage3.jpg' ?>">
-        </div>
-        <div>
-          <img src="<?php echo get_stylesheet_directory_uri(). '/assets/images/paysage4.jpg' ?>">
-        </div>
-        <div>
-          <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/paysage5.jpg' ?>">
-        </div>
-        <div>
-          <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/paysage6.jpg' ?>">
-        </div>
+      </div>
+
       </section>
     
 

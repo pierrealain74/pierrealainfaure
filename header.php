@@ -20,7 +20,7 @@
   	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() . '/assets/slick/slick-theme.css' ?>">
 	
 	
-	<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/carousel.js' ?>"></script>
+	<script src="<?php //echo get_stylesheet_directory_uri() . '/assets/js/carousel.js' ?>"></script>
 
 
 
