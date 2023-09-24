@@ -1,4 +1,7 @@
-$(document).on('ready', function() {
+
+function slickCarousel() {
+
+  $(document).on('ready', function () {
     $(".vertical-center-4").slick({
       dots: true,
       vertical: true,
@@ -54,3 +57,4 @@ $(document).on('ready', function() {
       infinite: true
     });
   });
+}

@@ -1,6 +1,8 @@
 <?php
-// Récupérez les portfolios depuis l'API REST
-$portfolio_url = 'http://pierrealainfaure2.local/wp-json/wp/v2/portfolio?_fields=id,title,date,categories,tags,featured_media,content';
+// Récupérez les portfolios depuis l'API 
+$portfolio_url = get_site_url() . '/wp-json/wp/v2/portfolio?_fields=id,title,date,categories,tags,featured_media,content';
+
+
 $portfolio_response = wp_remote_get($portfolio_url);
 $portfolio_data = wp_remote_retrieve_body($portfolio_response);
 $portfolios = json_decode($portfolio_data);
@@ -73,6 +75,6 @@ $file_path = get_stylesheet_directory() . '/assets/json/portfolio-data.json';
 file_put_contents($file_path, $portfolio_json);
 
 // Afficher un message de confirmation
-echo 'Le JSON a été enregistré dans ' . $file_path;
+//echo 'Le JSON a été enregistré dans ' . $file_path;
 ?>
 

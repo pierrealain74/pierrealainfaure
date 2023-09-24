@@ -12,7 +12,6 @@ function pafchild_enqueue_styles() {
 }
 
 
-
 // ACF -- Portfolio Custom Post Type
 function portfolio_post_type() {
     $labels = array(
@@ -59,4 +58,21 @@ function register_my_menu() {
 }
 add_action('after_setup_theme', 'register_my_menu');
 
+//To Launch create JSON
+function save_portfolio_update_json($post_id = null) {
+    // Si $post_id n'est pas fourni, on vérifie le type de post en cours de traitement
+    if ($post_id === null || get_post_type($post_id) === 'portfolio') {
+        require_once get_stylesheet_directory() . '/assets/php/create_portfolio_array.php';
+        
+    }
+}
+
+// Action lors de la sauvegarde/mise à jour d'un post
+add_action('save_post', 'save_portfolio_update_json');
+
+// Action lors de la suppression d'un post
+add_action('delete_post', 'save_portfolio_update_json');
+
+// Action lors de la création d'un post
+add_action('wp_insert_post', 'save_portfolio_update_json');
 

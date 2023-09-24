@@ -3,12 +3,36 @@
 Style SCSS du site pierrealainfaure.com
 
 */
-/****************************************/
+@import "./assets/css/reset";
+
+/* @import "./assets/css/cursor"; */
+/* @import "./assets/css/carousel"; */
+@import "./assets/css/fonts";
+@import "./assets/css/scrollbar";
+
+
+
 html, body {
   padding: 0;
   margin: 0;
   background-color: #101010;
   font-family: sans-serif;
+}
+
+#logo{
+  position: fixed;
+  top: 2rem;
+  left: 9rem;
+/*   transition: width 0.2s ease-in, transform 0.1s ease-in-out; */
+  width: 75px;
+  font-family: 'Abel';
+  font-size: 2.2rem;
+  color: white;
+
+
+  &:hover {
+      /*animate todo*/
+  }
 }
 
 .slideshow {
@@ -78,6 +102,7 @@ input:checked:nth-of-type(5) ~ nav label:nth-child(5) {
   height: 100%;
   background-size: 50% 100%;
   transition: transform 0.5s ease-in-out;
+  z-index: -1;
 }
 .slide__content {
   box-sizing: border-box;
@@ -297,7 +322,9 @@ label:nth-child(5) {
 }
 
 .slick-slide img {
-  width: 100%;
+  width: 300px;
+  height: 700px;
+  object-fit: cover;
 }
 
 .slick-prev:before,
@@ -326,8 +353,8 @@ label:nth-child(5) {
 
 
 
-
+@import "./assets/css/menu";
 ///////////////
 /*Responsive*/ //////////////////////////////////////////////////
 /////////////
-/* @import "./assets/css/responsive"; */
+@import "./assets/css/responsive";

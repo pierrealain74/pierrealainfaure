@@ -1,4 +1,4 @@
-@media all and (min-width: 320px)  and  (max-width: 800px){
+@media (min-width: 320px)  and  (max-width: 800px){
 
     .u-media-wrapper.u-media-wrapper--16-9{
         height: 20rem !important;
@@ -6,6 +6,11 @@
     .c-header {
         height: 100vh;
 
+    }
+    
+    #logo{
+
+        left: 4rem;
     }
 }
 

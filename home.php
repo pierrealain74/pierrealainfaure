@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Template Name: Home
  *
@@ -7,98 +6,90 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  */
-
 get_header();
+
+ //Verifier si le fichier Json Portfolio default n'est pas vide 
+ $jsonfile = get_stylesheet_directory() . '/assets/json/portfolio-data.json';
+
+ //Creation du JSON si JSON Vide : en cas de migration par exemple
+ if (empty(file_get_contents($jsonfile))) {
+     save_portfolio_update_json();
+ }
 ?>
-<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() . '/assets/slick/slick.css' ?>">
-<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() . '/assets/slick/slick-theme.css' ?>">
-<script src="<?php //echo get_stylesheet_directory_uri() . '/assets/js/carousel.js' ?>"></script>
+
 <script>
 var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
 </script>
 
-<main id="site-main">
-
-<?php //get_template_part('template-parts/logo'); ?>
-<?php //get_template_part('template-parts/cursor'); ?>
-
-
-
-<fieldset class="slideshow">
-  
-  <!-- Slide 1 -->
-    <input type="radio" id="slideCheckbox1" name="slide" checked autofocus></input>
-    <div class="slide">      
-        <div class="slide__content">
-            <section class="variable slider">
-				
-                <!--slideshow.js-->
-
-		    </section>
-        </div>  
+<section class="variable slider">
+ <!--    <div>
+      <img src="https://picsum.photos/200/300">
     </div>
-<!-- Slide 2 -->
-<input type="radio" id="slideCheckbox2" name="slide"></input>
-  <div class="slide">
-  <div class="slide__content">
-      <h1>More</h1>
-      <p>More here</p>
-    </div> 
-  </div>
+    <div>
+      <img src="https://picsum.photos/200/300">
+    </div>
+    <div>
+      <img src="https://picsum.photos/200/300">
+    </div>
+    <div>
+      <img src="https://picsum.photos/200/300">
+    </div>
+    <div>
+      <img src="https://picsum.photos/200/300">
+    </div>
+    <div>
+      <img src="https://picsum.photos/200/300">
+    </div> -->
+  </section>
 
-  <!-- Slide 3 -->
-  <input type="radio" id="slideCheckbox3" name="slide"></input>
-  <div class="slide">
-    <div class="slide__content">
-      <h1>Yet More</h1>
-      <p>Yet more here</p>
-    </div>  
-  </div>
-
-  <!-- Slide 4 -->
-  <input type="radio" id="slideCheckbox4" name="slide"></input>
-  <div class="slide">
-    <div class="slide__content">
-      <h1>Zzz</h1>
-      <p>Yada yada</p>
-    </div>   
-  </div>
-
-  <!-- Slide 5 -->
-  <input type="radio" id="slideCheckbox5" name="slide"></input>
-  <div class="slide">
-    <div class="slide__content">
-      <h1>The end</h1>
-      <p>It's over</p>
-    </div>  
-  </div>
-
-  <!-- Add more slides here! -->
-
-  <nav>
-    
-    <!-- Add slide labels here! -->
-    
-    <label class="slide-button" for="slideCheckbox1">Home</label>
-    <label class="slide-button" for="slideCheckbox2">Projects</label>
-    <label class="slide-button" for="slideCheckbox3">About Me</label>
-    <label class="slide-button" for="slideCheckbox4">Contact</label>
-    <label class="slide-button" for="slideCheckbox5">Misc</label>
-  </nav>
-
-</fieldset>
 <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/slideshow.js' ?>" type="text/javascript"></script>
 
 
-<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript" defer></script>
-<script src="<?php echo get_stylesheet_directory_uri() . '/assets/slick/slick.js' ?>" type="text/javascript" defer></script>
-<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/slickcarousel.js' ?>" type="text/javascript" defer></script>
+<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/jquery-2.2.0.min.js' ?>" type="text/javascript"></script>
+<script src="<?php echo get_stylesheet_directory_uri() . '/assets/slick/slick.js' ?>" type="text/javascript"></script>
+<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/slickcarousel.js' ?>" type="text/javascript"></script>
+
+<script>
 
 
 
+// Identifiez votre conteneur où vous générez le contenu
+const container = document.querySelector(".variable.slider");
 
-</body>
+// Fonction à exécuter lorsque la balise <!-- endofile --> est détectée
+function executeScripts() {
 
+  slick();
+  slickCarousel();
+
+  console.log("Scripts exécutés après la détection de <!-- endofile -->");
+}
+
+// Configuration de l'observateur de mutations
+const observerConfig = { childList: true, subtree: true };
+
+// Créez un observateur de mutations avec une fonction de rappel
+const observer = new MutationObserver(function (mutationsList, observer) {
+  for (let mutation of mutationsList) {
+    if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+      // Parcourez les nœuds ajoutés pour rechercher la balise <!-- endofile -->
+      for (let addedNode of mutation.addedNodes) {
+        if (addedNode.nodeType === Node.COMMENT_NODE && addedNode.textContent.trim() === "endofile") {
+          // La balise <!-- endofile --> a été détectée, exécutez les scripts
+          executeScripts();
+
+          // Arrêtez d'observer les mutations, car nous avons fini
+          observer.disconnect();
+          break;
+        }
+      }
+    }
+  }
+});
+
+// Commencez à observer les mutations
+observer.observe(container, observerConfig);
+</script>
 <?php
 //get_sidebar();
 get_footer();

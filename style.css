@@ -1,14 +1,135 @@
+@charset "UTF-8";
 /**
 
 Style SCSS du site pierrealainfaure.com
 
 */
-/****************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* @import "./assets/css/cursor"; */
+/* @import "./assets/css/carousel"; */
+/*
+Font Family de pierrealainfaure.com
+*/
+@font-face {
+  font-family: "Abel";
+  src: url("./assets/fonts/Abel-Regular.ttf") format("truetype");
+}
+/* Styles personnalisés pour les barres de défilement */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Styles personnalisés pour les barres de défilement dans Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+/* Barre de défilement */
+::-moz-scrollbar {
+  width: 10px;
+}
+
+/* Piste de la barre de défilement */
+::-moz-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Poignée de la barre de défilement */
+::-moz-scrollbar-thumb {
+  background-color: #888;
+}
+
+/* Hover sur la poignée de la barre de défilement */
+::-moz-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
 html, body {
   padding: 0;
   margin: 0;
   background-color: #101010;
   font-family: sans-serif;
+}
+
+#logo {
+  position: fixed;
+  top: 2rem;
+  left: 9rem;
+  /*   transition: width 0.2s ease-in, transform 0.1s ease-in-out; */
+  width: 75px;
+  font-family: "Abel";
+  font-size: 2.2rem;
+  color: white;
+}
+#logo:hover {
+  /*animate todo*/
 }
 
 .slideshow {
@@ -87,6 +208,7 @@ input:checked:nth-of-type(5) ~ nav label:nth-child(5) {
   height: 100%;
   background-size: 50% 100%;
   transition: transform 0.5s ease-in-out;
+  z-index: -1;
 }
 
 .slide__content {
@@ -311,7 +433,9 @@ label:nth-child(5) {
 }
 
 .slick-slide img {
-  width: 100%;
+  width: 300px;
+  height: 700px;
+  object-fit: cover;
 }
 
 .slick-prev:before,
@@ -337,7 +461,224 @@ label:nth-child(5) {
   opacity: 1;
 }
 
+/* Styles pour le menu horizontal */
+nav {
+  top: 2rem;
+  overflow: hidden;
+  background: unset;
+  font-family: "Abel";
+}
+nav label {
+  border-bottom: none;
+  width: 14%;
+}
+
+.slider {
+  margin: 70px auto;
+}
+
+.slick-prev, .slick-next {
+  z-index: 1;
+}
+
+.slick-prev {
+  left: -80px;
+}
+
+.slick-next {
+  right: 20px;
+}
+
+.slick-prev:before, .slick-next:before {
+  opacity: 0.15;
+}
+
+.slick-prev::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 80px;
+  background: url(./assets/icons/fontawesome/svgs/solid/angle-left.svg);
+}
+
+.slick-next::before {
+  content: "";
+  position: absolute;
+  width: 99px;
+  height: 80px;
+  background: url(./assets/icons/fontawesome/svgs/solid/angle-right.svg);
+}
+
+.primary-menu {
+  position: absolute;
+  top: 1rem;
+  right: 6rem;
+  font-family: "Abel";
+  /*
+   * Just a quick hamburger
+   */
+  /* 
+   * Transform all the slices of hamburger
+   * into a crossmark.
+   */
+  /*
+   * But let's hide the middle one.
+   */
+  /*
+   * Ohyeah and the last one should go the other direction
+   */
+  /*
+   * Make this absolute positioned
+   * at the top left of the screen
+   */
+  /*
+   * And let's slide it in from the left
+   */
+}
+.primary-menu #menuToggle {
+  display: block;
+  position: relative;
+  top: 2rem;
+  left: 50px;
+  z-index: 3;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.primary-menu #menuToggle a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+.primary-menu #menuToggle a:hover {
+  color: tomato;
+}
+.primary-menu #menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+.primary-menu #menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: white;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+.primary-menu #menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+.primary-menu #menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+.primary-menu #menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #ffffff;
+}
+.primary-menu #menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+.primary-menu #menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+.primary-menu ul.menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+.primary-menu ul.menu li a {
+  font-size: 2.2rem;
+  color: white;
+  margin-right: 20px;
+}
+.primary-menu #menu-menu-header {
+  position: absolute;
+  width: 450px;
+  /*   margin: -270px 0 0 -50px; */
+  padding: 2rem;
+  right: 100px;
+  top: -60px;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translateY(-100%);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+.primary-menu #menu-menu-header li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+.primary-menu #menuToggle input:checked ~ ul {
+  transform: none;
+}
+
 /*Responsive*/
-/* @import "./assets/css/responsive"; */
+@media (min-width: 320px) and (max-width: 800px) {
+  .u-media-wrapper.u-media-wrapper--16-9 {
+    height: 20rem !important;
+  }
+  .c-header {
+    height: 100vh;
+  }
+  #logo {
+    left: 4rem;
+  }
+}
+/****************
+
+
+        MENU
+
+*****************/
+@media all and (min-width: 600px) and (max-width: 1200px) {
+  /*
+
+  MENU Toogle
+
+  */
+  .primary-menu {
+    top: 4rem;
+    left: 2rem;
+    width: 100%;
+  }
+  .primary-menu #menuToggle {
+    left: 0;
+  }
+  #menuToggle input {
+    color: white !important;
+  }
+}
+@media all and (min-width: 320px) and (max-width: 600px) {
+  .primary-menu {
+    top: 4rem;
+    left: 0;
+  }
+  .primary-menu #menuToggle {
+    left: 2rem;
+  }
+  .primary-menu #menu-menu-header {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-200%);
+    padding: 0;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

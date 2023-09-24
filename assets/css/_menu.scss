@@ -1,4 +1,53 @@
 /* Styles pour le menu horizontal */
+
+
+nav {
+
+  top: 2rem;
+  overflow: hidden;
+  background: unset;
+  font-family: 'Abel';
+
+  label {
+    border-bottom: none;
+    width: 14%;
+  }
+
+}
+.slider {
+  margin: 70px auto;
+}
+
+
+.slick-prev, .slick-next {
+  z-index: 1;
+}
+.slick-prev {
+  left: -80px;
+}
+.slick-next {
+ right: 20px;
+}
+.slick-prev:before, .slick-next:before {
+  opacity: .15;
+}
+.slick-prev::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 80px;
+  background: url(./assets/icons/fontawesome/svgs/solid/angle-left.svg);
+
+}
+
+.slick-next::before {
+  content: "";
+  position: absolute;
+  width: 99px;
+  height: 80px;
+  background: url(./assets/icons/fontawesome/svgs/solid/angle-right.svg);
+
+}
 .primary-menu {
 
   position: absolute;
