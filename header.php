@@ -17,13 +17,9 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 
-	<link rel="stylesheet" type="text/css" href="<?php //echo get_stylesheet_directory_uri() . '/assets/slick/slick.css' ?>">
-	<link rel="stylesheet" type="text/css" href="<?php //echo get_stylesheet_directory_uri() . '/assets/slick/slick-theme.css' ?>">
-	
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css'>
-	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css'>
+	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() . '/assets/slick/slick.css' ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() . '/assets/slick/slick-theme.css' ?>">
+
 
 
 	<?php wp_head(); ?>

@@ -32,11 +32,13 @@ var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
 
 <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/slideshow.js' ?>" type="text/javascript"></script>
 
+<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/initslick.js' ?>" type="text/javascript" defer></script>
+
 <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/jquery-3.7.1.js' ?>" type="text/javascript"></script>
 
 <script src="<?php echo get_stylesheet_directory_uri() . '/assets/slick/slick.min.js' ?>" type="text/javascript" defer></script>
 
-<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/initslick.js' ?>" type="text/javascript" defer></script>
+
 
 </body>
 <?php
