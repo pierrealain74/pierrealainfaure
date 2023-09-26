@@ -6,7 +6,7 @@
         .then(response => response.json())
         .then(data => {
             var htmlCode = '';
-            const container = document.querySelector(".variable.slider");
+            const container = document.querySelector(".slider.multiple-items");
 
             data.forEach(item => {
                 const thumbnailfull = item.thumbnailfull;
