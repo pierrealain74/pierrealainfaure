@@ -20,29 +20,66 @@ get_header();
 var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
 </script>
 <body>
+<main id="site-main">
+<div id="logo">pierrealainfaure.com</div>
 
-<!-- partial:index.partial.html -->
-<div class="main">
-  <div class="slider center">
-    <!--slideshow.js generate gallery images from CPT WP-->
+<fieldset class="slideshow">
 
-
-
+<!-- Slide 1 -->
+<input type="radio" id="slideCheckbox1" name="slide" checked autofocus></input>
+    <div class="slide">      
+        <div class="slide__content">
+            <section class="game-section">
+                <div class="owl-carousel custom-carousel owl-theme">
+                    <!--slideshow.js generate gallery images from CPT WP-->
+                </div>
+            </section>
+        </div>
+    </div>
+<!-- Slide 2 -->
+<input type="radio" id="slideCheckbox2" name="slide"></input>
+  <div class="slide">
+    <div class="slide__content">
+      <h1>Projects</h1>
+      <p>More here</p>
+    </div> 
   </div>
-</div>
-<!-- partial -->
+
+  <!-- Slide 3 -->
+<input type="radio" id="slideCheckbox3" name="slide"></input>
+  <div class="slide">
+    <div class="slide__content">
+      <h1>About me</h1>
+      <p>More here</p>
+    </div> 
+  </div>
+
+  <nav>    
+    <label class="slide-button" for="slideCheckbox1">Home</label>
+    <label class="slide-button" for="slideCheckbox2">Projects</label>
+    <label class="slide-button" for="slideCheckbox3">About</label>
+    <label class="slide-button" for="slideCheckbox4">Contact</label>
+    <label class="slide-button" for="slideCheckbox5">Links</label>
+  </nav>
+
+</fieldset>
 
 
 <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/slideshow.js' ?>" type="text/javascript"></script>
 
+/** Create the carousel with JQuery & OWL */
 
 <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/jquery-3.7.1.js' ?>" type="text/javascript" defer></script>
 
-<script src="<?php echo get_stylesheet_directory_uri() . '/slick/slick.min.js' ?>" type="text/javascript" defer></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js' defer></script>
 
-<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/initslick.js' ?>" type="text/javascript" defer></script>
+<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/initOwl.js' ?>" type="text/javascript" defer></script>
 
 
+
+
+
+<script src="<?php //echo get_stylesheet_directory_uri() . '/assets/js/carousel.js' ?>" type="text/javascript" defer></script>
 
 
 
@@ -52,15 +89,3 @@ var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
 get_footer();
 
 ?>
-
-<!-- <script type="text/javascript">
-    $(window).on("load", function() {
-
-        $.getScript("<?php //echo get_stylesheet_directory_uri() . '/assets/js/initslick.js' ?>", function() {});
-
-        $.getScript("<?php //echo get_stylesheet_directory_uri() . '/assets/js/jquery-3.7.1.js' ?>", function() {});
-
-        $.getScript("<?php //echo get_stylesheet_directory_uri() . '/slick/slick.min.js' ?>", function() {});
-
-    });
-</script> -->

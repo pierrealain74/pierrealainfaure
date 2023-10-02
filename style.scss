@@ -6,7 +6,7 @@ Style SCSS du site pierrealainfaure.com
 @import "./assets/css/reset";
 
 /* @import "./assets/css/cursor"; */
-/* @import "./assets/css/carousel"; */
+@import "./assets/css/slideshow";
 @import "./assets/css/fonts";
 @import "./assets/css/scrollbar";
 
@@ -36,29 +36,18 @@ html, body {
 }
 
 .main {
-  font-family:Arial;
-  width:800px;
+/*   font-family:Arial;
+  width:1200px;
   display:block;
-  margin:0 auto;
+  margin:0 auto; */
 }
 .slider img{
 
-  width: 200px;
+  width: 300px;
   height: 650px;
   object-fit: cover;
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 @import "./assets/css/menu";
 ///////////////

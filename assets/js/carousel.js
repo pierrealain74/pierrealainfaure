@@ -1,22 +1,41 @@
+$(document).ready(function() {
+   
+    $('.slider img').click(function() {
+        
+        var imageSrc = $(this).attr('src');
+        
+        
+        //$('.slide:nth-child(4)').html('<img src="' + imageSrc + '">');
+        $('.slide:nth-child(4)').css('background-image', 'url(' + imageSrc + ')');
+
+        $("#slideCheckbox2").click();
+
+    });
+});
 
 
-document.addEventListener("DOMContentLoaded", function () {
+/* document.addEventListener("DOMContentLoaded", function () {
     
-    const imgCarousel = document.querySelectorAll("section img");
+    const imgCarousel = document.querySelectorAll("slick-slide");
 
-    const slide4 = document.querySelector(".slide:nth-child(4)");
+    const slide = document.querySelector(".slide:nth-child(4)");
+
+    
 
 
     imgCarousel.forEach((image) => {
+
+        console.log(image);
 
         image.addEventListener('click', () => {
 
             const imgSrc = image.getAttribute('src');
 
-            slide4.style.backgroundImage = `url(${imgSrc})`;
+            slide.style.backgroundImage = `url(${imgSrc})`;
 
             document.getElementById("slideCheckbox2").click();
 
         });
     });
 });
+ */
