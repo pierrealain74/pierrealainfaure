@@ -1,22 +1,30 @@
 
 /*Init OWL par defaut */
 
-$('.owl-carousel').owlCarousel({
-  loop:true,
-  margin:10,
-  nav:true,
-  responsive:{
-      0:{
-          items:1
-      },
-      600:{
-          items:3
-      },
-      1000:{
-          items:5
-      }
-  }
-})
+
+$(document).ready(function() {
+  // Attendre que toutes les images soient chargées
+  $(".owl-carousel .item img").on("load", function() {
+      // Initialiser le carousel OWL une fois que toutes les images sont chargées
+      $('.owl-carousel').owlCarousel({
+          loop:true,
+          margin:10,
+          nav:true,
+          responsive:{
+              0:{
+                  items:1
+              },
+              600:{
+                  items:3
+              },
+              1000:{
+                  items:5
+              }
+          }
+      })
+  });
+});
+
 
 
 /*Init OWL avec Boostrap */
