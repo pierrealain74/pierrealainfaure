@@ -4,11 +4,13 @@ Style SCSS du site pierrealainfaure.com
 
 */
 @import "./assets/css/reset";
-
-/* @import "./assets/css/cursor"; */
-@import "./assets/css/slideshow";
 @import "./assets/css/fonts";
+@import "./assets/css/slideshow";
+/* 
+@import "./assets/css/cursor"; 
+
 @import "./assets/css/scrollbar";
+*/
 
 
 
@@ -41,7 +43,7 @@ html, body {
   display:block;
   margin:0 auto; */
 }
-.slider img{
+.item img{
 
   width: 300px;
   height: 650px;

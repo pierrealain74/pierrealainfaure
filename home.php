@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Template Name: Home
@@ -30,8 +31,14 @@ var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
     <div class="slide">      
         <div class="slide__content">
             <section class="game-section">
-                <div class="owl-carousel custom-carousel owl-theme">
+                <div class="owl-carousel owl-theme">
                     <!--slideshow.js generate gallery images from CPT WP-->
+
+
+
+
+                    <!--END slideshow.js generate gallery images from CPT WP-->
+
                 </div>
             </section>
         </div>
@@ -65,21 +72,9 @@ var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
 </fieldset>
 
 
-<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/slideshow.js' ?>" type="text/javascript"></script>
-
-/** Create the carousel with JQuery & OWL */
-
-<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/jquery-3.7.1.js' ?>" type="text/javascript" defer></script>
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js' defer></script>
-
-<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/initOwl.js' ?>" type="text/javascript" defer></script>
 
 
-
-
-
-<script src="<?php //echo get_stylesheet_directory_uri() . '/assets/js/carousel.js' ?>" type="text/javascript" defer></script>
+<!-- <script src="<?php //echo get_stylesheet_directory_uri() . '/assets/js/carousel.js' ?>" type="text/javascript" defer></script> -->
 
 
 
@@ -89,3 +84,11 @@ var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
 get_footer();
 
 ?>
+
+<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/slideshow.js' ?>"></script>
+
+<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/jquery-3.7.1.js' ?>"></script>
+
+<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js' ?>"></script>
+
+<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/initOwl.js' ?>"></script>
