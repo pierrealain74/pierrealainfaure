@@ -3,9 +3,9 @@
 
 
 $(document).ready(function() {
-  // Attendre que l'événement personnalisé 'galleryCreated' soit déclenché
+  
   $(document).on('galleryCreated', function() {
-      // Initialiser le carousel OWL une fois que la galerie est créée
+      
       $('.owl-carousel').owlCarousel({
           loop:true,
           margin:10,
