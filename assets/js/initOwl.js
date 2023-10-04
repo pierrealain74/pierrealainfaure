@@ -3,9 +3,9 @@
 
 
 $(document).ready(function() {
-  // Attendre que toutes les images soient chargées
-  $(".owl-carousel .item img").on("load", function() {
-      // Initialiser le carousel OWL une fois que toutes les images sont chargées
+  // Attendre que l'événement personnalisé 'galleryCreated' soit déclenché
+  $(document).on('galleryCreated', function() {
+      // Initialiser le carousel OWL une fois que la galerie est créée
       $('.owl-carousel').owlCarousel({
           loop:true,
           margin:10,
@@ -21,9 +21,10 @@ $(document).ready(function() {
                   items:5
               }
           }
-      })
+      });
   });
 });
+
 
 
 

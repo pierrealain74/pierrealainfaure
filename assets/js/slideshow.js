@@ -28,6 +28,8 @@ fetch(jsonfile)
             }
         });
 
+        $(document).trigger('galleryCreated');
+
     });
 
 
