@@ -1,0 +1,100 @@
+/* Styles pour le menu horizontal */
+.site-header{
+    font-family: 'Abel';
+    display: flex;
+    width: 100vw;
+    height: 80px;
+    justify-content: space-between;
+    padding: 25px 40px;
+    /* background: white; */
+    /* box-shadow: 0 0 12px #ccc; */
+  
+  }
+  
+  .site-title{
+    color: var(--primary-color);
+    text-transform: uppercase;
+  }
+  p.site-title a{
+    font-family: 'Abel';
+    font-size: 40px;
+    letter-spacing: 6px;
+  }
+  
+  .menu-horizontal {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    font-size: 1.5rem;
+    width: unset;
+  }
+  
+  .menu-horizontal li {
+    padding: 0.8rem;
+    
+    & a{
+      margin-right: 2rem;
+      color: rgb(255, 255, 255);
+      text-transform: uppercase;
+      text-decoration: none;
+  
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  
+  }
+  
+  .menu-fullscreen li {
+    padding: 0.8rem;
+    font-size: 3rem;
+    
+    & a{
+      margin-right: 2rem;
+      text-transform: uppercase;
+      color: #ffffff;
+  
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  
+  }
+  .menuwp-contact a{
+    cursor: pointer;
+  }
+  /* Menu burger styles */
+  #menuToggle {
+    display: none; /* Caché par défaut sur les grands écrans */
+    cursor: pointer !important;
+    padding: 10px;
+    z-index: 9999;
+    position: relative;
+  }
+  
+  #menuToggle span {
+    display: block;
+    width: 33px;
+    height: 3px;
+    margin-bottom: 5px;
+    background: #000;
+    border-radius: 2px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #menuToggle.active span {
+    background: #FFF;
+  }
+  
+  /* Pour transformer les barres en 'X' */
+  #menuToggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-4px, 4px);
+  }
+  
+  #menuToggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  #menuToggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-4px, -4px);
+  }

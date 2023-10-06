@@ -22,11 +22,8 @@ html, body {
 }
 
 #logo{
-  position: fixed;
-  top: 2rem;
-  left: 9rem;
+
 /*   transition: width 0.2s ease-in, transform 0.1s ease-in-out; */
-  width: 75px;
   font-family: 'Abel';
   font-size: 2.2rem;
   color: white;
@@ -51,7 +48,8 @@ html, body {
 
 } */
 
-@import "./assets/css/menu";
+@import "./assets/css/menu"; /*Menu original du slideshow*/
+/* @import "./assets/css/menu-wp"; */
 ///////////////
 /*Responsive*/ //////////////////////////////////////////////////
 /////////////

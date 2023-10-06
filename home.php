@@ -22,7 +22,27 @@ var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
 </script>
 <body>
 <main id="site-main">
-<div id="logo">pierrealainfaure.com</div>
+
+
+<header id="masthead" class="site-header">
+
+  <div id="logo">pierrealainfaure.com</div>
+
+  <?php
+        wp_nav_menu(
+          array(
+            'theme_location' => 'menu-1',
+            'menu_id'        => 'primary-menu',
+            'menu_class'     => 'menu-horizontal',
+          )
+          );
+  ?>
+
+
+
+</header>
+
+
 
 <fieldset class="slideshow">
 
@@ -61,13 +81,15 @@ var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
     </div> 
   </div>
 
-  <nav>    
+
+<!--<nav>    
+
     <label class="slide-button" for="slideCheckbox1">Home</label>
     <label class="slide-button" for="slideCheckbox2">Projects</label>
     <label class="slide-button" for="slideCheckbox3">About</label>
     <label class="slide-button" for="slideCheckbox4">Contact</label>
     <label class="slide-button" for="slideCheckbox5">Links</label>
-  </nav>
+  </nav> -->
 
 </fieldset>
 
