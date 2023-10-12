@@ -34,19 +34,31 @@ html, body {
   }
 }
 
-.main {
-/*   font-family:Arial;
-  width:1200px;
-  display:block;
-  margin:0 auto; */
+.site-header{
+  font-family: 'Abel';
+  display: flex;
+  width: 100vw;
+  height: 80px;
+  justify-content: space-between;
+  padding: 25px 40px;
+  /* background: white; */
+  /* box-shadow: 0 0 12px #ccc; */
+
 }
-/* .item img{
+.site-title{
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+p.site-title a{
+  font-family: 'Abel';
+  font-size: 40px;
+  letter-spacing: 6px;
+}
 
-  width: auto;
-  max-height: 100%;
-  object-fit: cover;
+.slider {
+  margin: 70px auto;
+}
 
-} */
 
 @import "./assets/css/menu"; /*Menu original du slideshow*/
 /* @import "./assets/css/menu-wp"; */

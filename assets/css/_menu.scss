@@ -1,27 +1,5 @@
 /* Styles pour le menu horizontal */
 
-.site-header{
-  font-family: 'Abel';
-  display: flex;
-  width: 100vw;
-  height: 80px;
-  justify-content: space-between;
-  padding: 25px 40px;
-  /* background: white; */
-  /* box-shadow: 0 0 12px #ccc; */
-
-}
-
-.site-title{
-  color: var(--primary-color);
-  text-transform: uppercase;
-}
-p.site-title a{
-  font-family: 'Abel';
-  font-size: 40px;
-  letter-spacing: 6px;
-}
-
 .menu-horizontal {
   display: flex;
   list-style: none;
@@ -43,40 +21,13 @@ nav {
   }
 
 }
-.slider {
-  margin: 70px auto;
-}
 
-
-.slick-prev, .slick-next {
-  z-index: 1;
-}
-.slick-prev {
-  left: -80px;
-}
-.slick-next {
- right: 20px;
-}
-.slick-prev:before, .slick-next:before {
-  opacity: .15;
-}
-.slick-prev::before {
-  content: "";
-  position: absolute;
-  width: 90px;
-  height: 80px;
-  background: url(./assets/icons/fontawesome/svgs/solid/angle-left.svg);
+.fullscreenMenu {
+  
+  display: none;
 
 }
-
-.slick-next::before {
-  content: "";
-  position: absolute;
-  width: 99px;
-  height: 80px;
-  background: url(./assets/icons/fontawesome/svgs/solid/angle-right.svg);
-
-}
+ 
 .primary-menu {
 
   position: absolute;
@@ -84,159 +35,42 @@ nav {
   right: 6rem;
   font-family: 'Abel';
 
-  #menuToggle
-  {
-    display: block;
-    position: relative;
-    top: 2rem;
-    left: 50px;
-    
-    z-index: 3;
-    
-    -webkit-user-select: none;
-    user-select: none;
-  }
-  
-  #menuToggle a
-  {
-    text-decoration: none;
-    color: #ffffff;
-    
-    transition: color 0.3s ease;
-  }
-  
-  #menuToggle a:hover
-  {
-    color: tomato;
-  }
-  
-  
-  #menuToggle input
-  {
-    display: block;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    top: -7px;
-    left: -5px;
 
-    cursor: pointer;
-    
-    opacity: 0; /* hide this */
-    z-index: 2; /* and place it over the hamburger */
-    
-    -webkit-touch-callout: none;
-  }
-  
-  /*
-   * Just a quick hamburger
-   */
-  #menuToggle span
-  {
-    display: block;
-    width: 33px;
-    height: 4px;
-    margin-bottom: 5px;
-    position: relative;
-    
-    background: white;
-    border-radius: 3px;
-    
-    z-index: 1;
-    
-    transform-origin: 4px 0px;
-    
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                opacity 0.55s ease;
-  }
-  
-  #menuToggle span:first-child
-  {
-    transform-origin: 0% 0%;
-  }
-  
-  #menuToggle span:nth-last-child(2)
-  {
-    transform-origin: 0% 100%;
-  }
-  
-  /* 
-   * Transform all the slices of hamburger
-   * into a crossmark.
-   */
-  #menuToggle input:checked ~ span
-  {
-    opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
-    background: #ffffff;
-  }
-  
-  /*
-   * But let's hide the middle one.
-   */
-  #menuToggle input:checked ~ span:nth-last-child(3)
-  {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-  }
-  
-  /*
-   * Ohyeah and the last one should go the other direction
-   */
-  #menuToggle input:checked ~ span:nth-last-child(2)
-  {
-    transform: rotate(-45deg) translate(0, -1px);
-  }
-  
-  /*
-   * Make this absolute positioned
-   * at the top left of the screen
-   */
 
-  ul.menu {
-    display: flex;
-    list-style: none;
-    padding: 0;
-  }
-  ul.menu li a{
-    font-size: 2.2rem;
-    color: white;
-    margin-right: 20px;
-  }
-  #menu-menu-header
-  {
+}
 
-    position: absolute;
+/* Menu burger styles */
+#menuToggle {
+  display: none; /* Caché par défaut sur les grands écrans */
+  cursor: pointer !important;
+  padding: 10px;
+  z-index: 9999;
+  position: relative;
+}
 
-    width: 450px;
-  /*   margin: -270px 0 0 -50px; */
-    padding: 2rem;
-    right: 100px;
-    top: -60px;
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-    /* to stop flickering of text in safari */
-    
-    transform-origin: 0% 0%;
-    transform: translateY(-100%);
-    
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-  }
-  
-  #menu-menu-header li
-  {
-    padding: 10px 0;
-    font-size: 22px;
-  }
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 3px;
+  margin-bottom: 5px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.3s ease-in-out;
+}
 
-  
-  /*
-   * And let's slide it in from the left
-   */
-  #menuToggle input:checked ~ ul
-  {
-    transform: none;
-  }
+#menuToggle.active span {
+  background: #FFF;
+}
 
+/* Pour transformer les barres en 'X' */
+#menuToggle.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+#menuToggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+#menuToggle.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-4px, -4px);
 }

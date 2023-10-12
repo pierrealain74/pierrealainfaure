@@ -19,6 +19,6 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/menu.js"></script>
 </body>
 </html>

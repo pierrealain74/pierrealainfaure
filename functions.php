@@ -11,32 +11,6 @@ function pafchild_enqueue_styles() {
     
 }
 
-function custom_menu_output($nav_menu, $args) {
-    $menu_location = 'menu-1'; // Remplacez par le nom de votre emplacement de menu
-    $menu = wp_get_nav_menu_object($menu_location);
-
-    if ($menu) {
-        $menu_items = wp_get_nav_menu_items($menu);
-
-        $output = '<nav>';
-
-        foreach ($menu_items as $key => $item) {
-            $output .= '<label class="slide-button" for="slideCheckbox' . ($key + 1) . '">' . esc_html($item->title) . '</label>';
-        }
-
-        $output .= '</nav>';
-        return $output;
-    }
-    
-    return $nav_menu;
-}
-
-add_filter('wp_nav_menu', 'custom_menu_output', 10, 2);
-
-
-
-
-
 // ACF -- Portfolio Custom Post Type
 function portfolio_post_type() {
     $labels = array(
@@ -77,11 +51,6 @@ function portfolio_post_type() {
 add_action( 'init', 'portfolio_post_type' );
 
 
-//Add main menu 
-function register_my_menu() {
-    register_nav_menu('primary-menu', __('Primary Menu'));
-}
-add_action('after_setup_theme', 'register_my_menu');
 
 //To Launch create JSON
 function save_portfolio_update_json($post_id = null) {
@@ -101,3 +70,44 @@ add_action('delete_post', 'save_portfolio_update_json');
 // Action lors de la création d'un post
 add_action('wp_insert_post', 'save_portfolio_update_json');
 
+/**
+ * Changer la structure du menu Wordpress de ul, li en label...
+ * @param mixed $nav_menu
+ * @param mixed $args
+ * @return mixed
+ */
+function custom_menu_output($nav_menu, $args) {
+    $menu_location = 'menu-1'; // Remplacez par le nom de votre emplacement de menu
+    $menu = wp_get_nav_menu_object($menu_location);
+
+    if ($menu) {
+        $menu_items = wp_get_nav_menu_items($menu);
+
+        $output = '<nav>';
+
+        foreach ($menu_items as $key => $item) {
+            $output .= '<label class="slide-button" for="slideCheckbox' . ($key + 1) . '">' . esc_html($item->title) . '</label>';
+        }
+
+        $output .= '</nav>';
+        return $output;
+    }
+    
+    return $nav_menu;
+}
+
+add_filter('wp_nav_menu', 'custom_menu_output', 10, 2);
+
+
+
+/* /**
+ * Utilité de ce code ???????????
+ * @return void
+ */
+/*
+function register_my_menu() {
+    register_nav_menu('primary-menu', __('Primary Menu'));
+}
+add_action('after_setup_theme', 'register_my_menu');
+
+ */
