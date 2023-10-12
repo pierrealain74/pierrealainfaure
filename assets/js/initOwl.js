@@ -4,11 +4,13 @@
 
 $(document).ready(function() {
   
-  $(document).on('galleryCreated', function() {
-      
+  $(document).on('galleryCreated', function () {
+    
+
+     
       $('.owl-carousel').owlCarousel({
-          loop:true,
-          margin:10,
+          loop: true,
+          margin:0,
           nav:true,
           responsive:{
               0:{
@@ -18,26 +20,12 @@ $(document).ready(function() {
                   items:3
               },
               1000:{
-                  items:5
+                  items:8
               }
           }
       });
+    
+    
   });
 });
 
-
-
-
-/*Init OWL avec Boostrap */
-/* document.addEventListener("DOMContentLoaded", function() {
-  $(".custom-carousel").owlCarousel({
-    autoWidth: true,
-    loop: true
-  });
-  $(document).ready(function () {
-    $(".custom-carousel .item").click(function () {
-      $(".custom-carousel .item").not($(this)).removeClass("active");
-      $(this).toggleClass("active");
-    });
-  });
-}); */

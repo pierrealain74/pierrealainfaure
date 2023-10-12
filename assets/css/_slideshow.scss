@@ -201,6 +201,8 @@
   
   nav {
     position: absolute;
+    display: flex;
+    justify-content: end;
     bottom: 0;
     right: 0;
     width: 50%;
@@ -215,6 +217,7 @@
     box-sizing: border-box;
     color: #AAA;
     font-weight: bold;
+    font-size: 1.5rem;
     display: block;
     width: calc((100% / 5) - 2%);
     margin: 5px 1% 5px 1%;
@@ -223,7 +226,7 @@
     border-bottom: solid 4px #AAA;
     text-align: center;
     float: left;
-    text-transform: uppercase;
+    text-transform: lowercase;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -269,18 +272,7 @@
   }
   
   
-  /* SLICK CAROUSEL***********************************************/
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  .slider {
-    width: 90%;
-    margin: 150px auto;
-  /*       width: 50%;
-      margin: 100px auto; */
-  }
+  /* SLICK CAROUSEL**********************************************
   
   .slick-slide {
     margin: 0px 20px;
@@ -312,3 +304,4 @@
   .slick-current {
     opacity: 1;
   }
+  */

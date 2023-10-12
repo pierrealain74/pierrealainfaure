@@ -6,11 +6,6 @@ Style SCSS du site pierrealainfaure.com
 @import "./assets/css/reset";
 @import "./assets/css/fonts";
 @import "./assets/css/slideshow";
-/* 
-@import "./assets/css/cursor"; 
-
-@import "./assets/css/scrollbar";
-*/
 
 
 
@@ -19,7 +14,9 @@ html, body {
   margin: 0;
   background-color: #101010;
   font-family: sans-serif;
+  overflow: hidden;
 }
+
 
 #logo{
 
@@ -28,21 +25,20 @@ html, body {
   font-size: 2.2rem;
   color: white;
 
-
   &:hover {
       /*animate todo*/
   }
 }
 
 .site-header{
+  display: flex;
   font-family: 'Abel';
   display: flex;
   width: 100vw;
   height: 80px;
   justify-content: space-between;
+  align-items: center;
   padding: 25px 40px;
-  /* background: white; */
-  /* box-shadow: 0 0 12px #ccc; */
 
 }
 .site-title{

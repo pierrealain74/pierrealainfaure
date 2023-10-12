@@ -1,5 +1,13 @@
 @media (min-width: 320px)  and  (max-width: 800px){
 
+  .owl-theme .owl-nav {
+    left: unset;
+  }
+
+  .owl-next{
+    left: 77vw;
+  }
+
     .u-media-wrapper.u-media-wrapper--16-9{
         height: 20rem !important;
     }
