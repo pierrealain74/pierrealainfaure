@@ -1,3 +1,6 @@
+
+
+/**Ouvre / Ferme le bouton Toggle */
 const menuToggle = document.getElementById('menuToggle');
 const fullscreenMenu = document.querySelector('.fullscreenMenu');
 console.log('fulscreen : ', fullscreenMenu);
@@ -20,7 +23,10 @@ menuToggle.addEventListener('click', () => {
 
 });
 
-/* const menuLinks = document.querySelectorAll("#menu-fullscreen ul li a");
+
+
+/**Ouvre / Ferme le menu bg au clique sur un lien du menu */
+const menuLinks = document.querySelectorAll(".slide-button");
 
 menuLinks.forEach((link) => {
     link.addEventListener('click', () => {
@@ -28,4 +34,4 @@ menuLinks.forEach((link) => {
         menuToggle.classList.add('inactive');
         fullscreenMenu.classList.remove('active');//Cacher l'écran 100%
     });
-}); */
+});

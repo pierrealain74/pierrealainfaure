@@ -46,7 +46,8 @@ var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
         <span></span>
         <span></span>
         <span></span>
-        <div class="fullscreenMenu">
+      </div>
+      <div class="fullscreenMenu">
         <?php
         wp_nav_menu(
           array(
@@ -57,7 +58,7 @@ var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
           );
         ?>
 
-        </div>
+      
       </div>
 
 

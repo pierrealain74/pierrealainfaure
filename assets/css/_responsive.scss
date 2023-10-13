@@ -43,10 +43,6 @@
 
     .fullscreenMenu {
 
-      
-
-        &.active {
-
           position: absolute;
           /* top: -100%; */
           width: 100%;
@@ -54,42 +50,49 @@
           background: white;
           top: 0;
           left: 0;
-/*           display: flex;
 
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          z-index: -1;
-          transform-origin: top;
-          transition: top 0.7s ease-in-out;
-          overflow: hidden;
+          &.active {
+            top: 0;
+            left: 0;
+            display: flex;
+            z-index: 9999;
 
-          text-align: center; */
-        }
-          
-            
-              nav {
+              nav{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                top: unset;
+                border: 0;
+                background: none;
 
                 label {
                   
-        
-                    text-decoration: none;
-                    font-size: 3rem;
-            
-                    /* &:hover {
-                      text-shadow: 0px 0px 14px #ff5c00;
-                    } */
-                  
-                }
-            
-                p {
-                  text-transform: uppercase;
-                  position: absolute;
-                  bottom: 10%;
+
+                  margin: 0;
+                  color: black;
+                  overflow: auto;
+                  line-height: 100%;
+                  padding: 1.5rem;
+                  width: 100%;
+                  justify-content: center;
+                  border: 0;
+                  background: none;
+
                 }
               }
+
+          }
+
+          
+
+        
+
+            
+
       }
     
 
 
-}/*end of media <800px*/
+}

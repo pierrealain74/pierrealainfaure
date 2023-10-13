@@ -44,8 +44,9 @@ nav {
   display: none; /* Caché par défaut sur les grands écrans */
   cursor: pointer !important;
   padding: 10px;
-  z-index: 9999;
+  z-index: 99999;
   position: relative;
+  margin: 0 65px 0 0;
 }
 
 #menuToggle span {
@@ -59,7 +60,7 @@ nav {
 }
 
 #menuToggle.active span {
-  background: #FFF;
+  background: #2b2a2a;
 }
 
 /* Pour transformer les barres en 'X' */
