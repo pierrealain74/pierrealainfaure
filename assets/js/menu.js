@@ -3,7 +3,7 @@
 /**Ouvre / Ferme le bouton Toggle */
 const menuToggle = document.getElementById('menuToggle');
 const fullscreenMenu = document.querySelector('.fullscreenMenu');
-console.log('fulscreen : ', fullscreenMenu);
+//console.log('fulscreen : ', fullscreenMenu);
 
 menuToggle.addEventListener('click', () => {
 

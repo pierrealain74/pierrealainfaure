@@ -138,3 +138,57 @@ get_footer();
 <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js' ?>"></script>
 
 <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/initOwl.js' ?>"></script>
+
+<script>
+
+
+    /**
+     * Seconde partie du code
+     * Img slideshow OnClick
+     * Display img in slide
+     * 
+     */
+
+$(document).ready(function() {
+  
+  $(document).on('galleryCreated', function () {
+
+
+    $('.item img').hover(
+    function() {
+        // Lorsque la souris survole l'image
+        $(this).css('animation', 'biggerImgCarousel 0.5 ease-in');
+        $(this).css('transform', 'scale(1.1)');
+        $(this).css('filter', 'unset');
+        $(this).css('opacity', '1');
+
+    },
+    function() {
+        // Lorsque la souris quitte l'image
+        $(this).css('transform', 'scale(1)');
+        $(this).css('filter', 'grayscale(1)');
+        $(this).css('opacity', '0.5');
+    }
+);
+
+
+    $('.item img').click(function() {
+        
+        var imageSrc = $(this).attr('src');
+        
+        
+        //$('.slide:nth-child(4)').html('<img src="' + imageSrc + '">');
+        $('.slide:nth-child(4)').css('background-image', 'url(' + imageSrc + ')');
+
+        $("#slideCheckbox2").click();
+
+    });
+        
+
+
+      });
+});
+
+    
+
+</script>

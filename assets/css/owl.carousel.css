@@ -56,11 +56,13 @@
     object-fit: cover;
     filter: grayscale(1);
     opacity: 0.5;
+    transition: transform 0.3s ease-in-out;
     }
+
 
     .owl-carousel .owl-item img :hover{
       filter: unset;
-      opacity: unset;
+
     }
 
   .owl-carousel .owl-nav.disabled,
