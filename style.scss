@@ -3,11 +3,29 @@
 Style SCSS du site pierrealainfaure.com
 
 */
+:root {
+  --home-color: #20CAFC;
+  --default-color: #e9e9e9;
+  --contact-color: #000000;
+  --primary-color: #E00000;
+	--secondary-color: #CD006B;
+	--third-color: #EEE325;
+}
+
+
+
 @import "./assets/css/reset";
 @import "./assets/css/fonts";
 @import "./assets/css/slideshow";
 
-
+main{
+  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Utilisez 100% de la hauteur de la vue (viewport height) */
+  margin: 0;
+  padding: 0;
+}
 
 html, body {
   padding: 0;
@@ -23,7 +41,7 @@ html, body {
 /*   transition: width 0.2s ease-in, transform 0.1s ease-in-out; */
   font-family: 'Abel';
   font-size: 2.2rem;
-  color: white;
+  color: rgb(235, 235, 235);
 
   &:hover {
       /*animate todo*/
@@ -33,7 +51,6 @@ html, body {
 .site-header{
   display: flex;
   font-family: 'Abel';
-  display: flex;
   width: 100vw;
   height: 80px;
   justify-content: space-between;
@@ -55,6 +72,47 @@ p.site-title a{
   margin: 70px auto;
 }
 
+.site-footer{
+  display: flex;
+  width: 97%;
+  padding: 2rem 35px;
+  position: absolute;
+  bottom: 0;
+  background-color: #101010;
+  justify-content: space-between;
+
+
+  .bottomL{
+
+    flex: 9;
+    font-family: 'Abel';
+    font-size: 2rem;
+    letter-spacing: 6px;
+    color: var(--default-color);
+
+  }
+  .bottomR{
+
+    font-family: 'Abel';
+    font-size: .9rem;
+    letter-spacing: 2px;
+    color: var(--default-color);
+    justify-content: flex-end;
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+  }
+
+}
+
+.linkarrow:hover {
+
+    background: url("./assets/images/portfolio/arrow_right.png") no-repeat;
+    background-size: 8px 10px;
+    text-align: right;
+    background-position: left center; /* Ajustez la position de l'image de fond */
+    padding-left: 20px;
+}
 
 @import "./assets/css/menu"; /*Menu original du slideshow*/
 /* @import "./assets/css/menu-wp"; */

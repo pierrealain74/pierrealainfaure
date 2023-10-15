@@ -14,6 +14,12 @@
 	<footer id="colophon" class="site-footer">
 
 
+			<div class="bottomL">independant developper<br />available on dec. 2023</div>
+			<div class="bottomR">
+				<a href="mailto:pierrealainfaure@gmail.com" class="linkarrow">linkedin</a>
+				<a href="#" class="linkarrow">twitter</a>
+				<a href="#" class="linkarrow">instagram</a>		
+			</div>
 		
 	</footer><!-- #colophon -->
 </div><!-- #page -->

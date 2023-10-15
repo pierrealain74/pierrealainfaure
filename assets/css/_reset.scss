@@ -23,6 +23,11 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+a {
+    color: inherit; /* Couleur du texte héritée */
+    text-decoration: none; /* Aucune décoration de texte (pas de soulignement) */
+    cursor: pointer; /* Curseur par défaut */
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
