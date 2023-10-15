@@ -83,24 +83,44 @@ p.site-title a{
 
 
   .bottomL{
-
-    flex: 9;
+    display: flex;
+    flex: 2;
     font-family: 'Abel';
-    font-size: 2rem;
-    letter-spacing: 6px;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
     color: var(--default-color);
+    align-items: self-end;
 
+
+  }
+  .bottomCenter{
+    flex: 8;
+    height: 200px;
+    font-family: 'Abel';
+    font-size: 12rem;
+    letter-spacing: 2px;
+    color: var(--default-color);
+    opacity: 0; /* Définissez l'opacité initiale à 0 */
+    transition: opacity 0.9s ease-in;
+
+    position: absolute;
+    bottom: 150px;
+    left: 150px;
+    z-index: 9999;
+    
   }
   .bottomR{
 
+    display: flex;
     font-family: 'Abel';
     font-size: .9rem;
     letter-spacing: 2px;
     color: var(--default-color);
     justify-content: flex-end;
-    display: flex;
+    
     text-align: right;
     flex-direction: column;
+
   }
 
 }
