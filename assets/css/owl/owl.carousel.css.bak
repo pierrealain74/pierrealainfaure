@@ -6,7 +6,7 @@
 /*
  *  Owl Carousel - Core
  */
- .owl-carousel {
+.owl-carousel {
   display: none;
   width: 100%;
   -webkit-tap-highlight-color: transparent;
@@ -54,51 +54,16 @@
     height: 50vh;
     width: 190px;
     object-fit: cover;
-/*     filter: grayscale(1);
+    filter: grayscale(1);
     opacity: 0.5;
-    transition: transform 0.3s ease-in-out; */
+    transition: transform 0.3s ease-in-out;
     }
 
-/*     .owl-carousel .owl-item img:hover{
+
+    .owl-carousel .owl-item img :hover{
       filter: unset;
-      opacity: 1;
-    } */
-
-    .rolloverImg:hover{
-      opacity: 1;
-    }
-    .rolloverImg{
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 190px;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
-      cursor: pointer;
 
     }
-    .eye{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 46px;
-      height: 32px;
-      transform: translate(-50%, -50%);
-      background: url(../icons/icon-eye.svg) center center / 100% 100%;
-    }
-
-
-    
-
-
-
-
-
-
-
-
 
   .owl-carousel .owl-nav.disabled,
   .owl-carousel .owl-dots.disabled {

@@ -395,7 +395,7 @@ label:nth-child(5) {
 main {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Utilisez 100% de la hauteur de la vue (viewport height) */
+  min-height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -462,18 +462,21 @@ p.site-title a {
   align-items: self-end;
 }
 .site-footer .bottomCenter {
-  flex: 8;
-  height: 200px;
-  font-family: "Abel";
-  font-size: 12rem;
-  letter-spacing: 2px;
-  color: var(--default-color);
-  opacity: 0; /* Définissez l'opacité initiale à 0 */
-  transition: opacity 0.9s ease-in;
-  position: absolute;
-  bottom: 150px;
-  left: 150px;
-  z-index: 9999;
+  /*     
+      Désactivé cette partie, pas besoin d'afficher le titre = moche
+      flex: 8;
+      height: 200px;
+      font-family: 'Abel';
+      font-size: 12rem;
+      letter-spacing: 2px;
+      color: var(--default-color);
+      opacity: 0; 
+      transition: opacity 0.9s ease-in;
+
+      position: absolute;
+      bottom: 150px;
+      left: 150px;
+      z-index: 9999;*/
 }
 .site-footer .bottomR {
   display: flex;
@@ -486,11 +489,19 @@ p.site-title a {
   flex-direction: column;
 }
 
+.hovered:hover {
+  background: url("./assets/images/portfolio/arrow_right.png") no-repeat;
+  background-size: 17px 19px;
+  background-position: center top;
+  background-color: #101010;
+  height: 50%;
+}
+
 .linkarrow:hover {
   background: url("./assets/images/portfolio/arrow_right.png") no-repeat;
   background-size: 8px 10px;
   text-align: right;
-  background-position: left center; /* Ajustez la position de l'image de fond */
+  background-position: left center;
   padding-left: 20px;
 }
 

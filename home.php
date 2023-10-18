@@ -71,17 +71,12 @@ var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
 <input type="radio" id="slideCheckbox1" name="slide" checked autofocus></input>
     <div class="slide">      
         <div class="slide__content">
-            <section class="game-section">
+
                 <div class="owl-carousel owl-theme">
-                    <!--slideshow.js generate gallery images from CPT WP-->
-
-
-
-
-                    <!--END slideshow.js generate gallery images from CPT WP-->
+                  <!--Slideshow.js generate gallery images from CPT WP-->
 
                 </div>
-            </section>
+
         </div>
     </div>
 <!-- Slide 2 -->
