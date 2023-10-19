@@ -33,18 +33,24 @@ fetch(jsonfile)
         container.appendChild(divItem);
 
 
-        
-        //Click on image
+        // Click on image
         $(".eye").click(function () {
-            
+          
+          var itemElement = $(this).closest(".item");
 
-          var imageSrc = $(".item img").attr("src");
-    
-          //$('.slide:nth-child(4)').html('<img src="' + imageSrc + '">');
+          // Trouver l'image à l'intérieur de l'élément .item
+          var imageSrc = itemElement.find("img").attr("src");
+        
+          // Utiliser l'URL de l'image comme vous le souhaitez
+          console.log(imageSrc);
+
+          // Mettre l'image en arrière-plan
           $(".slide:nth-child(4)").css("background-image", "url(" + imageSrc + ")");
-    
+
+          // Activer le carrousel
           $("#slideCheckbox2").click();
         });
+
 
 
 
