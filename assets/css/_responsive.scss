@@ -5,7 +5,10 @@
   }
 
   .owl-next{
-    left: 77vw;
+    right: 0;
+  }
+  .owl-prev{
+    left: 0;
   }
 
     .u-media-wrapper.u-media-wrapper--16-9{
@@ -44,52 +47,36 @@
     .fullscreenMenu {
 
           position: absolute;
-          /* top: -100%; */
           width: 100%;
           height: 100vh;
           background: white;
-          top: 0;
-          left: 0;
 
           &.active {
+
             top: 0;
             left: 0;
             display: flex;
-            z-index: 9999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
 
               nav{
                 display: flex;
                 flex-direction: column;
-                width: 100%;
-                height: 100%;
-                justify-content: center;
+                align-items: center;
                 top: unset;
                 border: 0;
                 background: none;
 
                 label {
-                  
 
-                  margin: 0;
-                  color: black;
-                  overflow: auto;
-                  line-height: 100%;
-                  padding: 1.5rem;
-                  width: 100%;
-                  justify-content: center;
-                  border: 0;
-                  background: none;
-
+                  font-size: 2rem;
+                  margin: 10px 0;
                 }
               }
 
           }
-
-          
-
-        
-
-            
 
       }
     

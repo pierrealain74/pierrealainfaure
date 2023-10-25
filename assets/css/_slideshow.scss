@@ -13,16 +13,13 @@
   }
 
   
-  input {
+/*   input {
     position: absolute;
     opacity: 0;
     top: -25px;
     counter-increment: slide;
-  }
-  input:checked + .slide {
-    transform: translateX(0px);
-    transition: transform 0.5s ease-in-out;
-  }
+  } */
+
   input:checked + .slide .slide__content {
     width: 100%;
     display: block;
@@ -55,14 +52,31 @@
     background-size: 50% 100%;
     transition: transform 0.5s ease-in-out;
   }
+
+  input:checked + .slide {
+    transform: translateX(30px);
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* border: 1px solid red; */
+  }
   .slide {
     transform: translateX(-100%);
     position: absolute;
     width: 50%;
-    height: 100%;
+    height: 70%;
     background-size: 50% 100%;
     transition: transform 0.5s ease-in-out;
   }
+  .slide:nth-child(4) {
+    /* background: url("https://via.placeholder.com/1000x2000/540032/fff?text=2"); */
+    background-repeat: no-repeat;
+    background-size: 98%;
+    background-position: top left;
+  }
+
+
+
+
   .slide__content {
     box-sizing: border-box;
     height: 100%;
@@ -77,6 +91,8 @@
     animation-iteration-count: 1;
     opacity: 1;
   }
+  
+
   
   .slide__html {
     display: none;
@@ -111,12 +127,7 @@
   .slide__html {
     display: none;
   }
-  .slide:nth-child(4) {
-    background: url("https://via.placeholder.com/1000x2000/540032/fff?text=2");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-  }
+
   .slide:nth-child(4):after {
     position: absolute;
     margin: auto;
@@ -257,37 +268,9 @@
     }
   }
   
-  
-  /* SLICK CAROUSEL**********************************************
-  
-  .slick-slide {
-    margin: 0px 20px;
+  @media screen and (max-width:500px){
+
+
+
+    
   }
-  
-  .slick-slide img {
-    width: 100%;
-  }
-  
-  .slick-prev:before,
-  .slick-next:before {
-    color: black;
-  }
-  
-  .slick-dots li button:before {
-    color: white !important;
-    font-size: 12px !important;
-  }
-  
-  .slick-slide {
-    transition: all ease-in-out .3s;
-    opacity: .2;
-  }
-  
-  .slick-active {
-    opacity: .5;
-  }
-  
-  .slick-current {
-    opacity: 1;
-  }
-  */

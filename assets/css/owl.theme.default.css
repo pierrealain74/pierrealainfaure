@@ -7,12 +7,12 @@
  * 	Default theme - Owl Carousel CSS File
  */
  .owl-theme .owl-nav {
-  margin-top: 10px;
+  /* margin-top: 10px; */
   text-align: center;
   -webkit-tap-highlight-color: transparent; 
   position: absolute;
   top: 30%;
-  left: 50px;}
+  width: 100%;}
   .owl-theme .owl-nav [class*='owl-'] {
     color: #FFF;
     font-size: 14px;
@@ -52,8 +52,4 @@
       border-radius: 30px; }
     .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
       background: #869791; }
-      
-      .owl-next{
-        position: absolute;
-        left: 87vw;
-      }
+

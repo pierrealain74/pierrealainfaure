@@ -1,6 +1,6 @@
 <?php
 // Récupérez les portfolios depuis l'API 
-$portfolio_url = get_site_url() . '/wp-json/wp/v2/portfolio?_fields=id,title,date,categories,tags,featured_media,content';
+$portfolio_url = get_site_url() . '/wp-json/wp/v2/portfolio?_fields=id,title,date,categories,tags,featured_media';
 
 
 $portfolio_response = wp_remote_get($portfolio_url);
@@ -10,9 +10,10 @@ $portfolios = json_decode($portfolio_data);
 // Tableau pour stocker les données JSON
 $portfolio_json = array();
 
-// Boucle pour afficher chaque portfolio et stocker les données JSON
+// Boucle qui recupere des données de chaque portfolio
 foreach ($portfolios as $portfolio) :
     $portfolio_item = array(
+        'id' => $portfolio->id,
         'title' => esc_html($portfolio->title->rendered),
         'excerpt' => isset($portfolio->excerpt->rendered) ? wp_kses_post($portfolio->excerpt->rendered) : '',
         'date' => isset($portfolio->date) ? esc_html($portfolio->date) : '',
@@ -20,7 +21,7 @@ foreach ($portfolios as $portfolio) :
         'tags' => array(),
         'thumbnail' => '',
         'thumbnailfull' => '',
-        'content' => esc_html($portfolio->content->rendered),
+        /* 'content' => esc_html($portfolio->content->rendered),  pas besoin car j'utilise une autre url*/
     );
 
     // Récupérer les catégories
