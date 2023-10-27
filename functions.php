@@ -1,6 +1,31 @@
 <?php
 
-//Declarer le theme enfant 
+/**
+ * 
+ * Supprimer le script automatique de WP sur les emojis
+ * 
+ * @return void
+ */
+function disable_emojis() {
+    remove_action('wp_head', 'print_emoji_detection_script', 7);
+    remove_action('wp_print_styles', 'print_emoji_styles');
+    remove_filter('the_content_feed', 'wp_staticize_emoji');
+    remove_filter('comment_text_rss', 'wp_staticize_emoji');
+    remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+    add_filter('tiny_mce_plugins', 'disable_emojis_tinymce');
+}
+add_action('init', 'disable_emojis');
+
+function disable_emojis_tinymce($plugins) {
+    return array_diff($plugins, array('wpemoji'));
+}
+
+/**
+ * 
+ * Declarer le theme enfant 
+ * 
+ * 
+ */
 add_action( 'wp_enqueue_scripts', 'pafchild_enqueue_styles' );
 function pafchild_enqueue_styles() {
 
@@ -77,7 +102,7 @@ add_action('wp_insert_post', 'save_portfolio_update_json');
  * @return mixed
  */
 function custom_menu_output($nav_menu, $args) {
-    $menu_location = 'menu-1'; // Remplacez par le nom de votre emplacement de menu
+    $menu_location = 'menu-1'; 
     $menu = wp_get_nav_menu_object($menu_location);
 
     if ($menu) {
@@ -85,8 +110,8 @@ function custom_menu_output($nav_menu, $args) {
 
         $output = '<nav>';
 
-        foreach ($menu_items as $key => $item) {
-            $output .= '<label class="slide-button" for="slideCheckbox' . ($key + 1) . '">' . esc_html($item->title) . '</label>';
+        foreach ($menu_items as $item) {
+            $output .= '<label><a href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a></label>';
         }
 
         $output .= '</nav>';
@@ -97,17 +122,3 @@ function custom_menu_output($nav_menu, $args) {
 }
 
 add_filter('wp_nav_menu', 'custom_menu_output', 10, 2);
-
-
-
-/* /**
- * Utilité de ce code ???????????
- * @return void
- */
-/*
-function register_my_menu() {
-    register_nav_menu('primary-menu', __('Primary Menu'));
-}
-add_action('after_setup_theme', 'register_my_menu');
-
- */

@@ -93,19 +93,17 @@ html, body {
 }
 
 main {
-  border: 1px solid rgb(115, 255, 0);
+  /* border: 1px solid rgb(115, 255, 0); */
   display: flex;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 95%;
   height: 100%;
   border: 0px;
   padding: 0px;
   margin: 0 auto;
-  background-color: #000;
   overflow: hidden;
-  counter-reset: slide;
-  border: 1px solid grey;
+  /*   border: 1px solid grey; */
   align-items: center;
 }
 
@@ -149,6 +147,7 @@ p.site-title a {
 .site-footer {
   display: flex;
   justify-content: space-between;
+  height: 25px;
   color: var(--default-color);
   font-size: 0.8rem;
   font-family: "Abel";
@@ -189,34 +188,21 @@ p.site-title a {
 }
 
 /*Images thumbs dans slide nth4*/
-.thumbs {
-  width: 100%;
-  height: 50px;
-  /* border: 1px solid blue; */
-  position: absolute;
-  bottom: 0;
-}
-
-.imgThumb {
-  width: 100px;
-  height: 80px;
+.owl-carousel .owl-item img {
+  height: 25rem;
   object-fit: cover;
-  padding: 1rem 0 1rem;
-  margin-right: 1rem;
-}
-
-/**/
-.rolloverImg:hover {
-  opacity: 1;
+  filter: grayscale(1);
+  opacity: 0.5;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .rolloverImg {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 190px;
+  width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  /*   background-color: rgba(0, 0, 0, 0.5); */
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
   cursor: pointer;
@@ -230,17 +216,24 @@ p.site-title a {
   height: 32px;
   transform: translate(-50%, -50%);
   background: url(./assets/icons/icon-eye.svg) center center/100% 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.owl-carousel .owl-item img {
-  /* width: unset; */
-  height: 25rem;
-  object-fit: cover;
-  filter: grayscale(1);
-  opacity: 0.5;
-  transition: transform 0.3s ease-in-out;
+.owl-carousel .owl-item:hover img {
+  filter: unset; /* Réinitialisez le filtre au survol */
+  opacity: 1; /* Augmentez l'opacité au survol */
 }
 
+.owl-carousel .owl-item:hover .rolloverImg {
+  opacity: 1; /* Affichez le div de rollover au survol */
+}
+
+.owl-carousel .owl-item:hover .eye {
+  opacity: 1; /* Affichez l'icône de l'œil au survol */
+}
+
+/*Fleche navigation caorusel -- Surcharge les css owl.carousel.css*/
 .owl-next {
   position: absolute;
   left: 92vw;
@@ -253,6 +246,41 @@ p.site-title a {
 
 .owl-theme .owl-nav [class*=owl-] {
   color: var(--default-color) !important;
+}
+
+/*Projects**********************************************************/
+#projects {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  width: 100%;
+  height: 100%;
+  min-height: calc(100% - 20px);
+  padding: 0 2rem;
+}
+#projects .projects__main {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+#projects .projects__main img {
+  width: 60%;
+  height: auto;
+  object-fit: contain;
+}
+#projects .projects__thumb {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre le contenu verticalement */
+  justify-content: center;
+  /* Limiter la hauteur de .projects__thumb */
+  max-height: 25rem;
+  overflow-y: auto;
+}
+#projects .projects__thumb .thumb_gallery img {
+  width: 150px;
+  object-fit: cover;
 }
 
 /* Styles pour le menu horizontal */

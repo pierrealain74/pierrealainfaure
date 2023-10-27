@@ -27,37 +27,7 @@ function transformTitle(title) {
   return title;
 }
 
-/**
- * Extrait les sources des images à partir de l'URL fournie (merci chatgpt ;))
- *
- * @param {string} url - L'URL à partir de laquelle extraire les sources des images.
- * @param {function} callback - La fonction de rappel à appeler avec les sources d'images extraites.
- */
-function extractImageSourcesFromURL(url, callback) {
-  // Effectuer une requête AJAX pour obtenir le contenu de l'URL
-  $.ajax({
-    url: url,
-    method: "GET",
-    dataType: "html",
-  })
-    .done(function (data) {
-      // Créer un objet jQuery à partir des données HTML
-      var $html = $(data);
 
-      // Sélectionner toutes les balises img et extraire les src
-      var imageSources = $html.find("img").map(function () {
-        return $(this).attr("src");
-      });
-
-      // Appeler la fonction de rappel avec le tableau d'URL d'images
-      callback(imageSources.get());
-      
-    })
-    .fail(function () {
-      console.error("Impossible de récupérer le contenu de l'URL.");
-      callback([]);
-    });
-}
 
 /**
  * Création de la galerie OWL avec les vignettes des ACF Portfolios.
@@ -73,6 +43,8 @@ fetch(jsonfile)
 
     data.forEach((item) => {
       const thumbnailfull = item.thumbnailfull;
+
+      //Tranforme le title par exemple "beautées d'orient" devient "beautees-dorient"
       const title = transformTitle(item.title);
 
       if (thumbnailfull) {
@@ -117,9 +89,20 @@ fetch(jsonfile)
      */
 
     $(".eye").click(function () {
+
+
+      //Prend le alt (en fait le title) de l'image cliquée
+      //pour construire l'url ...portfolio/medit...
       var itemElement = $(this).closest(".item");
       var imageAlt = itemElement.find("img").attr("alt");
-      var url = "http://" + window.location.hostname + "/portfolio/" + imageAlt;
+
+
+      window.location.href = "http://pierrealainfaure4.local/projects/?title=" + encodeURIComponent(imageAlt);
+      //console.log('URL: ', window.location.href);
+
+
+
+ /*    var url = "http://" + window.location.hostname + "/portfolios/" + imageAlt;
       //console.log('URLs des images : ', url);
 
       extractImageSourcesFromURL(url, function (imageSources) {
@@ -130,7 +113,7 @@ fetch(jsonfile)
 
         //console.log(imageSources);
 
-        let slide4 = document.querySelector(".slide:nth-child(4)");
+        let slide4 = document.querySelector(".slide");
 
         const divThumbs = document.createElement("div");
         divThumbs.classList.add("thumbs");
@@ -147,12 +130,14 @@ fetch(jsonfile)
 
         });
 
-      });
+      }); */
 
+   /* 
+      Plus besoin...
       var itemElement = $(this).closest(".item");
       var imageSrc = itemElement.find("img").attr("src");
       $(".slide:nth-child(4)").css("background-image", "url(" + imageSrc + ")");
-      $("#slideCheckbox2").click();
+      $("#slideCheckbox2").click(); */
     });
 
     $(document).trigger("galleryCreated");//Permet de lancer les autres JS (OWL) à la fin de ce code

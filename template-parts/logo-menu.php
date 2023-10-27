@@ -1,5 +1,5 @@
 
-  <div id="logo">pierrealainfaure.com</div>
+  <div id="logo">pierrealainfaure</div>
 
 
   <div id="primary-menu">
@@ -14,20 +14,20 @@
       );
     ?>
   </div>
-    <!-- Menu burger -->
-      <div id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="fullscreenMenu">
-        <?php
-        wp_nav_menu(
-          array(
-            'theme_location' => 'menu-1',
-            'menu_id'        => 'primary-menu',
-            'menu_class'     => 'menu-fullscreen',
-          )
-          );
-        ?>
-      </div>
+  <!-- Menu burger -->
+  <div id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="fullscreenMenu">
+    <?php
+    wp_nav_menu(
+      array(
+        'theme_location' => 'menu-1',
+        'menu_id'        => 'primary-menu',
+        'menu_class'     => 'menu-fullscreen',
+      )
+      );
+    ?>
+  </div>
