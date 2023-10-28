@@ -63,21 +63,29 @@ extractImageSourcesFromURL(url, function (imageSources) {
   imageSources.forEach((imgSrc) => {
       
 
-
+        //Photo principale gauche
         const divImgMain = document.createElement("div");
         const imgMain = document.createElement("img");
         imgMain.setAttribute("src", imgSrc);
-
         divImgMain.appendChild(imgMain);
         projects__main.appendChild(divImgMain);
 
-
+        /**
+         * Creation de la nav (div projects__thumb)
+         * 
+         */
         const divImg = document.createElement("div");
         divImg.classList.add("thumb_gallery");
         const imgThumb = document.createElement("img");
         imgThumb.setAttribute("src", imgSrc);      
         divImg.appendChild(imgThumb);
         projects__thumb.appendChild(divImg);
+    
+
+        const divContentTitle = document.createElement("div");
+        divContentTitle.set
+
+
         
     });
 

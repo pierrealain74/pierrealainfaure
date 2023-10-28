@@ -32,7 +32,6 @@ get_header(); ?>
   <main id="projects">
 
 
-
       <div class="projects__main"></div>
 
       <div class="projects__thumb"></div>
@@ -45,5 +44,27 @@ get_header(); ?>
   <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/projects.js' ?>"></script>
   <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/initSlick.js' ?>"></script>
 
+  <style>
+/* Désactivez la transition de l'opacité */
+.slick-slide {
+  transition: transform 500ms ease 0s !important;
+}
+
+/* Configurez la transformation pour les diapositives actives */
+.slick-slide.slick-active {
+  transform: translateX(0); /* ou toute autre transformation souhaitée */
+}
+
+/* Configurez la transformation pour les diapositives précédentes */
+.slick-slide.slick-prev {
+  transform: translateY(-100%); /* ou toute autre transformation souhaitée */
+}
+
+/* Configurez la transformation pour les diapositives suivantes */
+.slick-slide.slick-next {
+  transform: translateY(100%); /* ou toute autre transformation souhaitée */
+}
+
+</style>
 
   <?php get_footer(); ?>

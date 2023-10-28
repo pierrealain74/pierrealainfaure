@@ -13,8 +13,11 @@ $(document).ready(function(){
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: false,
-          fade: true,
-          asNavFor: '.projects__thumb'
+          fade: false,
+          asNavFor: '.projects__thumb',
+/*           useCSS: false,
+          useTransform: true */
+            
         });
 
       /**
@@ -29,7 +32,7 @@ $(document).ready(function(){
           asNavFor: '.projects__main', 
           slidesToScroll: 1, 
           autoplay: true,
-          autoplaySpeed: 1000,
+          autoplaySpeed: 2000,
           centerMode: false,
           focusOnSelect: true
         });
@@ -37,4 +40,5 @@ $(document).ready(function(){
     });
 
 
-  });   
+}); 
+  

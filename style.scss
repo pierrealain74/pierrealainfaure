@@ -219,13 +219,14 @@ p.site-title a{
     justify-content: center; */
     height: 100%;
     width: 100%;
-  }
+  
 
-  .projects__main img{
+  img{
     width: 60%;
-    height: auto;
+    height: 60%;
     object-fit: cover;
   }
+}
 
   .projects__thumb {
 

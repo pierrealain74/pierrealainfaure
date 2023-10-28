@@ -265,7 +265,7 @@ p.site-title a {
 }
 #projects .projects__main img {
   width: 60%;
-  height: auto;
+  height: 60%;
   object-fit: cover;
 }
 #projects .projects__thumb {
