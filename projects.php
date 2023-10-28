@@ -8,6 +8,15 @@
  *
  */
 get_header(); ?>
+
+
+<script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/jquery-3.7.1.js' ?>"></script>
+<!-- Inclure les fichiers CSS et JS de Slick Carousel via CDN -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
 <script>
   var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
 </script>
@@ -31,8 +40,10 @@ get_header(); ?>
 
   </main>
 
-  <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/jquery-3.7.1.js' ?>"></script>
+  
 
   <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/projects.js' ?>"></script>
+  <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/initSlick.js' ?>"></script>
+
 
   <?php get_footer(); ?>

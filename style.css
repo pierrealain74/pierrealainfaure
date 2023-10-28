@@ -258,28 +258,30 @@ p.site-title a {
   padding: 0 2rem;
 }
 #projects .projects__main {
-  display: flex;
-  justify-content: center;
+  /*     display: flex;
+      justify-content: center; */
   height: 100%;
   width: 100%;
 }
 #projects .projects__main img {
   width: 60%;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
 #projects .projects__thumb {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centre le contenu verticalement */
+  /*     display: flex;
+      flex-direction: column;  */
+  align-items: center;
   justify-content: center;
-  /* Limiter la hauteur de .projects__thumb */
   max-height: 25rem;
   overflow-y: auto;
 }
+#projects .projects__thumb .thumb_gallery {
+  margin-bottom: 15px;
+}
 #projects .projects__thumb .thumb_gallery img {
-  width: 150px;
+  width: 120px;
   object-fit: cover;
 }
 

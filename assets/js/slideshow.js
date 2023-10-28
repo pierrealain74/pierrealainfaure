@@ -90,54 +90,14 @@ fetch(jsonfile)
 
     $(".eye").click(function () {
 
-
       //Prend le alt (en fait le title) de l'image cliquée
       //pour construire l'url ...portfolio/medit...
       var itemElement = $(this).closest(".item");
       var imageAlt = itemElement.find("img").attr("alt");
-
-
       window.location.href = "http://pierrealainfaure4.local/projects/?title=" + encodeURIComponent(imageAlt);
       //console.log('URL: ', window.location.href);
 
 
-
- /*    var url = "http://" + window.location.hostname + "/portfolios/" + imageAlt;
-      //console.log('URLs des images : ', url);
-
-      extractImageSourcesFromURL(url, function (imageSources) {
-
-
-        
-        imageSources.reverse();
-
-        //console.log(imageSources);
-
-        let slide4 = document.querySelector(".slide");
-
-        const divThumbs = document.createElement("div");
-        divThumbs.classList.add("thumbs");
-        slide4.appendChild(divThumbs);
-
-        imageSources.forEach((imgSrc) => {
- 
-          const imgThumb = document.createElement("img");
-          imgThumb.src = imgSrc;
-          imgThumb.classList.add("imgThumb");
-
-          divThumbs.appendChild(imgThumb);
-
-
-        });
-
-      }); */
-
-   /* 
-      Plus besoin...
-      var itemElement = $(this).closest(".item");
-      var imageSrc = itemElement.find("img").attr("src");
-      $(".slide:nth-child(4)").css("background-image", "url(" + imageSrc + ")");
-      $("#slideCheckbox2").click(); */
     });
 
     $(document).trigger("galleryCreated");//Permet de lancer les autres JS (OWL) à la fin de ce code

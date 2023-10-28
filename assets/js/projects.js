@@ -50,27 +50,38 @@ extractImageSourcesFromURL(url, function (imageSources) {
     const projects__thumb = document.querySelector(".projects__thumb");
     const projects__main = document.querySelector(".projects__main");
 
-    imageSources.reverse();//pour ne pas afficher en1er le thunail principale à droite
-    const mainThumbnail = imageSources[imageSources.length - 1];//prendre la derniere image = thumbnail principale
+    /*imageSources.reverse();//pour ne pas afficher en 1er le thumbail principal à droite
+    const mainThumbnail = imageSources[imageSources.length - 1];//prendre la derniere image = thumbnail principal
 
-    const imgThumb = document.createElement("img");
+    /**Affiche la thumb du portfolio cliqué (page home) en div projects__main */
+     
+    /*const imgThumb = document.createElement("img");
     imgThumb.setAttribute("src", mainThumbnail);
-    projects__main.appendChild(imgThumb);             
+    projects__main.appendChild(imgThumb); */             
   
     
-    imageSources.forEach((imgSrc) => {
+  imageSources.forEach((imgSrc) => {
+      
+
+
+        const divImgMain = document.createElement("div");
+        const imgMain = document.createElement("img");
+        imgMain.setAttribute("src", imgSrc);
+
+        divImgMain.appendChild(imgMain);
+        projects__main.appendChild(divImgMain);
+
 
         const divImg = document.createElement("div");
         divImg.classList.add("thumb_gallery");
-
         const imgThumb = document.createElement("img");
-        imgThumb.setAttribute("src", imgSrc);
-       
+        imgThumb.setAttribute("src", imgSrc);      
         divImg.appendChild(imgThumb);
-
         projects__thumb.appendChild(divImg);
+        
     });
 
+    $(document).trigger("galleryCreated2");
         
   });
   
