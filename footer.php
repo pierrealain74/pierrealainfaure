@@ -13,13 +13,12 @@
 
 <footer id="colophon" class="site-footer">
 
-
 		<div class="bottomL">independant developper<br />available on dec. 2023</div>
-		<div class="bottomC">Project : 12/12/2025</div>
+		<div class="bottomC"></div>
 		<div class="bottomR">
 			<a href="mailto:pierrealainfaure@gmail.com" class="linkarrow">linkedin</a>
-			<a href="#" class="linkarrow">twitter</a>
-			<a href="#" class="linkarrow">instagram</a>		
+			<a href="#" class="linkarrow">github</a>
+			<a href="#" class="linkarrow">codepen</a>		
 		</div>
 	
 </footer><!-- #colophon -->

@@ -149,13 +149,20 @@ p.site-title a {
   font-size: 0.8rem;
   font-family: "Abel";
   padding: 2rem;
+  text-transform: uppercase;
 }
 .site-footer .bottomC {
   display: flex;
   flex: 3;
-  letter-spacing: 3px;
+  letter-spacing: 0.1rem;
   align-items: self-end;
   line-height: 1.1rem;
+}
+.site-footer .bottomC .right__descr {
+  padding: 0 55px;
+}
+.site-footer .bottomC .right_r__descr {
+  padding: 0 55px;
 }
 .site-footer .bottomL {
   display: flex;
@@ -274,16 +281,17 @@ p.site-title a {
 }
 #projects .projects__title .title {
   position: absolute;
-  /*       width: 250px; */
+  /*width: 250px; */
   font-family: "Abel";
   font-size: 6.8rem;
   color: var(--default-color);
   text-transform: uppercase;
+  font-weight: 900;
   /* word-wrap: break-word; */
   z-index: 3;
 }
 #projects .projects__title .animate__animated {
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 #projects .projects__thumb {
   overflow-y: auto;

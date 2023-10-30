@@ -51,8 +51,11 @@ extractImageSourcesFromURL(url, function (imageSources) {
     const projects__thumb = document.querySelector(".projects__thumb");
     const projects__main = document.querySelector(".projects__main");
   
-
-  projects__title.textContent = title;
+    /**
+     * Affichage du titre du portfolio
+     * 
+     */
+    projects__title.textContent = title;
     
     
   imageSources.forEach((imgSrc) => {
@@ -75,16 +78,27 @@ extractImageSourcesFromURL(url, function (imageSources) {
         imgThumb.setAttribute("src", imgSrc);      
         divImg.appendChild(imgThumb);
         projects__thumb.appendChild(divImg);
-    
-
-        const divContentTitle = document.createElement("div");
-        divContentTitle.set
-
-
         
     });
 
     $(document).trigger("galleryCreated2");
         
-  });
+});
   
+
+const jsonfile = themeDirectoryUri + "/assets/json/portfolio-data.json";
+
+fetch(jsonfile)
+  .then((response) => response.json())
+  .then((data) => {
+
+    const bottomC = document.querySelector(".bottomC");
+
+    data.forEach((item) => {
+
+      
+      bottomC.innerHTML = `<div class="left__descr"><ul><li>+ Type</li>
+      <li>+ Language</li><li>+ Date</li><li></li></ul></div><div class="right__descr"><ul><li>${item.categories}</li><li>${item.tags}</li><li>${item.date}</li><li></li></ul></div><div class="right__descr2"><ul><li></li><li></li><li></li><li>Ici la description....</li></ul></div>`;
+
+    });
+  });

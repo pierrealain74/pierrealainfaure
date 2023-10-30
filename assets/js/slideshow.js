@@ -27,8 +27,6 @@ function transformTitle(title) {
   return title;
 }
 
-
-
 /**
  * Création de la galerie OWL avec les vignettes des ACF Portfolios.
  * Utilise un fichier JSON pour récupérer les données des vignettes.

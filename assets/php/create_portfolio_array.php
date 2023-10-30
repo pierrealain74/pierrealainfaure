@@ -15,7 +15,6 @@ foreach ($portfolios as $portfolio) :
     $portfolio_item = array(
         'id' => $portfolio->id,
         'title' => esc_html($portfolio->title->rendered),
-        'excerpt' => isset($portfolio->excerpt->rendered) ? wp_kses_post($portfolio->excerpt->rendered) : '',
         'date' => isset($portfolio->date) ? esc_html($portfolio->date) : '',
         'categories' => array(),
         'tags' => array(),

@@ -34,9 +34,9 @@ get_header(); ?>
 
   <main id="projects">
 
-      <div class="projects__title"><h1 class="animate__animated animate__backInLeft title"></h1></div>
+      <div class="projects__title"><h1 class="animate__animated animate__fadeInLeft title"></h1></div>
 
-      <div class="projects__main"></div>
+      <div class="projects__main animate__animated animate__fadeInRight"></div>
 
       <div class="projects__thumb"></div>
 
