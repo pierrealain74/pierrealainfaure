@@ -47,18 +47,13 @@ var url = "http://" + window.location.hostname + "/projects/" + title;
 extractImageSourcesFromURL(url, function (imageSources) {
 
 
+    const projects__title = document.querySelector(".projects__title .title");  
     const projects__thumb = document.querySelector(".projects__thumb");
     const projects__main = document.querySelector(".projects__main");
-
-    /*imageSources.reverse();//pour ne pas afficher en 1er le thumbail principal à droite
-    const mainThumbnail = imageSources[imageSources.length - 1];//prendre la derniere image = thumbnail principal
-
-    /**Affiche la thumb du portfolio cliqué (page home) en div projects__main */
-     
-    /*const imgThumb = document.createElement("img");
-    imgThumb.setAttribute("src", mainThumbnail);
-    projects__main.appendChild(imgThumb); */             
   
+
+  projects__title.textContent = title;
+    
     
   imageSources.forEach((imgSrc) => {
       

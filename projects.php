@@ -15,7 +15,10 @@ get_header(); ?>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<style>
 
+</style>
 
 <script>
   var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";
@@ -31,6 +34,7 @@ get_header(); ?>
 
   <main id="projects">
 
+      <div class="projects__title"><h1 class="animate__animated animate__backInLeft title"></h1></div>
 
       <div class="projects__main"></div>
 

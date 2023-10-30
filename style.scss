@@ -41,7 +41,6 @@ main{
   padding: 0px;
   margin: 0 auto;
   overflow: hidden;
-/*   border: 1px solid grey; */
   align-items: center;
 }
 
@@ -60,14 +59,13 @@ main{
 }
 
 .site-header{
+  
   display: flex;
   font-family: 'Abel';
   width: 100vw;
   height: 80px;
   justify-content: space-between;
   align-items: center;
-/*   padding: 25px 40px; */
-/*   border: 1px solid rgb(121, 218, 231); */
 
 }
 .site-title{
@@ -95,16 +93,24 @@ p.site-title a{
   font-family: 'Abel';
   padding: 2rem;
 
-  .bottomL{
+  .bottomC{
 
     display: flex;
-    flex: 2;
+    flex: 3;
     letter-spacing: 3px;
     align-items: self-end;
     line-height: 1.1rem;
 
   }
+  .bottomL{
 
+    display: flex;
+    flex: 1;
+    letter-spacing: 3px;
+    align-items: self-end;
+    line-height: 1.1rem;
+
+  }
   .bottomR{
 
     display: flex;
@@ -207,36 +213,47 @@ p.site-title a{
 #projects {
 
   display: grid;
-  grid-template-columns: 75% 25%;
-  width: 100%;
+  grid-template-columns: 25% 65% 15%;
+  width: 99%;
   height: 100%;
   min-height: calc(100% - 20px); 
 
   padding: 0 2rem;
  
   .projects__main{
-/*     display: flex;
-    justify-content: center; */
+
+/*    border: 1px solid red;
+     width: 100%;
     height: 100%;
-    width: 100%;
-  
+    vertical-align: middle; */
 
-  img{
-    width: 60%;
-    height: 60%;
-    object-fit: cover;
+    img{
+      width: 80%;
+      height: 80%;
+      object-fit: cover;
+    }
   }
-}
+  .projects__title {
 
+    .title{
+      position: absolute;
+      /*       width: 250px; */
+      font-family: 'Abel';
+      font-size: 6.8rem;
+      color: var(--default-color);
+      text-transform: uppercase;
+      /* word-wrap: break-word; */
+      z-index: 3;
+
+    }
+    .animate__animated {
+
+      animation-duration: 2s;
+    }
+
+  }
   .projects__thumb {
 
-    height: 100%;
-/*     display: flex;
-    flex-direction: column;  */
-    align-items: center;
-    justify-content: center;
-
-    max-height: 25rem;
     overflow-y: auto;
 
     .thumb_gallery{
@@ -244,7 +261,7 @@ p.site-title a{
     }
   
     .thumb_gallery img {
-      width: 120px;
+      width: 90px;
       object-fit: cover;
     }
   }

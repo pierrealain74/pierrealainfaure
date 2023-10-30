@@ -15,6 +15,7 @@
 
 
 		<div class="bottomL">independant developper<br />available on dec. 2023</div>
+		<div class="bottomC">Project : 12/12/2025</div>
 		<div class="bottomR">
 			<a href="mailto:pierrealainfaure@gmail.com" class="linkarrow">linkedin</a>
 			<a href="#" class="linkarrow">twitter</a>

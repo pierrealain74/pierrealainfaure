@@ -14,9 +14,8 @@ $(document).ready(function(){
           slidesToScroll: 1,
           arrows: false,
           fade: false,
+          centerMode: false,
           asNavFor: '.projects__thumb',
-/*           useCSS: false,
-          useTransform: true */
             
         });
 
@@ -28,12 +27,12 @@ $(document).ready(function(){
           vertical: true,
           verticalSwiping: false,
           arrows: false, 
-          slidesToShow: 3,
+          slidesToShow: 5,
           asNavFor: '.projects__main', 
           slidesToScroll: 1, 
           autoplay: true,
           autoplaySpeed: 2000,
-          centerMode: false,
+          centerMode: true,
           focusOnSelect: true
         });
 
