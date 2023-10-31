@@ -12,14 +12,23 @@ function extractImageSourcesFromURL(url, callback) {
       dataType: "html",
     })
       .done(function (data) {
+
         // Créer un objet jQuery à partir des données HTML
         var $html = $(data);
+
+
+        /**
+         * Selectionner toutes les images galerie
+         * Mettre dans un tableau
+         */
   
         // Sélectionner toutes les balises img et extraire les src
         var imageSources = $html.find("img").map(function () {
           return $(this).attr("src");
         });
-  
+
+
+
         // Appeler la fonction de rappel avec le tableau d'URL d'images
         callback(imageSources.get());
         
@@ -29,6 +38,7 @@ function extractImageSourcesFromURL(url, callback) {
         callback([]);
       });
 }
+
   
 /**
  * 
@@ -87,6 +97,32 @@ extractImageSourcesFromURL(url, function (imageSources) {
   
 
 const jsonfile = themeDirectoryUri + "/assets/json/portfolio-data.json";
+const jsonfile_added = [
+  {
+      "title": "Planty",
+      "description": "Conception HTML + CSS en 100% responsive d'un template",
+      "color1": "#DEEBFF",
+      "color2": "#0065FC" 
+  },
+  {
+      "title": "Maitrenageur.org",
+      "description": "Maitrenageur.org online watersports job service",
+      "color1": "#f4824c",
+      "color2": "#cff4f5" 
+  },
+  {
+      "title": "Mkelefa",
+      "description": "MKelefa website graphic template",
+      "color1": "#0f5a7e",
+      "color2": "#dff2fb" 
+  },
+  {
+      "title": "MedIt",
+      "description": "MedIt - Coding Hacking Training",
+      "color1": "#0f5a7e",
+      "color2": "#fee02f" 
+  }
+]
 
 fetch(jsonfile)
   .then((response) => response.json())
@@ -96,9 +132,18 @@ fetch(jsonfile)
 
     data.forEach((item) => {
 
-      
-      bottomC.innerHTML = `<div class="left__descr"><ul><li>+ Type</li>
-      <li>+ Language</li><li>+ Date</li><li></li></ul></div><div class="right__descr"><ul><li>${item.categories}</li><li>${item.tags}</li><li>${item.date}</li><li></li></ul></div><div class="right__descr2"><ul><li></li><li></li><li></li><li>Ici la description....</li></ul></div>`;
 
+      if (item.title.toLowerCase() == title) {
+        
+
+          const matchingItem = jsonfile_added.find((item) => item.title.toLowerCase() === title.toLowerCase());
+
+
+          if (matchingItem) {
+        
+            bottomC.innerHTML = `<div class="left__descr"><ul><li>+ Type</li>
+          <li>+ Language</li><li>+ Date</li><li></li></ul></div><div class="right__descr"><ul><li>${item.categories}</li><li>${item.tags}</li><li>${item.date}</li><li></li></ul></div><div class="right__descr2"><ul><li></li><li></li><li></li><li>${matchingItem.description}</li></ul></div>`;
+          }
+      }
     });
   });

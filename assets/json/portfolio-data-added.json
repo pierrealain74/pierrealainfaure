@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Planty",
+        "description": "Conception HTML + CSS en 100% responsive d'un template d'une agence de voyage Booki",
+        "color1": "#DEEBFF",
+        "color2": "#0065FC" 
+    },
+    {
+        "title": "Maitrenageur.org",
+        "description": "Maitrenageur.org online watersports job service",
+        "color1": "#f4824c",
+        "color2": "#cff4f5" 
+    },
+    {
+        "title": "Mkelefa",
+        "description": "MKelefa website graphic template",
+        "color1": "#0f5a7e",
+        "color2": "#dff2fb" 
+    },
+    {
+        "title": "MedIt",
+        "description": "MedIt - Coding Hacking Training",
+        "color1": "#0f5a7e",
+        "color2": "#fee02f" 
+    }
+]
