@@ -71,6 +71,7 @@ fetch(jsonfile)
         const imgItem = document.createElement("img");
         imgItem.src = thumbnailfull;
         imgItem.setAttribute("alt", title);
+        imgItem.setAttribute("id", item.id);
 
         divHover.appendChild(divEye);
         divItem.appendChild(divHover);
@@ -92,7 +93,10 @@ fetch(jsonfile)
       //pour construire l'url ...portfolio/medit...
       var itemElement = $(this).closest(".item");
       var imageAlt = itemElement.find("img").attr("alt");
-      window.location.href = "http://pierrealainfaure4.local/projects/?title=" + encodeURIComponent(imageAlt);
+      var imageId = itemElement.find("img").attr("id");
+      window.location.href = "http://pierrealainfaure4.local/projects/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
+  
+     
       //console.log('URL: ', window.location.href);
 
 

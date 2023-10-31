@@ -1,4 +1,12 @@
 
+//Force la redirection de home vers l'accueil du site
+//sinon probleme de rafraichissement
+const firstNavLink = document.querySelector("nav label:first-child a");
+console.log('firstNavLink : ',firstNavLink);
+firstNavLink.onclick = function() {
+    window.location.href = `http://${window.location.hostname}`;
+    //window.location.href = `https://google.fr`;
+  };
 
 /**Ouvre / Ferme le bouton Toggle */
 const menuToggle = document.getElementById('menuToggle');

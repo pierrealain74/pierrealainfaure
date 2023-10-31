@@ -1,6 +1,6 @@
 <?php
 // Récupérez les portfolios depuis l'API 
-$portfolio_url = get_site_url() . '/wp-json/wp/v2/portfolio?_fields=id,title,date,categories,tags,featured_media';
+$portfolio_url = get_site_url() . '/wp-json/wp/v2/portfolio?_fields=id,title,date,categories,tags,featured_media,&per_page=20';
 
 
 $portfolio_response = wp_remote_get($portfolio_url);
@@ -9,10 +9,12 @@ $portfolios = json_decode($portfolio_data);
 
 // Tableau pour stocker les données JSON
 $portfolio_json = array();
-
+$num = 0;
 // Boucle qui recupere des données de chaque portfolio
 foreach ($portfolios as $portfolio) :
+
     $portfolio_item = array(
+        'num' => $num,
         'id' => $portfolio->id,
         'title' => esc_html($portfolio->title->rendered),
         'date' => isset($portfolio->date) ? esc_html($portfolio->date) : '',
@@ -22,6 +24,18 @@ foreach ($portfolios as $portfolio) :
         'thumbnailfull' => '',
         /* 'content' => esc_html($portfolio->content->rendered),  pas besoin car j'utilise une autre url*/
     );
+    $num++;
+
+    // Récupérer l'image à la une (thumbnail)
+    $thumbnail_id = $portfolio->featured_media;
+    $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'thumbnail');
+    $portfolio_item['thumbnail'] = esc_url($thumbnail_url);
+
+    // Récupérer l'image à la une (thumbnail)
+    $thumbnail_id = $portfolio->featured_media;
+    $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'full');
+    $portfolio_item['thumbnailfull'] = esc_url($thumbnail_url);
+
 
     // Récupérer les catégories
     if (isset($portfolio->categories) && is_array($portfolio->categories)) {
@@ -43,19 +57,6 @@ foreach ($portfolios as $portfolio) :
         }
     }
 
-    // Récupérer l'image à la une (thumbnail)
-    $thumbnail_id = $portfolio->featured_media;
-    $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'thumbnail');
-    $portfolio_item['thumbnail'] = esc_url($thumbnail_url);
-
-    // Récupérer l'image à la une (thumbnail)
-    $thumbnail_id = $portfolio->featured_media;
-    $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'full');
-    $portfolio_item['thumbnailfull'] = esc_url($thumbnail_url);
-
-
-
-
     // Ajouter l'élément au tableau JSON
     $portfolio_json[] = $portfolio_item;
     ?>
@@ -64,6 +65,7 @@ foreach ($portfolios as $portfolio) :
 
 <?php
 endforeach;
+
 
 // Convertir le tableau JSON en une chaîne JSON
 $portfolio_json = json_encode($portfolio_json, JSON_PRETTY_PRINT);

@@ -40,7 +40,6 @@ time, mark, audio, video {
 
 a {
   color: inherit; /* Couleur du texte héritée */
-  text-decoration: none; /* Aucune décoration de texte (pas de soulignement) */
   cursor: pointer; /* Curseur par défaut */
 }
 
@@ -319,8 +318,15 @@ nav {
   overflow: hidden;
 }
 nav label {
-  border-bottom: none;
   margin-left: 2rem;
+}
+nav label a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+nav label a:hover {
+  border-bottom: 1px solid #ffffff;
+  text-decoration: underline;
 }
 
 .fullscreenMenu {
