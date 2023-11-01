@@ -40,6 +40,19 @@ $(document).ready(function() {
             }
         })
     
-  });
+    });
+
+    setTimeout(function () {
+        
+        const divOwl = document.querySelector(".owl-carousel.owl-theme.owl-loaded.owl-drag");
+        if (!divOwl) {
+
+            location.reload();
+            console.log('reload');
+
+        }
+
+    }, 500);
+
 });
 

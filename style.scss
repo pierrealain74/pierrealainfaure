@@ -1,6 +1,10 @@
 /**
 
-Style SCSS du site pierrealainfaure.com
+Style SCSS 
+theme pafchild
+pierrealainfaure.com
+
+
 
 */
 :root {
@@ -132,6 +136,11 @@ p.site-title a{
     text-align: right;
     flex-direction: column;
 
+    a{
+      padding: 0 0 0 1rem;
+      text-decoration: none;
+    }
+
   }
 
 }
@@ -143,16 +152,15 @@ p.site-title a{
   background-position: center top; 
   background-color: #101010;
   height: 50%;
-
 }
 
 .linkarrow:hover {
 
-    background: url("./assets/images/portfolio/arrow_right.png") no-repeat;
+    background: url("./assets/images/portfolio/arrow_right_45deg.png") no-repeat;
     background-size: 8px 10px;
     text-align: right;
-    background-position: left center;
-    padding-left: 20px;
+    background-position: left center; 
+
 }
 
 
@@ -204,18 +212,7 @@ p.site-title a{
   opacity: 1; /* Affichez l'icône de l'œil au survol */
 }
 
-/*Fleche navigation caorusel -- Surcharge les css owl.carousel.css*/
-.owl-next{
-  position: absolute;
-  left: 92vw;
-}
-.owl-prev{
-  position: absolute;
-  left: 5vw;
-}
-.owl-theme .owl-nav [class*='owl-'] {
-  color: var(--default-color) !important;
-}
+
 
 /*Projects**********************************************************/
 

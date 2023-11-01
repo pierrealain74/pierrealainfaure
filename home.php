@@ -8,9 +8,12 @@
  *
  */
 get_header();?>
-<link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri() . '/assets/css/owl.carousel.css' ?>'>
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . "/assets/css/owl.carousel.css" ?>">
 
-<link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri() . '/assets/css/owl.theme.default.css' ?>'>
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . "/assets/css/owl.theme.default.css" ?>">
+
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . "/assets/css/owl.supercharge.css" ?>">
+
 <script>var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";</script>
 <body>
 

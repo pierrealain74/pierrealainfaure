@@ -1,5 +1,5 @@
 
-  <div id="logo">pierrealainfaure</div>
+  <div id="logo" class="animate__animated animate__flipInX">pierrealainfaure</div>
 
 
   <div id="primary-menu">

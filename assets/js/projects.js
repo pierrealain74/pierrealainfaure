@@ -270,9 +270,6 @@ fetch(jsonfile)
          */
       
       if (item.id == imgId) {
-        
-          console.log('item.id : ', item.id);
-          console.log('imgId : ', imgId);
 
           const matchingItem = portfolioData.find((item) => item.id == imgId);
           //toLowerCase() parce que les title dans json ont une majuscule Medit au lieu de medit
