@@ -67,6 +67,12 @@ Responsive CSS
     text-transform: uppercase;
     font-weight: 900;
   }
+  #about{
+    padding: 0;
+  }
+  .wp-block-media-text .wp-block-media-text__content{
+    padding: 0 .2rem;
+  }
 }
 
 /*Uniquement CSS Responsive pour le MENU*/

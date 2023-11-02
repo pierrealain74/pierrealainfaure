@@ -36,5 +36,5 @@ get_header();?>
 
 </div>
 
-
+<?php get_template_part('template-parts/bottom');?>
 <?php get_footer();?>

@@ -1,4 +1,3 @@
-
 //Crée un lie sur le logo
 const logo = document.getElementById("logo");
 
@@ -7,7 +6,6 @@ logo.onclick = function() {
     window.location.href = `http://${window.location.hostname}`;
 
   };
-
 /**Ouvre / Ferme le bouton Toggle */
 const menuToggle = document.getElementById('menuToggle');
 const fullscreenMenu = document.querySelector('.fullscreenMenu');

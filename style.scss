@@ -53,7 +53,7 @@ table {
 }
 #about{
   display: flex;
-  width: 100%;
+  width: 95%;
   flex-direction: column;
   color: white;
   padding: 0 2rem;
@@ -61,17 +61,21 @@ table {
   font-size: 1.8rem;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(to bottom, #000000 20%, #1a1a1a 50% );
 
   .aboutL{
     display: flex;
-    width: 75%;
+    width: 100%;
   }
 
   .animate-image:hover {
     opacity: 0.8; /* Réduisez l'opacité au survol */
   }
 
-
+  .wp-block-media-text.is-image-fill .wp-block-media-text__media img {
+  
+  }
+  
 }
 #logo{
 
@@ -80,7 +84,8 @@ table {
   color: var(--default-color);
   padding: 0 2rem;
   cursor: pointer;
-}
+
+  }
 
 .site-header{
   
