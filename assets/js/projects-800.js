@@ -293,7 +293,7 @@ const portfolioData = [
                *Coloriser les textes et le body 
               * 
               */
-              //colorize(matchingItem.color1, matchingItem.color2);
+              colorize(matchingItem.color1, matchingItem.color2);
     
             }
         }
