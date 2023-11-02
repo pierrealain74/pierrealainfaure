@@ -39,5 +39,5 @@ get_header();?>
 
 <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/initOwl.js' ?>"></script>
 
-
+<?php get_template_part('template-parts/bottom');?>
 <?php get_footer();?>

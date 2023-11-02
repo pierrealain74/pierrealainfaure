@@ -273,7 +273,7 @@ const portfolioData = [
     .then((response) => response.json())
     .then((data) => {
   
-      const bottomC = document.querySelector(".bottomC");
+      const bottomL = document.querySelector(".bottomL");
   
       data.forEach((item) => {
   
@@ -288,13 +288,13 @@ const portfolioData = [
   
             if (matchingItem) {//si title (medit) match avec un title du json secondaire (en dur)
           
-              bottomC.innerHTML = `<div class="left__descr">+ Type: ${item.categories}<br />+ Language: ${item.tags}<br />+ Date: ${item.date}</div>`;
-            /**
-             *Coloriser les textes et le body 
-             * 
-             */
-            //colorize(matchingItem.color1, matchingItem.color2);
-  
+                bottomL.innerHTML = `<div class="left__descr"><h1 class="title800">${title}</h1></span><br />+ Type: ${item.categories}<br />+ Language: ${item.tags}<br />+ Date: ${item.date}</div>`;
+              /**
+               *Coloriser les textes et le body 
+              * 
+              */
+              //colorize(matchingItem.color1, matchingItem.color2);
+    
             }
         }
       });
