@@ -20,21 +20,18 @@ function disable_emojis_tinymce($plugins) {
     return array_diff($plugins, array('wpemoji'));
 }
 
-/**
- * 
+
+/** 
  * Declarer le theme enfant 
- * 
- * 
  */
-add_action( 'wp_enqueue_scripts', 'pafchild_enqueue_styles' );
+
 function pafchild_enqueue_styles() {
 
-    /* wp_enqueue_style( 'pierrealainfaure', get_template_directory_uri() . '/style.css' ); */
-
-    wp_enqueue_style( 'pafchild', get_stylesheet_uri(), array( 'pierrealainfaure' ) );
-
-    
+    wp_enqueue_style('pafchild', get_stylesheet_uri(), array('pierrealainfaure'), '1.0', 'false'); 
 }
+
+add_action('wp_footer', 'pafchild_enqueue_styles');
+
 
 // ACF -- Portfolio Custom Post Type
 function portfolio_post_type() {

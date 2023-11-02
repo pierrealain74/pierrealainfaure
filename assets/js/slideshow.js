@@ -94,10 +94,15 @@ fetch(jsonfile)
       var itemElement = $(this).closest(".item");
       var imageAlt = itemElement.find("img").attr("alt");
       var imageId = itemElement.find("img").attr("id");
-      window.location.href = "http://pierrealainfaure4.local/projects/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
-  
-     
-      //console.log('URL: ', window.location.href);
+
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth < 768) {
+
+        window.location.href = "http://" + window.location.hostname + "/projects-800/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
+      } else {
+        window.location.href = "http://" + window.location.hostname + "/projects/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
+      }
 
 
     });

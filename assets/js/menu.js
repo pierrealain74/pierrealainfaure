@@ -1,14 +1,12 @@
 
-//Force la redirection de home vers l'accueil du site
-//sinon probleme de rafraichissement
-/* const firstNavLink = document.querySelector("nav label:first-child a");
+//Crée un lie sur le logo
+const logo = document.getElementById("logo");
 
-firstNavLink.onclick = function() {
+logo.onclick = function() {
 
     window.location.href = `http://${window.location.hostname}`;
-    window.location.href = `http://${window.location.hostname}`;
 
-  }; */
+  };
 
 /**Ouvre / Ferme le bouton Toggle */
 const menuToggle = document.getElementById('menuToggle');

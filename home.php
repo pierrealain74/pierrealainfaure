@@ -30,7 +30,6 @@ get_header();?>
   </main>
 
 
-<?php get_footer();?>
 
 <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/jquery-3.7.1.js' ?>"></script>
 
@@ -40,3 +39,5 @@ get_header();?>
 
 <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/initOwl.js' ?>"></script>
 
+
+<?php get_footer();?>

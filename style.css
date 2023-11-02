@@ -109,15 +109,35 @@ main {
   align-items: center;
 }
 
+table {
+  border: 0 !important;
+}
+
+#about {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  color: white;
+  padding: 0 2rem;
+  font-family: "Abel";
+  font-size: 1.8rem;
+  align-items: center;
+  justify-content: center;
+}
+#about .aboutL {
+  display: flex;
+  width: 75%;
+}
+#about .animate-image:hover {
+  opacity: 0.8; /* Réduisez l'opacité au survol */
+}
+
 #logo {
-  /*   transition: width 0.2s ease-in, transform 0.1s ease-in-out; */
   font-family: "Abel";
   font-size: 1.8rem;
   color: var(--default-color);
   padding: 0 2rem;
-}
-#logo:hover {
-  /*animate todo*/
+  cursor: pointer;
 }
 
 .site-header {
@@ -250,6 +270,32 @@ p.site-title a {
   opacity: 1; /* Affichez l'icône de l'œil au survol */
 }
 
+/*
+Lightslider 
+*/
+.demo {
+  width: 50%;
+}
+
+ul {
+  list-style: none outside none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+li {
+  display: block;
+  float: left;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
 /*Projects**********************************************************/
 #projects {
   display: grid;
@@ -258,12 +304,6 @@ p.site-title a {
   height: 100%;
   min-height: calc(100% - 20px);
   padding: 0 2rem;
-}
-#projects .projects__main {
-  /*    border: 1px solid red;
-       width: 100%;
-      height: 100%;
-      vertical-align: middle; */
 }
 #projects .projects__main img {
   width: 80%;
@@ -360,68 +400,6 @@ nav label a:hover {
 
 #menuToggle.active span:nth-child(3) {
   transform: rotate(45deg) translate(-4px, -4px);
-}
-
-@media (min-width: 320px) and (max-width: 800px) {
-  .owl-theme .owl-nav {
-    left: unset;
-  }
-  .owl-next {
-    right: 0;
-  }
-  .owl-prev {
-    left: 0;
-  }
-  .u-media-wrapper.u-media-wrapper--16-9 {
-    height: 20rem !important;
-  }
-  .c-header {
-    height: 100vh;
-  }
-  #logo {
-    left: 2rem;
-  }
-}
-/****************
-
-
-        MENU
-
-*****************/
-@media (max-width: 900px) {
-  #primary-menu {
-    display: none;
-  }
-  #menuToggle {
-    display: block;
-  }
-  .fullscreenMenu {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    background: white;
-  }
-  .fullscreenMenu.active {
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-  }
-  .fullscreenMenu.active nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: unset;
-    border: 0;
-    background: none;
-  }
-  .fullscreenMenu.active nav label {
-    font-size: 2rem;
-    margin: 10px 0;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

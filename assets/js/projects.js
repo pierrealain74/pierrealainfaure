@@ -152,6 +152,14 @@ function colorize(color1, color2) {
   bottomR.style.color = txtColor;
   bottomR.style.transition = transitionTxt;
 
+  const spanMenuToggle = document.querySelectorAll("#menuToggle span");
+  spanMenuToggle.forEach((span) => {
+    
+    span.style.background = txtColor;
+
+  })
+  
+
 }
 
 

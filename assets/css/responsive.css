@@ -1,0 +1,116 @@
+/**
+Responsive CSS
+
+*/
+@media (min-width: 320px)  and  (max-width: 800px){
+
+  .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next{
+    display: none;
+  }
+
+    .u-media-wrapper.u-media-wrapper--16-9{
+        height: 20rem !important;
+    }
+    .c-header {
+        height: 100vh;
+
+    }
+    
+    #logo{
+
+        left: 2rem;
+    }
+
+
+    #projects {
+      display: grid;
+      grid-template-rows: auto auto auto;
+      width: 99%;
+      height: 100%;
+      min-height: calc(100% - 20px);
+      padding: 0 2rem;
+    }
+    
+    .projects__title,
+    .projects__main,
+    .projects__thumb {
+      width: 100%;
+    }
+
+    .site-footer{
+      letter-spacing: 0.1rem;
+      letter-spacing: 3px;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    html, body {
+      overflow-y: auto;
+    }
+    .site-footer .bottomR {
+
+      justify-content: unset;
+      text-align: unset;
+      flex-direction: unset;
+  }
+  .site-footer .bottomR a {
+      padding: 0 1rem 0 0;
+      text-decoration: none;
+  }
+  .linkarrow:hover {
+    background: unset;
+    background-size: unset;
+    text-align: unset;
+    background-position: unset;
+  }
+
+
+}
+
+/*Uniquement CSS Responsive pour le MENU*/
+@media (max-width: 900px){
+
+
+    #primary-menu {
+        display: none;
+    }
+
+    #menuToggle{
+
+        display: block;
+    }
+
+    .fullscreenMenu {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      background: white;
+    }
+    
+    .fullscreenMenu.active {
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 4;
+    }
+    
+    .fullscreenMenu.active nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: unset;
+      border: 0;
+      background: none;
+    }
+    
+    .fullscreenMenu.active nav label {
+      font-size: 2rem;
+      margin: 10px 0;
+    }
+    
+    
+
+
+}
