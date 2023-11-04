@@ -99,9 +99,9 @@ fetch(jsonfile)
 
       if (screenWidth < 768) {
 
-        window.location.href = "http://" + window.location.hostname + "/projects-800/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
+        window.location.href = "https://" + window.location.hostname + "/projects-800/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
       } else {
-        window.location.href = "http://" + window.location.hostname + "/projects/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
+        window.location.href = "https://" + window.location.hostname + "/projects/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
       }
 
 
