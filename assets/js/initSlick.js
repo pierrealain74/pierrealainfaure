@@ -26,7 +26,7 @@ $(document).ready(function(){
         vertical: true,
         verticalSwiping: false,
         arrows: false, 
-        slidesToShow: 5,
+        slidesToShow: 3,
         asNavFor: '.projects__main', 
         slidesToScroll: 1, 
         autoplay: true,

@@ -14,7 +14,11 @@ get_header();?>
 
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . "/assets/css/owl.supercharge.css" ?>">
 
-<script>var themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";</script>
+<script>const themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";</script>
+
+<script>const jsonfile = themeDirectoryUri + "/assets/json/portfolio-data.json";</script>
+
+
 <body>
 
   <header class="site-header">

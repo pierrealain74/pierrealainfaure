@@ -152,6 +152,10 @@ function colorize(color1, color2) {
   bottomR.style.color = txtColor;
   bottomR.style.transition = transitionTxt;
 
+  const news = document.querySelector(".news");
+  news.style.color = txtColor;
+  news.style.transition = transitionTxt;
+
   const spanMenuToggle = document.querySelectorAll("#menuToggle span");
   spanMenuToggle.forEach((span) => {
     
@@ -220,7 +224,7 @@ const imgId = urlParams.get("id");
 //Construit l'uRL pour récupérer la galerie d'images de chaque portolio
 //Exemple http://pierrealainfaure.com/portfolio/chic-dressing/ --> le post où se trouve le contenu galerie
 
-var url = "https://" + window.location.hostname + "/projects/" + title;
+var url = "http://" + window.location.hostname + "/projects/" + title;
 
 extractImageSourcesFromURL(url, function (imageSources) {
 

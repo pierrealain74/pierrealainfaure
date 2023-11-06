@@ -72,9 +72,6 @@ table {
     opacity: 0.8; /* Réduisez l'opacité au survol */
   }
 
-  .wp-block-media-text.is-image-fill .wp-block-media-text__media img {
-  
-  }
   
 }
 #logo{
@@ -278,6 +275,7 @@ img {
 
   .projects__main{
 
+
     img{
       width: 80%;
       height: 80%;
@@ -308,6 +306,7 @@ img {
   .projects__thumb {
 
     overflow-y: auto;
+    max-height: 70%;
 
     .thumb_gallery{
       margin-bottom: 15px;
@@ -323,6 +322,10 @@ img {
 }
 
 /*News*/
+
+.projects .news{
+  display: none;
+}
 
 .news{
 
@@ -349,6 +352,7 @@ img {
   }
 
 }
+
 .news > :first-child {
   display: inline-block;
   padding-right: 2em;

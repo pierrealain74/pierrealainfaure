@@ -20,7 +20,7 @@ get_header(); ?>
 </script>
 <body>
 
-  <header class="site-header">
+  <header class="site-header projects">
     <!-- Contenu de votre en-tête, par exemple, votre logo et menu -->
     <?php get_template_part('template-parts/logo-menu'); ?>
   </header>

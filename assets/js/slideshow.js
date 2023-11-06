@@ -32,7 +32,7 @@ function transformTitle(title) {
  * Utilise un fichier JSON pour récupérer les données des vignettes.
  */
 
-const jsonfile = themeDirectoryUri + "/assets/json/portfolio-data.json";//existe dans assets/json/ Créé par create_portfolio_array.php
+/* const jsonfile = themeDirectoryUri + "/assets/json/portfolio-data.json"; *///existe dans assets/json/ Créé par create_portfolio_array.php
 
 fetch(jsonfile)
   .then((response) => response.json())
@@ -99,9 +99,9 @@ fetch(jsonfile)
 
       if (screenWidth < 768) {
 
-        window.location.href = "https://" + window.location.hostname + "/projects-800/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
+        window.location.href = "http://" + window.location.hostname + "/projects-800/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
       } else {
-        window.location.href = "https://" + window.location.hostname + "/projects/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
+        window.location.href = "http://" + window.location.hostname + "/projects/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
       }
 
 

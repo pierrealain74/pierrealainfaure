@@ -132,6 +132,7 @@ table {
 #about .animate-image:hover {
   opacity: 0.8; /* Réduisez l'opacité au survol */
 }
+
 #logo {
   font-family: "Abel";
   font-size: 1.8rem;
@@ -326,6 +327,7 @@ img {
 }
 #projects .projects__thumb {
   overflow-y: auto;
+  max-height: 70%;
 }
 #projects .projects__thumb .thumb_gallery {
   margin-bottom: 15px;
@@ -336,6 +338,10 @@ img {
 }
 
 /*News*/
+.projects .news {
+  display: none;
+}
+
 .news {
   display: flex;
   max-width: 7rem;
