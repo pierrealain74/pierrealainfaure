@@ -52,24 +52,43 @@ table {
   border: 0 !important;
 }
 #about{
-  display: flex;
+
   width: 95%;
-  flex-direction: column;
+  display: flex;
   color: white;
   padding: 0 2rem;
   font-family: 'Abel';
-  font-size: 1.8rem;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to bottom, #000000 20%, #1a1a1a 50% );
+  font-size: 1.2rem;
+  /* background: linear-gradient(45deg, #000000, #222222); */
+  animation: backgroundAnimation 15s linear infinite;
+
+  @keyframes backgroundAnimation {
+    0% { background-color: #0a0a0a; }
+    20% { background-color: #13273a; }
+    40% { background-color: #2b583f; }
+    60% { background-color: #182833; }
+    80% { background-color: #07151f; }
+    100% { background-color: #0a0a0a; }
+  }
+  
 
   .aboutL{
+    flex: 1; 
     display: flex;
-    width: 100%;
+    align-items: self-end;
+    padding: 2rem;
   }
 
   .animate-image:hover {
     opacity: 0.8; /* Réduisez l'opacité au survol */
+  }
+
+  .aboutR{
+    flex: 1;
+
+/*     background: url('/wp-content/uploads/2023/11/moi-2019-250.jpg') no-repeat;
+    background-size: 100% 100%;
+    background-position: center top; */
   }
 
   
@@ -130,10 +149,10 @@ p.site-title a{
     
 
     .right__descr{
-      padding: 0 55px;
+      padding: 0 15px;
     }
     .right_r__descr{
-      padding: 0 55px;
+      padding: 0 5px;
     }
 
   }
@@ -249,7 +268,7 @@ ul {
 li {
   display: block;
   float: left;
-  margin-right: 6px;
+  margin-right: 60px;
   cursor:pointer;
 }
 img {
@@ -336,7 +355,7 @@ img {
   font-family: 'Abel';
   color: var(--default-color);
   text-transform: lowercase;
-  padding: 0 5rem;
+  padding: 0 10rem;
   background: url(./assets/images/bg_news.png) no-repeat;
   position: relative;
 

@@ -9,13 +9,15 @@
 const portfolioData = [
   {
       "title": "Planty",
+      "url": "",
       "id": 258,
       "description": "100% responsive template - OPCR",
       "color1": "#DEEBFF",
       "color2": "#007600" 
   },
   {
-      "title": "Maitrenageur.org",
+      "title": "Maitrenageur",
+      "url": "https://maitrenageur.org",
       "id": 246,
       "description": "Online watersports job service",
       "color1": "#f4824c",
@@ -23,6 +25,7 @@ const portfolioData = [
   },
   {
       "title": "Mkelefa",
+      "url": "",
       "id": 241,
       "description": "Website graphic template",
       "color1": "#0f5a7e",
@@ -30,76 +33,87 @@ const portfolioData = [
   },
   {
       "title": "MedIt",
+      "url": "",
       "id": 230,
       "description": "Coding highest performance - OPCR",
       "color1": "#88cff1",
       "color2": "#fee02f" 
   },
   {
-      "title": "Motaphoto",
+    "title": "Motaphoto",
+    "url": "https://pierrealainfaure.com/motaphoto",
       "id": 252,
       "description": "Coding Js Jquery PhP - OPCR",
       "color1": "#454342",
       "color2": "#CA2605" 
   },
   {
-      "title": "e-Moving",
+    "title": "e-Moving",
+    "url": "",
       "id": 204,
       "description": "Debug woocommerce - OPCR",
       "color1": "#D5F5E3",
       "color2": "#196F3D" 
   },
   {
-      "title": "Chic Dressing",
+    "title": "Chic Dressing",
+    "url": "",
       "id": 281,
       "description": "Get best performance woocommerce - OPCR",
       "color1": "#4A235A",
       "color2": "#D2B4DE" 
   },
   {
-      "title": "Booki",
+    "title": "Booki",
+    "url": "https://pierrealainfaure.com/booki",
       "id": 123,
       "description": "100% responsive template - OPCR",
       "color1": "#FFFFFF",
       "color2": "#3498DB" 
   },
   {
-      "title": "CPing",
+    "title": "CPing",
+    "url": "https://www.cpingsport.fr/",
       "id": 279,
       "description": "Woocommerce table tennis specialist",
       "color1": "#1C2833",
       "color2": "#DC7633" 
   },
   {
-      "title": "Polyglotchat",
+    "title": "Polyglotchat",
+    "url": "",
       "id": 277,
       "description": "Graphic template for online language exchange",
       "color1": "#191919",
       "color2": "#CC0000" 
   },
   {
-      "title": "United Nations",
+    "title": "United Nations",
+    "url": "",
       "id": 187,
       "description": "Graphic template for United Nations website project",
       "color1": "#b3c1c8",
       "color2": "#3586A9" 
   },
   {
-      "title": "Meteo Guinee",
+    "title": "Meteo Guinee",
+    "url": "",
       "id": 237,
       "description": "Meteo Guinee graphic template",
       "color1": "#F1FA61",
       "color2": "#61BEFA" 
   },
   {
-      "title": "Indigo",
+    "title": "Indigo",
+    "url": "",
       "id": 276,
       "description": "Graphic template for indigo brand",
       "color1": "#EBD7F3",
       "color2": "#9921D1" 
   },
   {
-      "title": "Iya Traore",
+    "title": "Iya Traore",
+    "url": "https://iya.fr/",    
       "id": 275,
       "description": "Footbal freestyler website - Redesign",
       "color1": "#333134",
@@ -107,6 +121,7 @@ const portfolioData = [
   },
   {
     "title": "Koukaki",
+    "url": "https://pierrealainfaure.com/koukaki",
     "id": 280,
     "description": "Js library parallax - OPCR",
     "color1": "#FCE7BA",
@@ -289,7 +304,7 @@ fetch(jsonfile)
           if (matchingItem) {//si title (medit) match avec un title du json secondaire (en dur)
         
             bottomC.innerHTML = `<div class="left__descr"><ul><li>+ Type</li>
-          <li>+ Language</li><li>+ Date</li><li></li></ul></div><div class="right__descr"><ul><li>${item.categories}</li><li>${item.tags}</li><li>${item.date}</li><li></li></ul></div><div class="right__descr2"><ul><li></li><li></li><li></li><li>${matchingItem.description}</li></ul></div>`;
+          <li>+ Language</li><li>+ Date</li><li></li></ul></div><div class="right__descr"><ul><li>${item.categories}</li><li>${item.tags}</li><li>${item.date}</li><li></li></ul></div><div class="right__descr2"><ul><li></li><li></li><li>${matchingItem.description}</li><li><a href="${matchingItem.url}" target="_blank">${matchingItem.url}</a></li></ul></div>`;
           /**
            *Coloriser les textes et le body 
            * 

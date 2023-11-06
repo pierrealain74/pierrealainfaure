@@ -75,7 +75,7 @@ Responsive CSS
     font-weight: 900;
   }
   #about {
-    padding: 0;
+    padding: 0 2rem;
     font-size: 1.5rem;
 
   }

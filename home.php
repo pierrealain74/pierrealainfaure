@@ -23,7 +23,7 @@ get_header();?>
 
   <header class="site-header">
     <!-- Contenu de votre en-tête, par exemple, votre logo et menu -->
-    <?php get_template_part('template-parts/logo-menu');?>
+    <?php get_template_part('template-parts/logo-menu-news');?>
   </header>
 
 
