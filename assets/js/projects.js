@@ -167,10 +167,6 @@ function colorize(color1, color2) {
   bottomR.style.color = txtColor;
   bottomR.style.transition = transitionTxt;
 
-  const news = document.querySelector(".news");
-  news.style.color = txtColor;
-  news.style.transition = transitionTxt;
-
   const spanMenuToggle = document.querySelectorAll("#menuToggle span");
   spanMenuToggle.forEach((span) => {
     

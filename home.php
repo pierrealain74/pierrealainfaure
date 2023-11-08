@@ -27,7 +27,7 @@ get_header();?>
   </header>
 
 
-  <main id="site-main">
+  <main>
 
     <div class="owl-carousel owl-theme"></div>
 

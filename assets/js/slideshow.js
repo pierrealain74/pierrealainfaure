@@ -89,21 +89,25 @@ fetch(jsonfile)
 
     $(".eye").click(function () {
 
+      console.log('test');
+
       //Prend le alt (en fait le title) de l'image cliquée
       //pour construire l'url ...portfolio/medit...
       var itemElement = $(this).closest(".item");
+
       var imageAlt = itemElement.find("img").attr("alt");
       var imageId = itemElement.find("img").attr("id");
 
-      const screenWidth = window.innerWidth;
+      const screenWidth2 = window.innerWidth;
 
-      if (screenWidth < 768) {
+      
+      if (screenWidth2 < 768) {//Selon si c'est mobile = autre template (100% responsive)
 
         window.location.href = "http://" + window.location.hostname + "/projects-800/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
       } else {
         window.location.href = "http://" + window.location.hostname + "/projects/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
       }
-
+   
 
     });
 

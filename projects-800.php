@@ -37,5 +37,6 @@ get_header(); ?>
 <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
 <!-- <script src="<?php //echo get_stylesheet_directory_uri() . '/assets/js/jquery-3.7.1.js' ?>"></script> -->
 <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/lightslider.js' ?>"></script>
+<!--Decouverte du lightslider  : https://codepen.io/sachinchoolur/pen/mdZJRx-->
 <?php get_template_part('template-parts/bottom800');?>
 <?php get_footer(); ?>

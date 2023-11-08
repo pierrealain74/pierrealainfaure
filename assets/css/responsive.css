@@ -90,6 +90,24 @@ Responsive CSS
 }
 
 /*Uniquement CSS Responsive pour le MENU*/
+@media (min-width:801px) and (max-width: 1150px) {
+  .site-footer{
+    font-size: .7rem;
+  }
+  .site-footer .bottomR {
+    font-size: .7rem;
+  }
+  .site-footer .bottomL {
+    width: 11rem;
+  }
+
+  .site-footer .bottomC .right__descr {
+    min-width: 15rem;
+    width: 15rem;
+  }
+}
+
+/*Uniquement CSS Responsive pour le MENU*/
 @media (max-width: 900px) {
   #primary-menu {
     display: none;

@@ -10,8 +10,8 @@ $(document).ready(function() {
 
         $('.owl-carousel').owlCarousel({
             loop: true,
-/*             autoplay: true,
-            autoplayTimeout: 1000, */
+            /* autoplay: true,
+            autoplayTimeout: 3000, */
             margin:5,
             responsiveClass:true,
             responsive: {
@@ -52,7 +52,30 @@ $(document).ready(function() {
 
         }
 
+
+        /* Hack pour supprimer la classe Cloned supsonée d'empecher le click sur item
+        var elements = document.querySelectorAll(".owl-item");
+
+        // Parcourez les éléments et supprimez la classe "cloned" s'ils la possèdent
+        for (var i = 0; i < elements.length; i++) {
+
+            var element = elements[i];
+            if (element.classList.contains("cloned"))
+            {
+                element.classList.remove("cloned");
+            }
+        } */
+
+
+
+
+
+
     }, 500);
+
+
+
+
 
 });
 
