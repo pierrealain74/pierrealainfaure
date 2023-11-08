@@ -87,9 +87,50 @@ fetch(jsonfile)
      * 
      */
 
+
+    /**
+     * 
+     * Petit HACK sur les elements .CLONED qui sont pas cliquables !!!
+     * 
+     */
+    setInterval(function () {
+  
+      const eltCloned = document.querySelectorAll('.owl-item.cloned.active');
+      
+      //console.log(eltCloned);
+      
+    eltCloned.forEach(elt => {
+
+      const itemCloned = elt.querySelector(".item");
+      const image = itemCloned.querySelector("img");
+      const imageAlt = image.getAttribute("alt");
+      const imageId = image.getAttribute("id");
+
+      elt.addEventListener('click', function() {
+        //console.log(imageAlt);
+
+          const screenWidth1 = window.innerWidth;
+
+          
+          if (screenWidth1 < 768) {//Selon si c'est mobile = autre template (100% responsive)
+
+            window.location.href = "http://" + window.location.hostname + "/projects-800/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
+          }
+          else {
+            window.location.href = "http://" + window.location.hostname + "/projects/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
+          }
+
+      });
+    })
+  }, 1000);//set time out
+
+
+
+
+
     $(".eye").click(function () {
 
-      console.log('test');
+      //console.log('testeye');
 
       //Prend le alt (en fait le title) de l'image cliquée
       //pour construire l'url ...portfolio/medit...

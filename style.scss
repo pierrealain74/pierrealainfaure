@@ -86,10 +86,64 @@ table {
   .aboutR{
     flex: 1;
 
-/*     background: url('/wp-content/uploads/2023/11/moi-2019-250.jpg') no-repeat;
-    background-size: 100% 100%;
-    background-position: center top; */
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    overflow: hidden;
+
+          .matrix{
+
+                display: inline-block;
+                position: absolute;
+                z-index: 1;
+                padding-left: 20%;
+                white-space: nowrap;
+                writing-mode: vertical-rl;
+                text-orientation: mixed;
+                line-height: 1.2; 
+                font-size: 2rem;
+
+                animation: defilement-ttb 40s infinite linear;
+                opacity: .2;
+          }
+          
+          @keyframes defilement-ttb {
+              0% {
+                transform: translateY(-100%);      /* position initiale à droite */
+              }
+              100% {
+                transform: translateY(100%);  /* position finale à gauche */
+              }
+          }
+
+
+          .matrix2{
+            display: inline-block;
+            position: absolute;
+            z-index: 1;
+            padding-left: 40%;
+            white-space: nowrap;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            line-height: 1.2; 
+            font-size: 4rem;
+
+            animation: defilement-ttb 40s infinite linear;
+            opacity: .1;
+          }
+    
+          @keyframes defilement-btt {
+            0% {
+              transform: translateY(-100%);      /* position initiale à droite */
+            }
+            100% {
+              transform: translateY(100%);  /* position finale à gauche */
+            }
+          }
   }
+
+
 
   
 }
@@ -101,6 +155,21 @@ table {
   padding: 0 2rem;
   cursor: pointer;
 
+  &:hover{
+
+    animation: neon2 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes neon2 {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228dff,
+        0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
+        0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
+    }
+  }
+/*Thanx: https://rilling.dev/*/
   }
 
 .site-header{
