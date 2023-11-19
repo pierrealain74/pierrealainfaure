@@ -23,7 +23,7 @@ Fleche navigation carousel
   Dot de navigation sous carousel en home.php
   */
   .owl-theme .owl-dots .owl-dot span{
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
     margin: 15px 7px;
   }

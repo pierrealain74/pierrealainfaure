@@ -99,35 +99,42 @@ fetch(jsonfile)
       
       //console.log(eltCloned);
       
-    eltCloned.forEach(elt => {
+      eltCloned.forEach(elt => {
 
-      const itemCloned = elt.querySelector(".item");
-      const image = itemCloned.querySelector("img");
-      const imageAlt = image.getAttribute("alt");
-      const imageId = image.getAttribute("id");
+        const itemCloned = elt.querySelector(".item");
+        const image = itemCloned.querySelector("img");
+        const imageAlt = image.getAttribute("alt");
+        const imageId = image.getAttribute("id");
 
-      elt.addEventListener('click', function() {
-        //console.log(imageAlt);
+        elt.addEventListener('click', function() {
+          //console.log(imageAlt);
 
-          const screenWidth1 = window.innerWidth;
+            const screenWidth1 = window.innerWidth;
 
-          
-          if (screenWidth1 < 768) {//Selon si c'est mobile = autre template (100% responsive)
+            
+            if (screenWidth1 < 800) {//Selon si c'est mobile = autre template (100% responsive)
 
-            window.location.href = "http://" + window.location.hostname + "/projects-800/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
-          }
-          else {
-            window.location.href = "http://" + window.location.hostname + "/projects/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
-          }
+              window.location.href = "http://" + window.location.hostname + "/projects-800/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
+            }
+            else {
+              window.location.href = "http://" + window.location.hostname + "/projects/?title=" + encodeURIComponent(imageAlt) + "&id=" + imageId;
+            }
 
-      });
+        });
     })
   }, 1000);//set time out
 
 
 
 
-
+  /**
+   * 
+   * Click sur l'icone EYE
+   * va cherche le .item le plus proche de eye cliqué
+   * recupérer le alt de l'image dans le item (pour prendre le title)
+   * crée le lien vers le portfolio d'apres son title
+   * 
+   */
     $(".eye").click(function () {
 
       //console.log('testeye');

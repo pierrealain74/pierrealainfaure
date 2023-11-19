@@ -21,7 +21,7 @@ $(document).ready(function() {
                     loop: true,
                     nav: true
                 },
-                450: {
+                500: {
                     items:2,
                     nav: true,
                     loop:true
@@ -48,27 +48,9 @@ $(document).ready(function() {
         if (!divOwl) {
 
             location.reload();
-            console.log('reload');
+            //console.log('reload');
 
         }
-
-
-        /* Hack pour supprimer la classe Cloned supsonée d'empecher le click sur item
-        var elements = document.querySelectorAll(".owl-item");
-
-        // Parcourez les éléments et supprimez la classe "cloned" s'ils la possèdent
-        for (var i = 0; i < elements.length; i++) {
-
-            var element = elements[i];
-            if (element.classList.contains("cloned"))
-            {
-                element.classList.remove("cloned");
-            }
-        } */
-
-
-
-
 
 
     }, 500);

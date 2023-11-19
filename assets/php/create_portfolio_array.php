@@ -17,12 +17,13 @@ foreach ($portfolios as $portfolio) :
         'num' => $num,
         'id' => $portfolio->id,
         'title' => esc_html($portfolio->title->rendered),
-        'date' => isset($portfolio->date) ? esc_html($portfolio->date) : '',
+        'date' => isset($portfolio->date) ? explode("T",  $portfolio->date)[0] : '',
         'categories' => array(),
         'tags' => array(),
         'thumbnail' => '',
         'thumbnailfull' => '',
         /* 'content' => esc_html($portfolio->content->rendered),  pas besoin car j'utilise une autre url*/
+
     );
     $num++;
 
@@ -35,7 +36,6 @@ foreach ($portfolios as $portfolio) :
     $thumbnail_id = $portfolio->featured_media;
     $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'full');
     $portfolio_item['thumbnailfull'] = esc_url($thumbnail_url);
-
 
     // Récupérer les catégories
     if (isset($portfolio->categories) && is_array($portfolio->categories)) {
