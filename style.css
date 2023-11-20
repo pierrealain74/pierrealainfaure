@@ -146,8 +146,18 @@ table {
 #about .aboutL {
   flex: 1;
   display: flex;
-  align-items: self-end;
+  /* align-items: self-end;*/
   padding: 2rem;
+  flex-direction: column;
+}
+#about .aboutL p:not(:first-child) {
+  margin-top: 1rem;
+}
+#about .aboutL .certification {
+  padding-left: 1.2rem;
+  background: url("./assets/icons/certification.svg") no-repeat;
+  background-size: 17px 19px;
+  background-position: left top;
 }
 #about .animate-image:hover {
   opacity: 0.8; /* Réduisez l'opacité au survol */
@@ -342,19 +352,27 @@ p.site-title a {
   background: url(./assets/icons/icon-eye.svg) center center/100% 100%;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  z-index: 999;
 }
 
 .owl-carousel .owl-item:hover img {
-  filter: unset; /* Réinitialisez le filtre au survol */
-  opacity: 1; /* Augmentez l'opacité au survol */
+  filter: unset;
+  opacity: 1;
+  object-fit: none;
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.owl-carousel .owl-stage-outer:hover {
+  overflow: visible;
 }
 
 .owl-carousel .owl-item:hover .rolloverImg {
-  opacity: 1; /* Affichez le div de rollover au survol */
+  opacity: 1;
 }
 
 .owl-carousel .owl-item:hover .eye {
-  opacity: 1; /* Affichez l'icône de l'œil au survol */
+  opacity: 1;
 }
 
 /*

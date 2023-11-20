@@ -18,33 +18,28 @@ get_header();
   </header>
 
 
-  <div id="about">
-    <div class="aboutL">
-        
-        <?php
-        
-            if (have_posts()) :
-                while (have_posts()) :
-                    the_post();
-                    the_content();
-                endwhile;
-            endif;
-        ?>
+    <div id="about">
+        <div class="aboutL">
+            
+            <?php
+            
+                if (have_posts()) :
+                    while (have_posts()) :
+                        the_post();
+                        the_content();
+                    endwhile;
+                endif;
+            ?>
+
+        </div>
+        <div class="aboutR">
+                
+                <div class="matrix">gsap -- slick -- owl -- librairie -- photoshop -- api rest -- photoshop -- github -- symfony -- vscode -- laravel -- wordpress -- doctype</div>
+                <div class="matrix2">sass -- gridcss -- json -- javascript -- jquery -- flexbox -- php -- react -- vue -- jsx -- html -- css3 -- scss</div>
+
+        </div>
 
     </div>
-    <div class="aboutR">
-              
-            <div class="matrix">gsap -- slick -- owl -- librairie -- photoshop -- api rest -- photoshop -- github -- symfony -- vscode -- laravel -- wordpress -- doctype</div>
-            <div class="matrix2">sass -- gridcss -- json -- javascript -- jquery -- flexbox -- php -- react -- vue -- jsx -- html -- css3 -- scss</div>
-
-    </div>
-
-</div>
-
-<script>
-
-
-</script>
 
 <?php get_template_part('template-parts/bottom');?>
 <?php get_footer();?>
